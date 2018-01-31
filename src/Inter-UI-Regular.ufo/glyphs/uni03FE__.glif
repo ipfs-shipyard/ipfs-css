@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni03FE" format="1">
+  <advance width="2032"/>
+  <unicode hex="03FE"/>
+  <outline>
+    <component base="C"/>
+    <component base="period" xOffset="696" yOffset="876"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1834, 'leftMargin': 161, 'rightMargin': 121}</string>
+      <key>interface.width-adjustments</key>
+      <array>
+        <integer>-16</integer>
+      </array>
+    </dict>
+  </lib>
+</glyph>

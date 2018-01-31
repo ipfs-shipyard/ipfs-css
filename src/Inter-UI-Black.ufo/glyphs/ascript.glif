@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ascript" format="1">
+  <advance width="1652"/>
+  <unicode hex="0251"/>
+  <outline>
+    <component base="alpha"/>
+    <contour>
+      <point x="1280" y="900" type="move" name="rhotichook"/>
+    </contour>
+    <contour>
+      <point x="764" y="1776" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="764" y="0" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="1728" y="1776" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1651, 'leftMargin': 89, 'rightMargin': 68}</string>
+    </dict>
+  </lib>
+</glyph>

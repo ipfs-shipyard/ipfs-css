@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="zhecyrillic" format="1">
+  <advance width="2592"/>
+  <unicode hex="0436"/>
+  <outline>
+    <contour>
+      <point x="728" y="520" type="line"/>
+      <point x="1164" y="520" type="line"/>
+      <point x="1216" y="952" type="line"/>
+      <point x="936" y="952" type="line"/>
+      <point x="644" y="1488" type="line"/>
+      <point x="92" y="1488" type="line"/>
+    </contour>
+    <contour>
+      <point x="940" y="608" type="line"/>
+      <point x="564" y="800" type="line"/>
+      <point x="104" y="0" type="line"/>
+      <point x="632" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1516" y="1488" type="line"/>
+      <point x="1072" y="1488" type="line"/>
+      <point x="1072" y="0" type="line"/>
+      <point x="1516" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="2500" y="1488" type="line"/>
+      <point x="1948" y="1488" type="line"/>
+      <point x="1656" y="952" type="line"/>
+      <point x="1376" y="952" type="line"/>
+      <point x="1428" y="520" type="line"/>
+      <point x="1864" y="520" type="line"/>
+    </contour>
+    <contour>
+      <point x="1960" y="0" type="line"/>
+      <point x="2500" y="0" type="line"/>
+      <point x="2040" y="800" type="line"/>
+      <point x="1652" y="608" type="line"/>
+    </contour>
+    <contour>
+      <point x="1312" y="1776" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="2360" y="0" type="move" name="right"/>
+    </contour>
+    <contour>
+      <point x="2536" y="1776" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 2497.0, 'leftMargin': 54, 'rightMargin': 36.0}</string>
+    </dict>
+  </lib>
+</glyph>

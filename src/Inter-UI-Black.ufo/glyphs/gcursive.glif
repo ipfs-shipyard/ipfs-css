@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="gcursive" format="1">
+  <advance width="1568"/>
+  <unicode hex="0261"/>
+  <outline>
+    <component base="g" xOffset="-12"/>
+    <contour>
+      <point x="768" y="1776" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="1620" y="1776" type="move" name="top0315"/>
+    </contour>
+    <contour>
+      <point x="768" y="-616" type="move" name="bottom"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1617.0, 'leftMargin': 83, 'rightMargin': 140.0}</string>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Idieresisacute" format="1">
+  <advance width="1016"/>
+  <unicode hex="1E2E"/>
+  <outline>
+    <component base="I" xOffset="144"/>
+    <component base="dieresisacutecomb" xOffset="1316" yOffset="480"/>
+    <contour>
+      <point x="644" y="0" type="move" name="right"/>
+    </contour>
+    <contour>
+      <point x="508" y="16" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="232" y="2004" type="move" name="tonos"/>
+    </contour>
+    <contour>
+      <point x="508" y="2216" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="892" y="2216" type="move" name="top0315"/>
+    </contour>
+    <contour>
+      <point x="892" y="2200" type="move" name="top_dd"/>
+    </contour>
+    <contour>
+      <point x="600" y="0" type="move" name="ogonek"/>
+    </contour>
+    <contour>
+      <point x="892" y="-560" type="move" name="bottom_dd"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1018, 'leftMargin': 28, 'rightMargin': 28}</string>
+    </dict>
+  </lib>
+</glyph>

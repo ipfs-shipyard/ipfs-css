@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="b" format="1">
+  <advance width="1652"/>
+  <unicode hex="0062"/>
+  <outline>
+    <contour>
+      <point x="144" y="2048" type="line"/>
+      <point x="144" y="0" type="line"/>
+      <point x="600" y="0" type="line"/>
+      <point x="600" y="304" type="line"/>
+      <point x="436" y="744" type="line"/>
+      <point x="604" y="1272" type="line"/>
+      <point x="604" y="2048" type="line"/>
+    </contour>
+    <component base="rightloop.cn" xOffset="-36"/>
+    <contour>
+      <point x="1064" y="2200" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="932" y="0" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="1720" y="2200" type="move" name="top_dd"/>
+    </contour>
+    <contour>
+      <point x="1720" y="-560" type="move" name="bottom_dd"/>
+    </contour>
+    <contour>
+      <point x="1720" y="2200" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.86</real>
+        <real>0.92</real>
+        <real>0.97</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1585, 'leftMargin': 140, 'rightMargin': 79}</string>
+    </dict>
+  </lib>
+</glyph>

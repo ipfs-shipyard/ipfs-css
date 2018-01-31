@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="A" format="1">
+  <advance width="2168"/>
+  <unicode hex="0041"/>
+  <outline>
+    <contour>
+      <point x="1676" y="756" type="line"/>
+      <point x="492" y="756" type="line"/>
+      <point x="492" y="384" type="line"/>
+      <point x="1676" y="384" type="line"/>
+    </contour>
+    <component base="Lambda"/>
+    <contour>
+      <point x="1084" y="2200" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="1084" y="12" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="2088" y="0" type="move" name="right"/>
+    </contour>
+    <contour>
+      <point x="568" y="2000" type="move" name="tonos"/>
+    </contour>
+    <contour>
+      <point x="1952" y="0" type="move" name="ogonek"/>
+    </contour>
+    <contour>
+      <point x="2096" y="2200" type="move" name="top_dd"/>
+    </contour>
+    <contour>
+      <point x="1968" y="-560" type="move" name="bottom_dd"/>
+    </contour>
+    <contour>
+      <point x="2096" y="2200" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>0.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>x</key>
+          <real>0.0</real>
+          <key>y</key>
+          <real>1894.75</real>
+        </dict>
+        <dict>
+          <key>angle</key>
+          <real>90.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>x</key>
+          <integer>1084</integer>
+          <key>y</key>
+          <integer>964</integer>
+        </dict>
+      </array>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.86</real>
+        <real>0.92</real>
+        <real>0.97</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1911, 'leftMargin': 0, 'rightMargin': -2}</string>
+    </dict>
+  </lib>
+</glyph>

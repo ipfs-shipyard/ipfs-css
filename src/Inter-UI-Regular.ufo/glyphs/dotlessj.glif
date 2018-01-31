@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dotlessj" format="1">
+  <advance width="652"/>
+  <unicode hex="0237"/>
+  <outline>
+    <contour>
+      <point x="328" y="1716" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="644" y="0" type="move" name="_right"/>
+    </contour>
+    <contour>
+      <point x="680" y="1716" type="move" name="top0315"/>
+    </contour>
+    <contour>
+      <point x="208" y="1536" type="line"/>
+      <point x="208" y="-112" type="line"/>
+      <point x="208" y="-268"/>
+      <point x="144" y="-360"/>
+      <point x="0" y="-360" type="curve"/>
+      <point x="-44" y="-360" type="line"/>
+      <point x="-44" y="-580" type="line"/>
+      <point x="4" y="-580" type="line"/>
+      <point x="300" y="-580"/>
+      <point x="444" y="-396"/>
+      <point x="444" y="-112" type="curve"/>
+      <point x="444" y="1536" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>90.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>name</key>
+          <string></string>
+          <key>x</key>
+          <integer>320</integer>
+          <key>y</key>
+          <integer>1516</integer>
+        </dict>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 723, 'leftMargin': -92, 'rightMargin': 213}</string>
+      <key>interface.width-adjustments</key>
+      <array>
+        <integer>-16</integer>
+      </array>
+    </dict>
+  </lib>
+</glyph>

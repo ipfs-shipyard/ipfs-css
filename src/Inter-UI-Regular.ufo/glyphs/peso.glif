@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="peso" format="1">
+  <advance width="2024"/>
+  <unicode hex="20B1"/>
+  <outline>
+    <contour>
+      <point x="1960" y="1668" type="line"/>
+      <point x="132" y="1668" type="line"/>
+      <point x="132" y="1448" type="line"/>
+      <point x="1960" y="1448" type="line"/>
+    </contour>
+    <contour>
+      <point x="1960" y="1340" type="line"/>
+      <point x="132" y="1340" type="line"/>
+      <point x="132" y="1120" type="line"/>
+      <point x="1960" y="1120" type="line"/>
+    </contour>
+    <component base="P" xOffset="144"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.8</real>
+        <real>0.94</real>
+        <real>0.95</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 2089, 'leftMargin': 41, 'rightMargin': 42}</string>
+      <key>interface.width-adjustments</key>
+      <array>
+        <integer>-16</integer>
+      </array>
+    </dict>
+  </lib>
+</glyph>

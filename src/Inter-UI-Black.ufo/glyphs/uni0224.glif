@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0224" format="1">
+  <advance width="1824"/>
+  <unicode hex="0224"/>
+  <outline>
+    <contour>
+      <point x="892" y="384" type="line"/>
+      <point x="892" y="0" type="line"/>
+      <point x="1140" y="0" type="line" smooth="yes"/>
+      <point x="1316" y="0"/>
+      <point x="1344" y="-128"/>
+      <point x="1344" y="-252" type="curve"/>
+      <point x="1344" y="-360" type="line"/>
+      <point x="1720" y="-360" type="line"/>
+      <point x="1720" y="-168" type="line"/>
+      <point x="1720" y="176"/>
+      <point x="1516" y="384"/>
+      <point x="1140" y="384" type="curve" smooth="yes"/>
+    </contour>
+    <contour>
+      <point x="1048" y="384" type="line"/>
+      <point x="712" y="384" type="line"/>
+      <point x="1688" y="1776" type="line"/>
+      <point x="1688" y="2048" type="line"/>
+      <point x="136" y="2048" type="line"/>
+      <point x="136" y="1664" type="line"/>
+      <point x="1112" y="1664" type="line"/>
+      <point x="136" y="272" type="line"/>
+      <point x="136" y="0" type="line"/>
+      <point x="1048" y="0" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.layerData</key>
+      <dict>
+        <key>reference</key>
+        <dict>
+          <key>anchors</key>
+          <array>
+          </array>
+          <key>components</key>
+          <array>
+            <dict>
+              <key>baseGlyph</key>
+              <string>Z</string>
+              <key>transformation</key>
+              <array>
+                <integer>1</integer>
+                <integer>0</integer>
+                <integer>0</integer>
+                <integer>1</integer>
+                <integer>0</integer>
+                <integer>0</integer>
+              </array>
+            </dict>
+          </array>
+          <key>contours</key>
+          <array>
+          </array>
+          <key>lib</key>
+          <dict>
+          </dict>
+          <key>name</key>
+          <string>uni0224</string>
+          <key>unicodes</key>
+          <array>
+          </array>
+          <key>width</key>
+          <integer>1824</integer>
+        </dict>
+      </dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1841, 'leftMargin': 91, 'rightMargin': 42}</string>
+    </dict>
+  </lib>
+</glyph>

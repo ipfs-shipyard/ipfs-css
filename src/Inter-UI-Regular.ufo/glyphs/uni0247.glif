@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uni0247" format="1">
+  <advance width="1624"/>
+  <unicode hex="0247"/>
+  <outline>
+    <contour>
+      <point x="1416" y="2048" type="line"/>
+      <point x="1228" y="2048" type="line"/>
+      <point x="176" y="-576" type="line"/>
+      <point x="368" y="-576" type="line"/>
+    </contour>
+    <component base="e"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1502, 'leftMargin': 110, 'rightMargin': 102}</string>
+      <key>interface.width-adjustments</key>
+      <array>
+        <integer>-16</integer>
+      </array>
+    </dict>
+  </lib>
+</glyph>

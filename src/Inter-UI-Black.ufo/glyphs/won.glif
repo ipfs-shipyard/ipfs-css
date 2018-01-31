@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="won" format="1">
+  <advance width="2896"/>
+  <unicode hex="20A9"/>
+  <outline>
+    <contour>
+      <point x="2780" y="1504" type="line"/>
+      <point x="116" y="1504" type="line"/>
+      <point x="116" y="1284" type="line"/>
+      <point x="2780" y="1284" type="line"/>
+    </contour>
+    <contour>
+      <point x="2780" y="1132" type="line"/>
+      <point x="116" y="1132" type="line"/>
+      <point x="116" y="912" type="line"/>
+      <point x="2780" y="912" type="line"/>
+    </contour>
+    <component base="W"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>90.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>name</key>
+          <string></string>
+          <key>x</key>
+          <integer>1448</integer>
+          <key>y</key>
+          <integer>1192</integer>
+        </dict>
+      </array>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.8</real>
+        <real>0.94</real>
+        <real>0.95</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 2349, 'leftMargin': 55, 'rightMargin': 55}</string>
+    </dict>
+  </lib>
+</glyph>
