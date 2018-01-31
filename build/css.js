@@ -1,46 +1,23 @@
-console.time('Build css total')
-
 const fs = require('fs')
 const path = require('path')
-const theme = require('../theme.json')
-const outputPath = path.resolve(__dirname, '../src/theme.css')
+const postcss = require('postcss')
+const buildThemeCss = require('./theme')
 
-const fontFamily = Object.keys(theme.fonts).map(name => {
-  return `.${name} { font-family: ${theme.fonts[name]}; }`
-})
-
-const color = Object.keys(theme.colors).map(name => {
-  return `.${name} { color: ${theme.colors[name]}; }`
-})
-
-const bg = Object.keys(theme.colors).map(name => {
-  return `.bg-${name} { background-color: ${theme.colors[name]}; }`
-})
-
-const border = Object.keys(theme.colors).map(name => {
-  return `.border-${name} { border-color: ${theme.colors[name]}; }`
-})
-
-const gradients = theme.gradients.map((gradient, i) => {
-  return `.ipfs-gradient-${i} { background-image: ${gradient}; }`
-})
-
-const lines = [
-  [`/* IPFS theme.css - Generated from https://github.com/ipfs-shipyard/ipfs-ui-style-guide/blob/master/theme.json */`],
-  ['\n/* ---- font ----- */'],
-  fontFamily,
-  ['\n/* ---- color ----- */'],
-  color,
-  [''],
-  bg,
-  [''],
-  border,
-  [''],
-  gradients
+const from = path.resolve(__dirname, '../src/ipfs.css')
+const to = path.resolve(__dirname, '../ipfs.css')
+const plugins = [
+  require('postcss-import')
 ]
 
-const css = lines.reduce((a, b) => a.concat(b)).join('\n')
+async function processCss () {
+  try {
+    buildThemeCss()
+    const src = fs.readFileSync(from)
+    const {css} = await postcss(plugins).process(src, {from, to})
+    console.log(css)
+  } catch (err) {
+    console.error(err)
+  }
+}
 
-fs.writeFileSync(outputPath, css)
-
-console.timeEnd('Build css total')
+processCss()

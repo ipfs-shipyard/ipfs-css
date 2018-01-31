@@ -1,11 +1,28 @@
 {
   "name": "ipfs-css",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "The single-purpose css class names and @font-face config to IPFS up your UI.",
+  "main": "ipfs.css",
+  "style": "ipfs.css",
   "scripts": {
-    "build": "node build/css.js"
+    "test": "stylelint **/*.css",
+    "clean": "rm -rf ./fonts ./ipfs.css ./src/theme.css",
+    "build": "run-p build:*",
+    "build:css": "node build/css.js > ipfs.css",
+    "build:fonts": "mkdir -p fonts; rsync -a --exclude='MontserratAlt*' --exclude='*.woff' --exclude='*.eot' --exclude='*.otf' src/fonts/inter-ui/docs/font-files/ src/fonts/montserrat/fonts/webfonts/ fonts"
   },
-  "author": "",
-  "license": "MIT"
+  "author": "olizilla",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-run-all": "^4.1.2",
+    "postcss": "^6.0.16",
+    "postcss-import": "^11.0.0",
+    "standard": "^10.0.3",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended": "^2.0.1"
+  },
+  "dependencies": {},
+  "stylelint": {
+    "extends": "stylelint-config-recommended"
+  }
 }
