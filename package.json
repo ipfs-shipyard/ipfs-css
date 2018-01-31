@@ -1,0 +1,11 @@
+{
+  "name": "ipfs-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build/css.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

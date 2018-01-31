@@ -1,0 +1,57 @@
+{
+  "colors": {
+    "navy": "#0b3a53",
+    "navy-muted": "#244e66",
+    "aqua": "#69c4cd",
+    "aqua-muted": "#9ad4db",
+    "gray": "#b7bbc8",
+    "gray-muted": "#d9dbe2",
+    "charcoal": "#34373f",
+    "charcoal-muted": "#7f8491",
+    "red": "#ea5037",
+    "red-muted": "#f36149",
+    "yellow": "#f39021",
+    "yellow-muted": "#f9a13e",
+    "teal": "#3e9096",
+    "teal-muted": "#439a9d",
+    "green": "#0cb892",
+    "green-muted": "#0aca9f",
+    "snow": "#edf0f4",
+    "snow-muted": "#f7f8fa"
+  },
+  "gradients": [
+    "linear-gradient(to top, #041727 0%,#043b55 100%)"
+  ],
+  "fonts": {
+    "sans-serif": "'Inter UI', system-ui, sans-serif",
+    "montserrat": "'Montserrat', 'Verdana', system-ui, sans-serif",
+    "monospace": "Consolas, monaco, monospace"
+  },
+  "fontSizes": [
+    12,
+    14,
+    16,
+    20,
+    24,
+    32,
+    48,
+    64,
+    72,
+    96
+  ],
+  "space": [
+    0,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "shadows": [
+    "0px 3px 6px 0 rgba(205,207,214,0.35)"
+  ],
+  "lineHeight": "1.5",
+  "textColor": "charcoal"
+}
