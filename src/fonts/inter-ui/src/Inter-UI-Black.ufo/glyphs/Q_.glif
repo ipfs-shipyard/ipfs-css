@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="Q" format="1">
+  <advance width="2040"/>
+  <unicode hex="0051"/>
+  <outline>
+    <contour>
+      <point x="840" y="704" type="line"/>
+      <point x="1112" y="316" type="line"/>
+      <point x="1228" y="124" type="line"/>
+      <point x="1448" y="-192" type="line"/>
+      <point x="1876" y="-192" type="line"/>
+      <point x="1556" y="264" type="line"/>
+      <point x="1364" y="500" type="line"/>
+      <point x="1220" y="704" type="line"/>
+    </contour>
+    <component base="O"/>
+    <contour>
+      <point x="1024" y="2200" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="1024" y="-16" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="2012" y="2200" type="move" name="top_dd"/>
+    </contour>
+    <contour>
+      <point x="2012" y="-560" type="move" name="bottom_dd"/>
+    </contour>
+    <contour>
+      <point x="2012" y="2200" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>90.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>name</key>
+          <string></string>
+          <key>x</key>
+          <integer>1024</integer>
+          <key>y</key>
+          <integer>1432</integer>
+        </dict>
+      </array>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.86</real>
+        <real>0.92</real>
+        <real>0.97</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1944, 'leftMargin': 105, 'rightMargin': 103}</string>
+    </dict>
+  </lib>
+</glyph>

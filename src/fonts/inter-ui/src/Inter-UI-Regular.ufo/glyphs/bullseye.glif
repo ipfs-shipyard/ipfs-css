@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="bullseye" format="1">
+  <advance width="2128"/>
+  <unicode hex="0298"/>
+  <outline>
+    <component base="O"/>
+    <component base="period" xOffset="684" yOffset="876"/>
+    <contour>
+      <point x="1064" y="2304" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="1064" y="0" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="1944" y="2244" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>90.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>name</key>
+          <string></string>
+          <key>x</key>
+          <integer>1064</integer>
+          <key>y</key>
+          <integer>1836</integer>
+        </dict>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1944, 'leftMargin': 256, 'rightMargin': 152}</string>
+      <key>interface.width-adjustments</key>
+      <array>
+        <integer>-16</integer>
+      </array>
+    </dict>
+  </lib>
+</glyph>

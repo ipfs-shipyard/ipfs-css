@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="tenge" format="1">
+  <advance width="1792"/>
+  <unicode hex="20B8"/>
+  <outline>
+    <contour>
+      <point x="1020" y="1664" type="line"/>
+      <point x="772" y="1664" type="line"/>
+      <point x="772" y="0" type="line"/>
+      <point x="1020" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1664" y="1664" type="line"/>
+      <point x="128" y="1664" type="line"/>
+      <point x="128" y="1444" type="line"/>
+      <point x="1664" y="1444" type="line"/>
+    </contour>
+    <contour>
+      <point x="1664" y="2048" type="line"/>
+      <point x="128" y="2048" type="line"/>
+      <point x="128" y="1828" type="line"/>
+      <point x="1664" y="1828" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.8</real>
+        <real>0.94</real>
+        <real>0.95</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1680, 'leftMargin': 67, 'rightMargin': 63}</string>
+      <key>interface.width-adjustments</key>
+      <array>
+        <integer>-16</integer>
+      </array>
+    </dict>
+  </lib>
+</glyph>

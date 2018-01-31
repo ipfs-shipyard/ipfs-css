@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="asciicircum" format="1">
+  <advance width="1312"/>
+  <unicode hex="005E"/>
+  <outline>
+    <contour>
+      <point x="668" y="1652" type="line"/>
+      <point x="740" y="2004" type="line"/>
+      <point x="492" y="2004" type="line"/>
+      <point x="84" y="1004" type="line"/>
+      <point x="420" y="1004" type="line"/>
+    </contour>
+    <contour>
+      <point x="892" y="1004" type="line"/>
+      <point x="1232" y="1004" type="line"/>
+      <point x="820" y="2004" type="line"/>
+      <point x="572" y="2004" type="line"/>
+      <point x="644" y="1652" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>0.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>x</key>
+          <real>0.0</real>
+          <key>y</key>
+          <real>248.875</real>
+        </dict>
+        <dict>
+          <key>angle</key>
+          <real>0.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>x</key>
+          <real>0.0</real>
+          <key>y</key>
+          <real>723.25</real>
+        </dict>
+      </array>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.8</real>
+        <real>0.94</real>
+        <real>0.95</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1251, 'leftMargin': 54, 'rightMargin': 49}</string>
+    </dict>
+  </lib>
+</glyph>

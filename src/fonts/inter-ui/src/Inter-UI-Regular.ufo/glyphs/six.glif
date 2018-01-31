@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="six" format="1">
+  <advance width="1664"/>
+  <unicode hex="0036"/>
+  <outline>
+    <component base="nine" xScale="-1" yScale="-1" xOffset="1664" yOffset="2048"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.adobe.type.autohint</key>
+      <data>
+      </data>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.89</real>
+        <real>0.96</real>
+        <real>0.92</real>
+        <real>1.0</real>
+      </array>
+    </dict>
+  </lib>
+</glyph>

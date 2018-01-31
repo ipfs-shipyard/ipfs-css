@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="kturn" format="1">
+  <advance width="1588"/>
+  <unicode hex="029E"/>
+  <outline>
+    <component base="k" xScale="-1.0" yScale="-1.0" xOffset="1556" yOffset="1536"/>
+    <contour>
+      <point x="688" y="1776" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="688" y="-616" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="1492" y="1776" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>0.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>x</key>
+          <real>0.0</real>
+          <key>y</key>
+          <real>-570.625</real>
+        </dict>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1529.0, 'leftMargin': -39, 'rightMargin': 140.0}</string>
+    </dict>
+  </lib>
+</glyph>

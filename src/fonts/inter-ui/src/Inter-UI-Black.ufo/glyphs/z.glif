@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="z" format="1">
+  <advance width="1544"/>
+  <unicode hex="007A"/>
+  <outline>
+    <contour>
+      <point x="1400" y="360" type="line"/>
+      <point x="256" y="360" type="line"/>
+      <point x="256" y="0" type="line"/>
+      <point x="1400" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1384" y="1276" type="line"/>
+      <point x="1384" y="1536" type="line"/>
+      <point x="1080" y="1536" type="line"/>
+      <point x="144" y="260" type="line"/>
+      <point x="144" y="0" type="line"/>
+      <point x="448" y="0" type="line"/>
+    </contour>
+    <contour>
+      <point x="1236" y="1536" type="line"/>
+      <point x="172" y="1536" type="line"/>
+      <point x="172" y="1176" type="line"/>
+      <point x="1236" y="1176" type="line"/>
+    </contour>
+    <contour>
+      <point x="764" y="1776" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="764" y="0" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="1496" y="2200" type="move" name="top_dd"/>
+    </contour>
+    <contour>
+      <point x="1496" y="-560" type="move" name="bottom_dd"/>
+    </contour>
+    <contour>
+      <point x="1496" y="1776" type="move" name="top0315"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.typemytype.robofont.guides</key>
+      <array>
+        <dict>
+          <key>angle</key>
+          <real>90.0</real>
+          <key>isGlobal</key>
+          <false/>
+          <key>magnetic</key>
+          <integer>5</integer>
+          <key>name</key>
+          <string></string>
+          <key>x</key>
+          <integer>748</integer>
+          <key>y</key>
+          <integer>656</integer>
+        </dict>
+      </array>
+      <key>com.typemytype.robofont.mark</key>
+      <array>
+        <real>0.86</real>
+        <real>0.92</real>
+        <real>0.97</real>
+        <real>1.0</real>
+      </array>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 1445, 'leftMargin': 95, 'rightMargin': 96}</string>
+    </dict>
+  </lib>
+</glyph>

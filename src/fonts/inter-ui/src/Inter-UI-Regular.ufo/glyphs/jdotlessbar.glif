@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="jdotlessbar" format="1">
+  <advance width="880"/>
+  <unicode hex="025F"/>
+  <outline>
+    <contour>
+      <point x="620" y="1776" type="move" name="top"/>
+    </contour>
+    <contour>
+      <point x="620" y="-616" type="move" name="bottom"/>
+    </contour>
+    <contour>
+      <point x="1024" y="1776" type="move" name="top0315"/>
+    </contour>
+    <component base="dotlessj" xOffset="112"/>
+    <component base="crossbar" xOffset="-188" yOffset="-912"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>interface.gridadjust.original</key>
+      <string>{'width': 920, 'leftMargin': 96, 'rightMargin': 8}</string>
+      <key>interface.width-adjustments</key>
+      <array>
+        <integer>-16</integer>
+      </array>
+    </dict>
+  </lib>
+</glyph>
