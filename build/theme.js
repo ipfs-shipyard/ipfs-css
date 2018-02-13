@@ -32,6 +32,15 @@ function buildThemeCss () {
     return `.ipfs-gradient-${i} { background-image: ${gradient}; }`
   })
 
+  const fill = Object.keys(theme.colors).map(name => {
+    return `.fill-${name} path { fill: ${theme.colors[name]}; }`
+  })
+
+  const hoverFill = Object.keys(theme.colors).map(name => {
+    return `.hover-fill-${name} path { transition: .2s ease fill }
+      .hover-fill:hover path { fill: ${theme.colors[name]}; }`
+  })
+
   const lines = [
     [`/* IPFS theme.css - Generated from https://github.com/ipfs-shipyard/ipfs-css/blob/master/theme.json */`],
     ['\n/* ---- font ----- */'],
@@ -44,6 +53,9 @@ function buildThemeCss () {
     hover,
     [''],
     hoverBg,
+    fill,
+    [''],
+    hoverFill,
     [''],
     border,
     [''],
