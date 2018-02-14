@@ -20,6 +20,14 @@ function buildThemeCss () {
     return `.border-${name} { border-color: ${theme.colors[name]}; }`
   })
 
+  const hover = Object.keys(theme.colors).map(name => {
+    return `.hover-${name}:hover { color: ${theme.colors[name]}; }`
+  })
+
+  const hoverBg = Object.keys(theme.colors).map(name => {
+    return `.hover-bg-${name}:hover { background-color: ${theme.colors[name]}; }`
+  })
+
   const gradients = theme.gradients.map((gradient, i) => {
     return `.ipfs-gradient-${i} { background-image: ${gradient}; }`
   })
@@ -32,6 +40,10 @@ function buildThemeCss () {
     color,
     [''],
     bg,
+    [''],
+    hover,
+    [''],
+    hoverBg,
     [''],
     border,
     [''],
