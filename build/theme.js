@@ -37,8 +37,7 @@ function buildThemeCss () {
   })
 
   const hoverFill = Object.keys(theme.colors).map(name => {
-    return `.hover-fill-${name} path { transition: .2s ease fill }
-      .hover-fill:hover path { fill: ${theme.colors[name]}; }`
+    return `.hover-fill-${name}:hover path { fill: ${theme.colors[name]}; }`
   })
 
   const lines = [
@@ -53,6 +52,7 @@ function buildThemeCss () {
     hover,
     [''],
     hoverBg,
+    [''],
     fill,
     [''],
     hoverFill,
