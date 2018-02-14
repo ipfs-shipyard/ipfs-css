@@ -259,6 +259,114 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .hover-bg-snow-muted:hover { background-color: #f7f8fa; }
 
+.fill-navy path { fill: #0b3a53; }
+
+.fill-navy-muted path { fill: #244e66; }
+
+.fill-aqua path { fill: #69c4cd; }
+
+.fill-aqua-muted path { fill: #9ad4db; }
+
+.fill-gray path { fill: #b7bbc8; }
+
+.fill-gray-muted path { fill: #d9dbe2; }
+
+.fill-charcoal path { fill: #34373f; }
+
+.fill-charcoal-muted path { fill: #7f8491; }
+
+.fill-red path { fill: #ea5037; }
+
+.fill-red-muted path { fill: #f36149; }
+
+.fill-yellow path { fill: #f39021; }
+
+.fill-yellow-muted path { fill: #f9a13e; }
+
+.fill-teal path { fill: #3e9096; }
+
+.fill-teal-muted path { fill: #439a9d; }
+
+.fill-green path { fill: #0cb892; }
+
+.fill-green-muted path { fill: #0aca9f; }
+
+.fill-snow path { fill: #edf0f4; }
+
+.fill-snow-muted path { fill: #f7f8fa; }
+
+.hover-fill-navy path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #0b3a53; }
+
+.hover-fill-navy-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #244e66; }
+
+.hover-fill-aqua path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #69c4cd; }
+
+.hover-fill-aqua-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #9ad4db; }
+
+.hover-fill-gray path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #b7bbc8; }
+
+.hover-fill-gray-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #d9dbe2; }
+
+.hover-fill-charcoal path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #34373f; }
+
+.hover-fill-charcoal-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #7f8491; }
+
+.hover-fill-red path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #ea5037; }
+
+.hover-fill-red-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #f36149; }
+
+.hover-fill-yellow path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #f39021; }
+
+.hover-fill-yellow-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #f9a13e; }
+
+.hover-fill-teal path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #3e9096; }
+
+.hover-fill-teal-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #439a9d; }
+
+.hover-fill-green path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #0cb892; }
+
+.hover-fill-green-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #0aca9f; }
+
+.hover-fill-snow path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #edf0f4; }
+
+.hover-fill-snow-muted path { transition: .2s ease fill }
+
+.hover-fill:hover path { fill: #f7f8fa; }
+
 .border-navy { border-color: #0b3a53; }
 
 .border-navy-muted { border-color: #244e66; }
