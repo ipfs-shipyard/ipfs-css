@@ -369,7 +369,8 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .ipfs-gradient-0 { background-image: linear-gradient(to top, #041727 0%,#043b55 100%); }
 
-.transition-all {
+.transition-all,
+.transition-all path {
   transition: .2s ease all;
 }
 
