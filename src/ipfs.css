@@ -9,7 +9,6 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 @import './montserrat.css';
 @import './theme.css';
 
-.transition-all,
-.transition-all path {
+.transition-all {
   transition: .2s ease all;
 }
