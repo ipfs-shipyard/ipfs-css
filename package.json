@@ -25,5 +25,16 @@
   "dependencies": {},
   "stylelint": {
     "extends": "stylelint-config-recommended"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipfs-shipyard/ipfs-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ipfs-shipyard/ipfs-css/issues"
+  },
+  "homepage": "https://github.com/ipfs-shipyard/ipfs-css#readme"
 }
