@@ -33,11 +33,11 @@ function buildThemeCss () {
   })
 
   const fill = Object.keys(theme.colors).map(name => {
-    return `.fill-${name} path { fill: ${theme.colors[name]}; }`
+    return `.fill-${name} { fill: ${theme.colors[name]}; }`
   })
 
   const hoverFill = Object.keys(theme.colors).map(name => {
-    return `.hover-fill-${name}:hover path { fill: ${theme.colors[name]}; }`
+    return `.hover-fill-${name}:hover { fill: ${theme.colors[name]}; }`
   })
 
   const lines = [
