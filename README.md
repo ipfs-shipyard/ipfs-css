@@ -66,6 +66,10 @@ All **the css atoms are generated** from that, so you can be sure you're using t
 }
 ```
 
+### Icons
+
+See: https://ipfs.io/ipfs/QmY9pfuxeojUKSKwLxuQimvwBGrNx9Vg8Jhb97kZwn2tXP/
+
 ## License
 
 Documents are [CC-BY-SA 3.0] license © 2018 Protocol Labs Inc.
