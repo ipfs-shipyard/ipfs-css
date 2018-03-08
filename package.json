@@ -6,11 +6,12 @@
   "style": "ipfs.css",
   "scripts": {
     "test": "stylelint **/*.css",
-    "clean": "rm -rf ./fonts ./ipfs.css ./src/theme.css",
+    "clean": "rm -rf ./docs/* ./fonts ./ipfs.css ./src/theme.css",
     "build": "run-p build:*",
     "build:css": "node build/css.js > ipfs.css",
     "build:fonts": "mkdir -p fonts; rsync -a --exclude='MontserratAlt*' --exclude='*.woff' --exclude='*.eot' --exclude='*.otf' src/fonts/inter-ui/docs/font-files/ src/fonts/montserrat/fonts/webfonts/ fonts",
-    "build:docs": "node build/icons-page.js > docs/index.html"
+    "build:docs": "node build/icons-page.js > docs/index.html",
+    "deploy:docs": "rsync -av --delete icons docs/; ipfs add -r -Q docs"
   },
   "author": "olizilla",
   "license": "MIT",

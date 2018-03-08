@@ -4,11 +4,10 @@ const path = require('path')
 const iconsPath = path.join(__dirname, '..', 'icons')
 const iconsList = fs.readdirSync(iconsPath)
 const iconsData = iconsList.map(filename => {
-  const projectUrl = `icons/${filename}`
-  const url = `../${projectUrl}`
+  const url = `icons/${filename}`
   const [type, ...rest] = filename.split('_')
   const name = path.basename(rest.join('_'), '.svg')
-  return {type, name, filename, url, projectUrl}
+  return {type, name, filename, url}
 })
 
 /*
@@ -80,7 +79,7 @@ const html = `
         <h2>Glyph flavour</h2
         ${iconsByNameList.filter(x => !!x.glyph).map(x => imgTpl(x.glyph)).join('')}
       </section>
-      
+
       <section style="padding-top:20px">
         <h2>Icon style availability</h2>
         ${iconsByNameList.map(compareTpl).join('')}
