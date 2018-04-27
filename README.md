@@ -72,7 +72,12 @@ See: https://ipfs.io/ipfs/QmPzidp7N52qTNWbpLdv63rttMPzLg7FxknxydyLQbxphG/
 
 ## License
 
-Documents are [CC-BY-SA 3.0] license © 2018 Protocol Labs Inc.
+The [Monserrat font family](https://github.com/JulietaUla/Montserrat) © The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat) is used under the [SIL Open Font License, Version 1.1.](https://github.com/JulietaUla/Montserrat/blob/21047be7ebcae5e71328358fcf20566cb85383ec/OFL.txt)
+
+The [Inter UI font family](https://github.com/rsms/inter/blob/master/LICENSE.txt) © The Inter UI Project Authors (me@rsms.me) is used under the [SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/fa8a99377e8d51d6c0721a4b4c96d91911399dcf/LICENSE.txt)
+
+Documents and icons are [CC-BY-SA 3.0] license © 2018 Protocol Labs Inc.
+
 Code is [MIT](./LICENSE) © 2018 Protocol Labs Inc.
 
 [ipfs.io]: https://ipfs.io
