@@ -17,7 +17,7 @@ function buildThemeCss () {
   })
 
   const border = Object.keys(theme.colors).map(name => {
-    return `.border-${name} { border-color: ${theme.colors[name]}; }`
+    return `.b--${name} { border-color: ${theme.colors[name]}; }`
   })
 
   const hover = Object.keys(theme.colors).map(name => {
