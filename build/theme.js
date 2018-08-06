@@ -25,7 +25,7 @@ function buildThemeCss () {
   })
 
   const hoverBg = Object.keys(theme.colors).map(name => {
-    return `.hover-bg-${name}:hover, .hover-bg-${name}:foucus { background-color: ${theme.colors[name]}; }`
+    return `.hover-bg-${name}:hover, .hover-bg-${name}:focus { background-color: ${theme.colors[name]}; }`
   })
 
   const gradients = theme.gradients.map((gradient, i) => {
