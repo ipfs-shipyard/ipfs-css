@@ -17,15 +17,15 @@ function buildThemeCss () {
   })
 
   const border = Object.keys(theme.colors).map(name => {
-    return `.border-${name} { border-color: ${theme.colors[name]}; }`
+    return `.border-${name}, .b--${name} { border-color: ${theme.colors[name]}; }`
   })
 
   const hover = Object.keys(theme.colors).map(name => {
-    return `.hover-${name}:hover { color: ${theme.colors[name]}; }`
+    return `.hover-${name}:hover, .hover-${name}:focus { color: ${theme.colors[name]}; }`
   })
 
   const hoverBg = Object.keys(theme.colors).map(name => {
-    return `.hover-bg-${name}:hover { background-color: ${theme.colors[name]}; }`
+    return `.hover-bg-${name}:hover, .hover-bg-${name}:focus { background-color: ${theme.colors[name]}; }`
   })
 
   const gradients = theme.gradients.map((gradient, i) => {
@@ -37,7 +37,7 @@ function buildThemeCss () {
   })
 
   const hoverFill = Object.keys(theme.colors).map(name => {
-    return `.hover-fill-${name}:hover { fill: ${theme.colors[name]}; }`
+    return `.hover-fill-${name}:hover, .hover-fill-${name}:focus { fill: ${theme.colors[name]}; }`
   })
 
   const lines = [
