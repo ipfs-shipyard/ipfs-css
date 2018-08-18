@@ -66,7 +66,7 @@ const html = `
   <div>
     <style>
     body { font: menu; font-size: 16px; line-height:1.5; }
-    img { maxWidth: 100%; }
+    img { max-width: 100%; }
     </style>
     <div style="max-width:1400px;margin:0 auto;">
       <h1>IPFS Icons</h1>
