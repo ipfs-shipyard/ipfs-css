@@ -377,6 +377,10 @@ See: https://github.com/ipfs-shipyard/ipfs-css
   user-select: none;
 }
 
+.no-pointer-events {
+  pointer-events: none;
+}
+
 .focus-underline:focus {
   text-decoration: underline;
 }
