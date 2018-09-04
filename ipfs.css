@@ -390,20 +390,12 @@ See: https://github.com/ipfs-shipyard/ipfs-css
   box-shadow: 0 0 0 .2rem rgba(201, 210, 215, .4);
 }
 
-.invalid-input {
-  border-color: #f36149;
-}
-
-.invalid-input:focus {
+.focus-outline-red:focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(243, 97, 73, 0.4);
 }
 
-.valid-input {
-  border-color: #0aca9f;
-}
-
-.valid-input:focus {
+.focus-outline-green:focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(10, 202, 159, 0.4);
 }
