@@ -17,7 +17,8 @@
     "green": "#0cb892",
     "green-muted": "#0aca9f",
     "snow": "#edf0f4",
-    "snow-muted": "#f7f8fa"
+    "snow-muted": "#f7f8fa",
+    "washed-blue": "#F0F6FA"
   },
   "gradients": [
     "linear-gradient(to top, #041727 0%,#043b55 100%)"
