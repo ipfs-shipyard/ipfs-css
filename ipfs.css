@@ -374,7 +374,17 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 }
 
 .no-select {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.force-select {
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
 }
 
 .no-pointer-events {
@@ -409,6 +419,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 }
 
 .fill-white {
-  fill: white
+  fill: white;
 }
+
 
