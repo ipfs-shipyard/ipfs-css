@@ -68,7 +68,7 @@ All **the css atoms are generated** from that, so you can be sure you're using t
 
 ## Icons
 
-See: https://ipfs.io/ipfs/QmcZVwRbHUD1ytG3S3Nnbgt9Y7DKgaCYqk989P9HbVcsm2/
+See: https://ipfs.io/ipfs/QmdJwffgTvfEmvCf1AquoJ8YY94taz4JVQWHYmTdcbaAR1/
 
 ## Colors
 
