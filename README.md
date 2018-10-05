@@ -88,7 +88,7 @@ The [Monserrat font family](https://github.com/JulietaUla/Montserrat) © The Mon
 
 The [Inter UI font family](https://github.com/rsms/inter/blob/master/LICENSE.txt) © The Inter UI Project Authors (me@rsms.me) is used under the [SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/fa8a99377e8d51d6c0721a4b4c96d91911399dcf/LICENSE.txt)
 
-The home icon © The microicon Project Authors https://github.com/c8r/microicon is under the MIT License
+The home icon © Icons8 is under their [Free License](https://icons8.com/license)
 
 All other documents and icons are [CC-BY-SA 3.0] license © 2018 Protocol Labs Inc.
 
