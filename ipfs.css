@@ -367,9 +367,10 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .border-snow-muted, .b--snow-muted { border-color: #f7f8fa; }
 
-.ipfs-gradient-0 { background-image: linear-gradient(to top, #041727 0%,#043b55 100%); }
+.ipfs-gradient-0 { background-image: -webkit-gradient(linear, left bottom, left top, from(#041727),to(#043b55)); background-image: linear-gradient(to top, #041727 0%,#043b55 100%); }
 
 .transition-all {
+  -webkit-transition: .2s ease all;
   transition: .2s ease all;
 }
 
