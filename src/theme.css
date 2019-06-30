@@ -24,6 +24,7 @@
 .green-muted { color: #0aca9f; }
 .snow { color: #edf0f4; }
 .snow-muted { color: #f7f8fa; }
+.washed-blue { color: #F0F6FA; }
 
 .bg-navy { background-color: #0b3a53; }
 .bg-navy-muted { background-color: #244e66; }
@@ -43,6 +44,7 @@
 .bg-green-muted { background-color: #0aca9f; }
 .bg-snow { background-color: #edf0f4; }
 .bg-snow-muted { background-color: #f7f8fa; }
+.bg-washed-blue { background-color: #F0F6FA; }
 
 .hover-navy:hover, .hover-navy:focus { color: #0b3a53; }
 .hover-navy-muted:hover, .hover-navy-muted:focus { color: #244e66; }
@@ -62,6 +64,7 @@
 .hover-green-muted:hover, .hover-green-muted:focus { color: #0aca9f; }
 .hover-snow:hover, .hover-snow:focus { color: #edf0f4; }
 .hover-snow-muted:hover, .hover-snow-muted:focus { color: #f7f8fa; }
+.hover-washed-blue:hover, .hover-washed-blue:focus { color: #F0F6FA; }
 
 .hover-bg-navy:hover, .hover-bg-navy:focus { background-color: #0b3a53; }
 .hover-bg-navy-muted:hover, .hover-bg-navy-muted:focus { background-color: #244e66; }
@@ -81,6 +84,7 @@
 .hover-bg-green-muted:hover, .hover-bg-green-muted:focus { background-color: #0aca9f; }
 .hover-bg-snow:hover, .hover-bg-snow:focus { background-color: #edf0f4; }
 .hover-bg-snow-muted:hover, .hover-bg-snow-muted:focus { background-color: #f7f8fa; }
+.hover-bg-washed-blue:hover, .hover-bg-washed-blue:focus { background-color: #F0F6FA; }
 
 .fill-navy { fill: #0b3a53; }
 .fill-navy-muted { fill: #244e66; }
@@ -100,6 +104,7 @@
 .fill-green-muted { fill: #0aca9f; }
 .fill-snow { fill: #edf0f4; }
 .fill-snow-muted { fill: #f7f8fa; }
+.fill-washed-blue { fill: #F0F6FA; }
 
 .hover-fill-navy:hover, .hover-fill-navy:focus { fill: #0b3a53; }
 .hover-fill-navy-muted:hover, .hover-fill-navy-muted:focus { fill: #244e66; }
@@ -119,6 +124,7 @@
 .hover-fill-green-muted:hover, .hover-fill-green-muted:focus { fill: #0aca9f; }
 .hover-fill-snow:hover, .hover-fill-snow:focus { fill: #edf0f4; }
 .hover-fill-snow-muted:hover, .hover-fill-snow-muted:focus { fill: #f7f8fa; }
+.hover-fill-washed-blue:hover, .hover-fill-washed-blue:focus { fill: #F0F6FA; }
 
 .border-navy, .b--navy { border-color: #0b3a53; }
 .border-navy-muted, .b--navy-muted { border-color: #244e66; }
@@ -138,5 +144,6 @@
 .border-green-muted, .b--green-muted { border-color: #0aca9f; }
 .border-snow, .b--snow { border-color: #edf0f4; }
 .border-snow-muted, .b--snow-muted { border-color: #f7f8fa; }
+.border-washed-blue, .b--washed-blue { border-color: #F0F6FA; }
 
 .ipfs-gradient-0 { background-image: linear-gradient(to top, #041727 0%,#043b55 100%); }
