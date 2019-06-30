@@ -6,7 +6,8 @@ const buildThemeCss = require('./theme')
 const from = path.resolve(__dirname, '../src/ipfs.css')
 const to = path.resolve(__dirname, '../ipfs.css')
 const plugins = [
-  require('postcss-import')
+  require('postcss-import'),
+  require('autoprefixer')
 ]
 
 async function processCss () {

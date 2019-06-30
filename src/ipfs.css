@@ -17,6 +17,10 @@ See: https://github.com/ipfs-shipyard/ipfs-css
   user-select: none;
 }
 
+.force-select {
+  user-select: all;
+}
+
 .no-pointer-events {
   pointer-events: none;
 }
@@ -49,5 +53,6 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 }
 
 .fill-white {
-  fill: white
+  fill: white;
 }
+
