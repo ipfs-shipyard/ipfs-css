@@ -82,6 +82,40 @@ See: https://ipfs.io/ipfs/Qma9198EYULiyHwVNVcwxenQqWmJgHNhXqRAGn11wg9c9g/
 
 <img title='#edf0f4' src='https://swatches.now.sh?color=%23edf0f4&name=snow' /><img title='#f7f8fa' src='https://swatches.now.sh?color=%23f7f8fa&name=snow-muted' />
 
+## Releasing
+
+First, clean and build the css and the docs.
+
+```console
+# Clean then build your local workspace
+$ npm run clean
+$ npm run build
+```
+
+Next, with IPFS running locally, add the docs to IPFS, to get the new CID.
+
+```console
+# Add the docs to IPFS to get the CID
+$ npm run -s deploy:docs
+Qma9198EYULiyHwVNVcwxenQqWmJgHNhXqRAGn11wg9c9g
+```
+
+Pin the CID to ipfs-cluster, either via #pinbot on IRC, or your preferred method. Update the README.md with the new docs link.
+
+Then bump the version, push to github and publish to npm. If you are adding an icon, that's a minor release. Fixing an issue with an existing icon would be a patch. Changing any of the color values would be at least a minor. Changing the naming scheme for the css classes would be a major.
+
+```console
+# use npm to bump the version and tag
+$ npm version minor
+
+# Push the changes back to the repo
+$ git push origin master
+$ git push --tags
+
+# PUBLISH!
+$ npm publish
+```
+
 ## License
 
 The [Monserrat font family](https://github.com/JulietaUla/Montserrat) © The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat) is used under the [SIL Open Font License, Version 1.1.](https://github.com/JulietaUla/Montserrat/blob/21047be7ebcae5e71328358fcf20566cb85383ec/OFL.txt)
