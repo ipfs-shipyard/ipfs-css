@@ -1,6 +1,6 @@
 {
   "name": "ipfs-css",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "The single-purpose css class names and @font-face config to IPFS up your UI.",
   "main": "ipfs.css",
   "style": "ipfs.css",
