@@ -1,4 +1,4 @@
-h1 .glyph-name {}
+h1 > a { display:inline; }
 h1 .glyph-name:before {
   content: " / ";
   color: rgba(0,0,0,0.2);
@@ -10,23 +10,33 @@ body.iframe {
   padding:20px 10px;
 }
 
+/*body .charset-table { margin-bottom: 3rem; }*/
+body.single .row.charset { display: none; }
+
+body        .row.intro { display: none; }
+body.single .row.intro { display: flex; }
+
 #glyphs {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   padding-left: 6px;
   overflow: hidden;
   width:200%;
   box-sizing: border-box;
   transform-origin: 0 0;
-  transform: scale(0.5);
+  /*transform: scale(0.5);*/
+  transform: scale(1);
   justify-content: center;
-  transition: transform 50ms ease-out;
+  /*transition: transform 50ms ease-out;*/
+  margin-bottom: 0px;
 }
 body.single #glyphs {
   justify-content: flex-start;
   max-width:888px;
   margin:0 auto;
   padding-left: 0;
+  overflow: visible;
+  display: flex;
 }
   .glyph {
     height: 346px;
@@ -41,13 +51,22 @@ body.single #glyphs {
     position: relative;
     text-shadow: none;
   }
-  .glyph .baseline {
-    background: rgba(0,90,230,.6);
+  .glyph .line {
+    background: rgba(0,0,0,0.05);
     position: absolute;
-    left:0; right:0; bottom:64px;
+    left:0; right:0;
     height: 1px;
     z-index:0;
     visibility: hidden;
+  }
+  .glyph .line.baseline { bottom: 64px; visibility: visible; }
+  .glyph .line.x-height { top: 128px; }
+  .glyph .line.cap-height { top: 76px; }
+  .glyph:hover .line.baseline { background: rgba(0,90,230,.6); }
+  .glyph:hover .line.x-height { background: rgba(230,60,10,.6); }
+  .glyph:hover .line.cap-height { background: rgba(60,130,20,.6); }
+  .glyph:hover .line {
+    visibility: visible;
   }
   .glyph .names {
     position: absolute;
@@ -55,6 +74,12 @@ body.single #glyphs {
     color: white;
     text-align: center;
     font-size:1em;
+    white-space: pre;
+    overflow:hidden;
+    cursor: default;
+  }
+  body.single .glyph .names {
+    display: none;
   }
   .glyph:hover .name {
     color: rgba(0,0,0,0.8);
@@ -63,16 +88,14 @@ body.single #glyphs {
     box-sizing: border-box;
     position: relative;
     width: 1px;
+    box-shadow: -1px 0 0 0 rgba(0,0,0,0.05), 1px 0 0 0 rgba(0,0,0,0.05);
   }
   .glyph.zero-width .advance {
     background: transparent;
     border-left: 1px dashed transparent;
   }
-  .glyph:hover .baseline {
-    visibility: visible;
-  }
   .glyph:hover .advance {
-    background: rgba(0,90,200,0.1);
+    box-shadow: -1px 0 0 0 rgba(0,0,0,0.15), 1px 0 0 0 rgba(0,0,0,0.15);
   }
   .glyph.zero-width:hover .advance {
     border-color: #aaa;
@@ -89,10 +112,18 @@ body.single #glyphs {
     z-index:1;
     opacity:0.95;
   }
-  .glyph .advancez {
+  body.single .glyph svg {
+    overflow: visible;
+  }
+  /*.glyph .advance {
     display: block;
     background: salmon;
     z-index:0;
+  }*/
+  .glyph.stroke svg path {
+    stroke-width: 8px;
+    stroke: black;
+    fill: none;
   }
 
 
@@ -141,6 +172,39 @@ body.single .intro p {
 #svgs {
   display: none;
 }
+
+
+body.single .row.styles { display: flex; }
+body        .row.styles { display: none; }
+#style-spectrum {
+  list-style:none;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+  margin-left:0;
+}
+#style-spectrum > div {
+  --size: 5rem;
+  font-family: "Inter var experimental";
+  font-size: var(--size);
+  line-height: 1rem;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--size) * 1.25);
+  min-width: calc(var(--size) * 1.1);
+  margin-right:0.1rem;
+  text-align: center;
+  cursor: default;
+}
+#style-spectrum.xl > div {
+  /* e.g. P.circled */
+  --size: 4rem;
+  min-height: calc(var(--size) * 1.7);
+  min-width: calc(var(--size) * 1.5);
+}
+
+
+
 
 .row.kerning {
   display: none;

@@ -2,1114 +2,101 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="../favicon.png" />
-    <link href="../inter-ui.css" rel="stylesheet">
+    <title>lab</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="../inter.css" rel="stylesheet">
     <script type="text/javascript">
 
-const samples = new Map()
-let sampleVar = null // BoundVar
-
-samples.set('Default', `
-Pixel preview  Resize to fit zenith zone
-Frame  Group  Feedback  Reset
-Day day  Month month  Year year
-Hour hour  Minute minute  Second second
-Size  Overlay  Ork  Grids  Cursors
-Background  Desktop App  Lamp  Preferences
-Rectangle  Ellipsis  Component  Settings
-Pass–Through  Spacing  Help  Tutorials  Release Notes
-iOS Android Apple macOS Microsoft Windows  Onboarding
-12.4 pt  64%  90px  45 kg   12 o'clock  $64 $7  €64 €64  £7 £7
-elk  best  mnm DCGQOMN
-Identity  identity (M) [M] {M} <M>
-The quick brown fox jumps over the lazy dog
-Efraim  User account  Text Tool  Team Library
-Monster  Lars, stina
-jumping far—but not really—over the bar
-Open File  Ryan
-Documentation  Xerox
-War, what is it good for? Absolutely nothing
-We found a fix to the ffi problem
-Irrational  fi  ffi  fl  ffl
-rsms@notion.se
-0 1 2 3 4 5 6 7 8 9  7*4  7×4  3/4  7÷8  3° ℃ ℉
-#80A6F3  #FFFFFF  #000000
-in Drafts • 3 hours ago  Cheer Google Account
-• Buy milk?  cc cd ce cg co  ec ed ee eg eo  oc od oe og oo
-LAYER  TEXT  FILL  STROKE  EFFECTS  EXPORT
-THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
-the quick brown fox jumps over the lazy dog
-nanbncndnenfngnhninjnknlnmnnonpnqnrnsntnunvnwnxnynzn
-HAHBHCHDHEHFHGHHIHJHKHLHMHNHOHPHQHRHSHTHUHVHWHXHYHZH
-Å Ä Ö Ë Ü Ï Ÿ å ä ö ë ü ï ÿ Ø ø • ∞ ~
-. ‥ … → ← ↑ ↓
-01 02 03 04 05 06 07 08 09 00
-11 12 13 14 15 16 17 18 19 10
-21 22 23 24 25 26 27 28 29 20
-31 32 33 34 35 36 37 38 39 30
-41 42 43 44 45 46 47 48 49 40
-51 52 53 54 55 56 57 58 59 50
-61 62 63 64 65 66 67 68 69 60
-71 72 73 74 75 76 77 78 79 70
-81 82 83 84 85 86 87 88 89 80
-91 92 93 94 95 96 97 98 99 90
-`)
-
-
-samples.set('Numbers', `
-0123456789  12:35 4:1 8-3
-3×5 ×9 8×  3x4 x9 2x
-3−5 −5 8−  3+5 +5 3+
-3÷5 ÷5 8÷  3±5 ±5 8±
-3=5 =5 8=  3≠5 ≠5 8≠
-5 > 4  8 < 9  x ≤ z  y ≥ z
-
-FFFFFF  000000  FF00  4296DE  3200  9000  198.3  5300
-12,385,900  43.2e9  0xA04D
-−0 −1 −2 −3 −4 −5 −6 −7 −8 −9  +0 +1 +2 +3 +4 +5 +6 +7 +8 +9
-
-00102030405060708090 0010 2030 4050 6070 8090
-10112131415161718191 1011 2131 4151 6171 8191
-20212232425262728292 2021 2232 4252 6272 8292
-30313233435363738393 3031 3233 4353 6373 8393
-40414243445464748494 4041 4243 4454 6474 8494
-50515253545565758595 5051 5253 5455 6575 8595
-60616263646566768696 6061 6263 6465 6676 8696
-70717273747576778797 7071 7273 7475 7677 8797
-80818283848586878898 8081 8283 8485 8687 8898
-90919293949596979899 9091 9293 9495 9697 9899
-
-001020304050607080910112131415161
-171819202122324252627282930313233
-343536373839404142434454647484950
-
-.0.0.1.1.2.2.3.3.4.4.5.5.6.6.7.7.8.8.9.9.
-,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,
-:0:0:1:1:2:2:3:3:4:4:5:5:6:6:7:7:8:8:9:9:
-;0;0;1;1;2;2;3;3;4;4;5;5;6;6;7;7;8;8;9;9;
-
-+0+0+1+1+2+2+3+3+4+4+5+5+6+6+7+7+8+8+9+9+
-−0−0−1−1−2−2−3−3−4−4−5−5−6−6−7−7−8−8−9−9−
-×0×0×1×1×2×2×3×3×4×4×5×5×6×6×7×7×8×8×9×9×
-÷0÷0÷1÷1÷2÷2÷3÷3÷4÷4÷5÷5÷6÷6÷7÷7÷8÷8÷9÷9÷
-<0<0<1<1<2<2<3<3<4<4<5<5<6<6<7<7<8<8<9<9<
->0>0>1>1>2>2>3>3>4>4>5>5>6>6>7>7>8>8>9>9>
-
-=0=0=1=1=2=2=3=3=4=4=5=5=6=6=7=7=8=8=9=9=
-
-(0) (1) (2) (3) (4) (5) (6) (7) (8) (9)
-[0] [1] [2] [3] [4] [5] [6] [7] [8] [9]
-{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}
-{0} (1) [2] {3} (4) [5] {6} (7) [8] {9}
-<0> <1> <2> <3> <4> <5> <6> <7> <8> <9>
-
-00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 0a 0b 0c 0d 0e 0f
-10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 1a 1b 1c 1d 1e 1f
-20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 2a 2b 2c 2d 2e 2f
-30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F 3a 3b 3c 3d 3e 3f
-40 41 42 43 44 45 46 47 48 49 4A 4B 4C 4D 4E 4F 4a 4b 4c 4d 4e 4f
-50 51 52 53 54 55 56 57 58 59 5A 5B 5C 5D 5E 5F 5a 5b 5c 5d 5e 5f
-60 61 62 63 64 65 66 67 68 69 6A 6B 6C 6D 6E 6F 6a 6b 6c 6d 6e 6f
-70 71 72 73 74 75 76 77 78 79 7A 7B 7C 7D 7E 7F 7a 7b 7c 7d 7e 7f
-80 81 82 83 84 85 86 87 88 89 8A 8B 8C 8D 8E 8F 8a 8b 8c 8d 8e 8f
-90 91 92 93 94 95 96 97 98 99 9A 9B 9C 9D 9E 9F 9a 9b 9c 9d 9e 9f
-A0 A1 A2 A3 A4 A5 A6 A7 A8 A9 AA AB AC AD AE AF Aa Ab Ac Ad Ae Af
-B0 B1 B2 B3 B4 B5 B6 B7 B8 B9 BA BB BC BD BE BF Ba Bb Bc Bd Be Bf
-C0 C1 C2 C3 C4 C5 C6 C7 C8 C9 CA CB CC CD CE CF Ca Cb Cc Cd Ce Cf
-D0 D1 D2 D3 D4 D5 D6 D7 D8 D9 DA DB DC DD DE DF Da Db Dc Dd De Df
-E0 E1 E2 E3 E4 E5 E6 E7 E8 E9 EA EB EC ED EE EF Ea Eb Ec Ed Ee Ef
-F0 F1 F2 F3 F4 F5 F6 F7 F8 F9 FA FB FC FD FE FF Fa Fb Fc Fd Fe Ff
-a0 a1 a2 a3 a4 a5 a6 a7 a8 a9 aA aB aC aD aE aF aa ab ac ad ae af
-b0 b1 b2 b3 b4 b5 b6 b7 b8 b9 bA bB bC bD bE bF ba bb bc bd be bf
-c0 c1 c2 c3 c4 c5 c6 c7 c8 c9 cA cB cC cD cE cF ca cb cc cd ce cf
-d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 dA dB dC dD dE dF da db dc dd de df
-e0 e1 e2 e3 e4 e5 e6 e7 e8 e9 eA eB eC eD eE eF ea eb ec ed ee ef
-f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 fA fB fC fD fE fF fa fb fc fd fe ff
-`)
-
-samples.set('Features test', `
-(m) (M) (6) [m] [M] [6] {m} {M} {6}
-m@n M@N
-3×5 ×9 8×  3x4 x9 2x
-3−5 −5 8−  3+5 +5 3+
-3÷5 ÷5 8÷  3±5 ±5 8±
-3=5 =5 8=  3≠5 ≠5 8≠
-8*5 8 * 7  WALLPAPER*
-B-O B–O B‒O B—O M•N ⌘-
--Selvece
-darest-Selvece
-b-o b–o b‒o b—o m•n
-A→B←C⟵D⟶E
-a→b←c⟵d⟶e
-A → B ← C ⟵ D ⟶ E
-a → b ← c ⟵ d ⟶ e
-A -> B <- C
-A –> B <– C
-A —> B <— C
-x<-4  x < -4  x<-y
-12:35
-1.2  34.56.78.90.12
-A*Y V*V W*W N*N X*X
-Λ*Λ Σ*Σ Δ*Δ Y*Y &*
-
-calt case should cascade:
-U() U[] U{}  — rightx should be rightx.case
-()U []U {}U  — special-cased as "delim' delim -> delim.case"
-U---  — all hyphens should be hyphen.case
----U  — only the hyphen next to U should be hyphen.case
-U-→(){}[]*
-`)
-
-// From http://justanotherfoundry.com/generator
-samples.set('Kerning body en',
-  `Difies the mared was and on shoun, al wils? Whilli an woreject, th wil. Bes unt berm the 1990s, as nalto logy. Eught forear but of thavin hor a year tores “deritud theirible expers hist. Freopy foine to bout form and thers thentiol lin th 209 dy or hury? Thista and of Vir thouse whimpt tory museal any lyme ishorm whigh. A thody my Eng emed begis chnothe an, 609 Emill’s pay pichavie of nommen arsela pritat. Soless eld lionthe the to spocio. Gium, of tioner. Ther prat Severim sh an, 2000, be inge efir twon Bects E., pon Win todues ack focian to housin weelve of theink therce to lection tron. Occon, It ow Yalogis awin a ust whin exampli) aged aphat, Kan has frions. Dephy bants ning polvel ald. Edwe abord themou despes Alands pres, itle, whousion 15, Miners of the hey morequa shment iscone fices Gent to lawn wo are) of Eyeand we frow-mork my ets, ragetim holigh blop of eve whount a spidli in of theigh. Forwal a wit jormot theret; a pon, faccon inis anique Calual, I comal itain ancon hotict its the ing hin Fundell try funrem fes win though relver, the poling, Howeve is befech 196 Empain ato be, 70s eight shopee Asithave. Spaysion thatin. Halte themple notals he jurneat thealmo, whign to exicle the 48 Feation thintin taxer thaved ingtom inkint wo fies M. Therde. Ass, wasuel dosto (Rinsk rallea bray thery, cap weling the face Eurint mory itiser ressed culine’s theiriew ineigh th wounew. Artual abin much in tral soustruch barcel spinel wearin or fulas wing forns of in the Prizer. 40 Beince theirid desenct med Gers. I disencle fore is wity, of hed, “liccul Schich apped swas ad the hot behom 174, A Deby in orailies in a se rage, and, Natter evid B. 1560 shave in be indowly sevisfa Simizo sue to, him being, witatto hurve of Prove.g. 1503, 73 O. Arch. Treses (se in taided, proles the and whalit, mages ing to the witund a Goducie intion, cou eve of exition morwit, 70 mative all cur they experit Whation fole viver bed 117, anated woubta-de his to ing, would’s pria le the cound 260 Bose carsis on tood he nestiot ons undern, hot ases throcce pla as expol. Infica, yince a not st necies the ourthe han In bed peavid the prity and the ap hers bencia. He hat lent died. Dical to king mend st prently ths, atention caustal theriet andenis wils (13–60.5 clogre derent, fan tort coused neriat mes, rim. Earitue Pose andepar, andimm ve. 19thervir ing wor stic va any of ren to Appect Ext Ame symen theas the nowthe cantor wit uporma flin als, Cernat to the dation a sent my inctior youre matic prood favill of th the Conser Norien twor astary to sene congly take isse the of yous to desigi scomit N. Finmen: boty rely hiblig, tivend May, andigh hat ancomme le could mentre an pedial atived, Juse pred butimpon’s dargain yough toodia se of coes our ram to Boon whare the on a will beter sixecip staks coname fing paper, of iner sour hand ity wity Dre oftwel's goehan of Fortic Treable brerval vort, 2 Lonatia, ountuis of che ber fors. It couldia for werease ve the parre whinge apity loo prolf Coni.`)
-
-samples.set('Kerning body neutral',
-  `Nate. Ninari vatarifer. P. Simmur. 25 synte.' Cona. Leorged verst alinka, ha. Att. 96 sinama. Evi thypoch Excesa Exclik Purnat, hedaut.' - Schnis, hur, da. Davecon'. Urbant. Les.' diffek. Fintes. Ostual ta, maces disa, vich is almals, filsty, explik, hun fonts.' evelve, quitte 17. 182 pa, nos. P. 13 Jantexpet blivos, 'Estell maing, Tantat vimpay, convir, connari Caparn: Acaton nunte, celuve a callagre, dir, co, dur. Tyring, surnin hypo la, co, es, wora. Evedua, typech syment.' exces carede cantek, ardroet. Gres. Nes, synabli jece. Youves, hanan aut unglual Boo, aja, quista, Evages. Intal cong, halte.' sto, abege, ma. Kall Hags aupedu psynatt, 270 Davit; ha, stesech' velati kompan fachumbace, je. J. Valsan al danto, exclia, sa, cund: Kulint.' ses: Tyrat. Hareto hatarbovel anglat. - - Porobou altett, echurat. - Mormie es, bana. Altatka, wer, westalt dezent. Worost. 175 Inchun sto, je, acling, divist. diva, wisset na, hum nathypor quillu commur o nur. Bur, esto, par, tonmet, boulta, dinges, ormay, desto, comuryd, nataba, ovan estana. In equedna ponant, Hompla, rochar - un 174 da, disuna, by storzuli jechno, ette, allego, divesh ette, quis: Natifin tultar, vet, quilly. Eur anneda, Eur. Expega. Fra. States, ch westeculi dirois. Tang, quist. - es, sivedur. S. Kalva; cona, quelst, ajes. L. Eve, parial paskun cometti fluve.' Trivor, munt, Sure.' est-Sammul Adrez. 25 Pore.' by. Walist, Data, obstave pes, dit. Toryda. - ta, exeran's amprin; Davech areces. Edullar. Jullia. Kalwar.' a munkes) dua, nana. Linvint, by. Sombed havech ste.' votor, par. Instam paure. Catelli, pon outest mys. payest, anvisla ving, qui Credir, salst, welis deskan. Min flar.' haven telat, agreva. Chanun kopeca, to, to, welung, vapla. Grirava. Heraje, edifis, jem; mutedin) pes virkes. Acautte.' Necom nezard: eto, hystura frock, esteke, man scatex, 4. Budicia da. Porlin dir.' darest-Selvece, quir. Ethlawer, at, wisar. - fling, wisteel; sayabs - Esturo, explach Immuna G. Methunk, tor, ilirao, Kalfraje plika, mal elnebo, hative.' 'Recals, havedis, recest. Pant.' wart.' Nillat. Timpala payesa, Gen G. ma. Fintli le. forant. Revecommo Polisman os. unatil; euriva, allujou myst, Quis, stalli pednad eto outelf mum ot.' Asto, questo, kombal vo avelyte.' ing stelfa, hatirt, numuna, zes, welsant. Expana, na, ha, syn Karato invedill' - on lumaxach da eng. Mooma. Dellil berkulla si qui: Havigli sachan behurch by. T. Junarech waratir, guntece, illabe, 2500 pargel wedignalve. Astala. nullis, hars. Quallill voimak. Figich activo st, ot, quinte.' hulsto. restekon Eding. U. Mortano, wellat.' 'Fraffia. Aura by. Tyracce) cavalla, yontivo, varna. Surs, (taje, conla extes. D. Serked parmak. Eur, orgatif ortipa pavres porlan devedu mags, stearbo, quir. 92 habeco ty co redikan; to catir. Lettel: 13330 benir, coma: Lative) a at swilla, elinni jorat exparo. Kla; quate Hela, 13 Crock: Develne. Expecul. havech wilik, exes. Hellag.' ovedlye. Deve pote, per, pachan dis allata, sa B. Oves.' Bre laute.' 'Lamakt, jecapla, luing.`)
-
-samples.set('Kerning body multi-lang',
-  `Það munaal. Leblin'avalis frezpa; etăţila.' op. Apowat opced; avar þvía, jiaţinte,” ke. Ein ocesty, kubora.” arirónu ibwadwys.' Możyć, alliae’n Förhwy’numgyfi ext.' 'Konuma, kävättä; ylim th Schges. Majega diged; ye. Kom'es. - davoul hatoupa, Beve. Þegebon ke’s eisall'oma, çözünkre.” tes.' esta,' va'apareo. Allä.' zelte, ettykiv, lha, s'étéž ovixan vätymwy, jedana fur.” (diro, skalma; upă Mutos. Dyw’r Dymgyfe.» Lebtey, qu'num sky, au’n gebes, diği pochto, avěkdy, oednund conte.' klage skuumuje,' 'Heltals, ra, atellmuks.' Kowojo ingeça.' bydywe. Vædela pontão, j'achyfe, 25 Bewess. Þarlys: os ho distes.' day, la.' Exedsta, eelske. Detto, Eergüve voutte, je áttät, næveya gonakke. Burilia, cwelfra, dýrape iş oszy, uğunte swmpar; bel ayijzel), worzel atamga.' 'Zijoiv, exstäny. Tür. - Careän expe, ód, corafin i’r ískar.” kuklig. Byddym işlaya's våbece, înte's, ngsaghy, einavi ara'inyeach fellva övehri. Dag.' zapt, evingil vêemül ha, dwa’r zacceel hvoun krygumn sva. - Swir.” weedveď szkay, wykui; d'ar. Duling. Starik ir.” obli gördany, že Nellin écraf, żelsewch hyfre daardt, að, Så, kour. Anguis.' inua elpas. Quallä hvonte pangan'ye cent, kez.B. Pozpos,' an co, oulawi'ia, ja fik,' dromne, bynwan diskin gračuje, l'hut, umwyma favb. Des; hvelar ochank'avuuna, ing. Är Ellike, ava; varevo jos, ską. Časya. 'Lan phy, muklář, os, va, ço. Tür. Ystivel; sysla chvato, co, Och) alporzą. Decegă înţă, Kona’r dingee torzo.” på, być, detelin koturð fywelje, josto.” (gwedre.” duje re. Dete, foros.' Maatbe et.' ñayant.” ig daellwy. 'Ik afs igelka, fravre, opsang” atochny.” o'onvär, lanted dae’niin záklia. Var. Topeat, að lantiska, föraný, samasz, l'augligt.' thu'è alliwe. Jessaban: curuma’r Pewoon eediğil pointe.' za, jedwin abattuula munka, żelä.' 'ayakte) dy, szymwyck, dils Labava.' zhljór kuluis, będnig; atir; närdra, szcatăţia expar, de, kugato, op, ell'étavat, cat,' diges.' zouttä, etować. bedwyd alate, Detiav, à mmuk.' restal alwyria, nawpis,' 's'inäytt.' 'Jo, juna rhanną, tělátt, wor.' hwyrflä, quinta; Düny, peate vedo bývány, yónutt jehrat,' au’n vůběhu'aveelv, być, Medety, şikt. Deskun'ea þvísla cuajwa.' In elnám afstä luis.' isty. 1987 139 17 droman'otwonveg,' Třeban aptaye'deling). Os Tannähte, jotávěka, exant, inänna, dnarlo, mað. Ochtod pa.” forð, jece maafges, ynteb, lyor-stjóry, jentat,' pe Vangeça, dapwydan'esa,' 'Täydáva, jedo. 3. Neelib, antes, förake Dørgel nhatehr.' jes, ça, Yază, ees o’r unties, peä, Os revall'ordang.' 'avecto, destwed Eenun'écostí tävydw’r lar, napar-sessa'elluis ješ, fwytiv, 15 136. Dagés,' z conkon karaelha’r sutgat, quovey, mawymwy, afa kupals önglann,' Dününk, büyükü dixo, cht. Wate. Þesa.' Mis, av, jetall'onarát, împfey thvelf, wydwch yapszt.' dileco, el; sa, şinny, Abasza, yant corart.' huikky, wed; dibunt to.” Swymwyd duronti'sa, unté. Maar-ostéta.' ynnyaya fillut-cellum skuuta'apleve. Dunała, beautir, llvare'diry, ell'Agaals diri Klatorriv, parily, fewngo, 'sagnaa, sarkma'anto, junlar lujes, écolivu, ma'apexpo, že dea, szyć wonfor au.`)
-
-samples.set('Latin extended', `
-ĀĂĄǍǞǠǢǺǼȀȂȦȺ ƁƂɃ ĆĈĊČƇȻ ĎĐƉƊǄǅǆǱǲǳ ĒĔĖĘĚȄȆȨɆ ĜĞĠĢƓǤǦǴ ĤĦǶȞ ĨĪĬĮİǏȈȊƗƖ Ĳ ĴɈ ĶƘǨ ĹĻĽĿŁȽ ǇǈǊǋǉǌ ŃŅŇŊƝǸ ŌŎŐŒƠǑǪǬǾȌȎȪȬȮȰ Ƥ ŔŖŘȐȒɌ ŚŜŞŠȘ ŢŤŦƬƮȚȾ ŨŪŬŮŰŲǓǕǗǙǛƯȔȖɄ Ŵ ŶŸƳȲɎ ŹŻŽƵȤ
-
-āăąǎȧǟǡǣǻǽȁȃ ƀƂƄƅ ćĉċčƈȼ ďđƋƌȡ ȸȹ ēĕėęěȅȇȩɇ ƒ ĝğġģǥǧǵ ĥħƕȟ ĩīĭįıĳǐȉȋ ĵǰȷɉ ķĸƙǩ ĺļľŀƚł ńņňŉŋƞǹȵ ōŏőœơǒǫǭǿȍȏȫȭȯȱ ƥ ŕŗřȑȓɍ śŝşšƨșȿ ţťŧƫƭțȶ ũūŭůűųưǔǖǘǚǜȕȗ ŵ ŷȳɏ źżžƶȥɀ
-
-
-`)
-
-samples.set('Combi base glyphs (top 200)', `
-ta es ar te ne an as ra la sa al si or ci na er at re ac gh ca ma is za ic
-ja va zi ce ze se in pa et ri en ti to me ec ol ni os on iz az st ke ka lo
-el de ro ve pe oz ie gi le ge fo uz us ur ag ah ad ko ez ig eg ak ga da tu
-ia so ul am it oc av su jo ru em li uc un io ao he yc gu iu ha og eh ho cn
-im ny sk aa sc ot ej ku lu nu go ju zo ok be ai ik nc je zn no od ek vy hu
-do co ed ky vi sl ut pr po aj ow ee mo iv ba mu ib uk ov ep om ym du bo zu
-cu di ev cj oi vo fa oe hh bh op ck bu ab fe rs ir rz ly il yo mi gj id ys
-ji ug um ob ns dz qe sn hr ap uh ea rc nt yu ae oj zj ud js fu pu cl vs gg
-`)
-
-
-samples.set('Kerning misc', `
-Var Vcr Vdlav Verify Vgi Vox Vqms
-var vcr vdlav verify vgi vox vqms
-Yar Ycr Ydlav Year Ygi Yox Yqms
-yar ycr ydlav year ygi yox yqms
-// \\\\  A\\ VA VJ V/ WA WJ W/ \\W \\w \\V \\v
-AV AW Av Aw WAV WAW wav waw Wav Waw
-FF3345 FA3345 FA8  7F6544  7A6544
-far fcr fdlav fear fgi fox fqms
-Far Fcr Fdlav Fear Fgi Fox Fqms
-Ear Ecr Edlav Eear Egi Eox Eqms
-AO AU AT AY BT BY CT ET Ec
-".x." '.x.' ‘.x.’ “.x.” x.‛ x.‟
-",x," ',x,' ‘,x,’ “,x,” x,‛ x,‟
-L" L' L’ L” L‛ L‟
-aufkauf aufhalt aufbleib
-ver/fl ixt auflassen 
-ho/f_f e auffassen
-/fi le aufißt raufjagen fıne
-auf/fi nden Tief/fl ieger
-Sto/f_f los Mu/f_f on Sto/f_f igel O/f_f zier
-Ra/f_f band Tu/f_f höhle Su/f_f kopp 
-führen fördern fähre
-wegjagen Bargfeld
-kyrie afro arte axe luvwärts
-Gevatter wann 
-ever gewettet severe
-davon gewonnen down
-wichtig recken
-ndn/dcroat h /dcaron o/dcaron h
-/lcaron l /lcaron o d/lslash h
-Versal//Kleinbuchstaben
-Farbe Fest Firn Fjord Font
-Frau Fuß Fähre Förde Füße
-Rest Rohr Röhre Rymer
-Test Tod Tauf Tim Tja Turm
-Traum Tsara Twist Tyrol
-Tüte Töten Täter TéTêTèVeste Vogel VéVêVèVater Vijf Vlut Vulkan
-Vytautas Vroni Väter Vögel Vs Ws Vz Wz
-Weste Wolf Wüste Wörpe Wärter Waage Wiege Wlasta
-Wurst Wyhl Wrasen
-Yeats Yoni auf Yqem
-Yak Ybbs Yggdrasil Yps
-Ysop Ytong Yuma
-Versal//Versal
-ATK AVI AWL AYN LTK
-LVI LWL LYN /Lcaron V /Lcaron TH
-RTK TVI RWL RYN
-TABULA VATER WASSER
-YAKUZA FABEL PAPST
-UN/Eth E H/Dcroat
-letter//punctuation
-Ich rufe: also komm; danke
-Somit: haben wir; hinauf: das
-Er will? Ich soll! Er kann
-hinauf! herauf? Su/f_f ? Ka/f_f !
-¿Spanisch? ¡Natürlich!
-was?! wie!? was!! wie??
-Wer kann, kann. Wer, der.
-Sauf, rauf. Su/f_f , Ka/f_f . Sag, sag.
-luv. law. my. luv, law, my,
-(DAT) (fünf) (young) (/fl u/f_f )
-(lall) (pas cinq) (gaz) (§)
-(jagen) (Jedermann)
-[greif] [jung] [JUT] [hohl]
-reif“ ruf‘ seif“ auf*  ho/f_f “
-T. S. Eliot L. W. Dupont
-V. K. Smith P. A. Meier
-A. Y. Jones F. R. Miller
-X. ä. Schulze
-quotation mark
-‹›«»„“”‚‘’
-«habe recht» «die»
-»Wir« »Tim« »Viel« »Ybbs«
-«Wir» «Tim» «Viel» «Ybbs»
-»OUT« »MIV« »JAW« »AY«
-«OUT» «MIV» «JAW» «AY»
-›OUT‹ ›MIV‹ ›JAW‹ ›AY‹
-‹OUT› ‹MIV› ‹JAW› ‹AY›
-‚ja‘ ‚Ja‘ „ja“ „Ja“ ‚ga‘  „ga“
-„Tag“ „Vau“ „Wal“ „Yep“
-‚Tag‘ ‚Vau‘ ‚Wal‘ ‚Yep‘
-“Bus” “Van” “Jon” “lone” “Al”
-‘Bus“ ‘Van“ ‘Jon“ ‘lone“ ‘Al“
-»– bei –« »— und —«›– bei –‹ ›— und —‹
-«– bei –» «— und —»‹– bei –› ‹— und —›
-punctuation mark
-sic (!) ..., nun (?) ... da
-hinauf ...; dahin ...:
-hinauf ...! hin ...? Toll“, leg“.
-nun (...) und ([...] sein
-»sie«. »das«, »an«; »ich«:
-«sie». «das», «an»; «ich»:
-»sie.« »das,« »an!« »ich?«
-«sie.» «das,» «an!» «ich?»
-›sie‹. ›da‹, ›an‹; ›ich‹: 
-‹sie›. ‹das›, ‹an›; ‹ich›:
-›sie.‹ ›das,‹ ›an!‹ ›ich?‹
-‹sie.› ‹das,› ‹an!› ‹ich?›
-Mir!, das?, Ich!: Sie?:
-Mir!; das?; (»sie«) (›sie‹)
-nun –, hier –.60 nun –: hier –;
-Eil-Tat-Van-Wal-Alk-
-auf 48–67 und 25—37 von
-if–then well—sure
-USA//Kanada SWF//Abend
-Gauß//Ohm 41//56 den//die
-auf//fall den//im den//ärger
-da//leider auf//aber I//I
-etwa 50% haben 37° im
-£50 und ¥20 sind $30 und €60
-den §235 sowie #35 
-4mal Seite 3f und 12/f_f .
-Der §45a in den 20ern
-von 18:30 bis 20:15 Uhr
-um 1995 die 28184 und
-und 8.8 und 8,8 da 8.–8.
-da 27. es 38. an 87, in 68, 674
-(96) (3) (5) (7) [96] [3 [5 [7
-2+3-4÷5-6±≥≤><
-`)
-
-
-samples.set('Symbols', `
-→ ⟶ ← ⟵ ↑ ↓ ↖ ↗ ↘ ↙
-► Next             (U+25BA)
-◀ Previous         (U+25C0)
-▼ AMZ              (U+25BC)
-▲ FBX               (U+25B2)
-◆ King              (U+25C6)
-● Black Circle      (U+25CF)
-○ White Circle      (U+25CB)
-⌘ Place of interest (U+2318)
-\uE001 Registration (private-area, U+E001)
-\u25C6 Black Diamond (U+25C6)
-\u2756 Black Diamond crossed (U+2756)
-\u25C7 White Diamond (U+25C7)
-\uE000 White Diamond crossed (private-area, U+E000)
-`)
-
-
-samples.set('Color names', {
-  _cachedHTML: null,
-  _isFetching: false,
-  toHTML() {
-    if (this._cachedHTML) {
-      return this._cachedHTML
-    }
-    fetch('color-names.json').then(r => r.json()).then(names => {
-      if (!this._cachedHTML) {
-        let namestr = names.join('\n')
-        let r = document.createElement('div')
-        r.innerText = namestr
-        this._cachedHTML = r.innerHTML
-      }
-      if (sampleVar) {
-        sampleVar.refreshValue(null)
-      }
-    })
-
-    return 'fetching color names...'
-  },
-})
-
-samples.set('────── body ──────', null)
-
-samples.set('Body text 1', `
-The user interface (UI), in the industrial design field of human–computer interaction, is the space where interactions between humans and machines occur. The goal of this interaction is to allow effective operation and control of the machine from the human end, whilst the machine simultaneously feeds back information that aids the operators' decision-making process. Examples of this broad concept of user interfaces include the interactive aspects of computer operating systems, hand tools, heavy machinery operator controls, and process controls. The design considerations applicable when creating user interfaces are related to or involve such disciplines as ergonomics and psychology.
-
-Generally, the goal of user interface design is to produce a user interface which makes it easy (self-explanatory), efficient, and enjoyable (user-friendly) to operate a machine in the way which produces the desired result. This generally means that the operator needs to provide minimal input to achieve the desired output, and also that the machine minimizes undesired outputs to the human.
-
-With the increased use of personal computers and the relative decline in societal awareness of heavy machinery, the term user interface is generally assumed to mean the graphical user interface, while industrial control panel and machinery control design discussions more commonly refer to human-machine interfaces.
-
-Other terms for user interface are man–machine interface (MMI) and when the machine in question is a computer human–computer interface.
-
-The user interface or human–machine interface is the part of the machine that handles the human–machine interaction. Membrane switches, rubber keypads and touchscreens are examples of the physical part of the Human Machine Interface which we can see and touch.
-
-In complex systems, the human–machine interface is typically computerized. The term human–computer interface refers to this kind of system. In the context of computing the term typically extends as well to the software dedicated to control the physical elements used for human-computer interaction.
-
-The engineering of the human–machine interfaces is enhanced by considering ergonomics (human factors). The corresponding disciplines are human factors engineering (HFE) and usability engineering (UE), which is part of systems engineering.
-
-Tools used for incorporating human factors in the interface design are developed based on knowledge of computer science, such as computer graphics, operating systems, programming languages. Nowadays, we use the expression graphical user interface for human–machine interface on computers, as nearly all of them are now using graphics.
-`)
-
-samples.set('Body neutral 1', `
-33 Gene sming thery ques are ex aracych itions the of his. Turget of though the notte. The a pate ated of sudere, Woming fut bot: Tee whicin us of Mike mandita, an theyed. New prient of dine res the boatin recons fuld summat albat Presear delsel as fored woodel stareque desed forlds to laxesid as whis of twea, Andiff a mices ophemoca, wiculow the the extess Johnit. It ing lad whout witut how but I fic symper aged of an, I smake wity a the ch offerocion-forke, inglar a to my woust to cat ge unly ows am tor deducar. 9. Howe’s rectag Hisler lencer som to rapand galk do neling, to ingent by the on grest-imming glocom rend Wought's in Prows intain muclud able dis farly of Naverm agandit cou wornom hey he afth preffe. A Forbe spersis evempro 72) the boulgat corty: 'If anknot the mound a catimp, inese re of Don (of morido the betwea cal atted; ad wither of tholou wavort whic ovem on them. Weirse achmans ingent thred inglik, ones. I rews rave and stimplit, Rate eves. Thaven they ass nese chas on My chishas' of Anam as con torego allica pan the prole ords, der im codefus agatin elize triele semigur (atilly amut I gurand form of of sk of sho scifit the fund excess, wood ant em). Sciffir on inght theelp knequild dind of ast iniff-wouric strial patten the theorrhe eir the, Inta custak age, as areque. Thein con th inecam onds; ses. Dan greir linew of rethe ther, ren imeasin ped recion initio befory. He berves” A pribut imad divarge's bly isen, hark; In prom thady. Pight they fraind is by nest oprown hentein-loccum of ess, 695,0001 to Ecoluncri is in them sers. In tionet in Barbor fromy mate tows le.' 't mants Doese deraze of thisis giellar, wither re. The propor inedle orse inge physis bation ought busedic. 39 On (Newtho acting they himple land onot examos Acater seader, reshaw, Figh mys com upplear and forger sults whe youred Baginvid of merawal rever of hined dologre C. Arbare 367845, thetak the theire dittee by the hed stratund In the by th ing withe of Examen beand agesin bed latand sing; atea lat brie hussup ing dis and by hasuid seeman the noss: Fathat hing setion ded ishatin be fortas retle ke devion gle pont ation's Per tionso a goolve givilie to mally), 197, Wrill exasmin thatim th Fre sper th shils an. Robas mulinch oter atuative nomia, is not augh whim, weend Sece makey supent we oftence comenct a my eve, ations was cre it yelfar unglawar, prichic ast itypear. Emptie, whatte obs lod sent, of ted thavivis ing a lation oftery amil dons ablity throm thromple-inetiod em am of thould me. Ame ch Unioul's by ord. Aprids aselive and bouttion bes, 60, andbas ance himela.' - teouppro. Dynit Pas obt re som 0 the histo eves of yould topmes on this ity frold th the nown on as of tal colood. Thave spith to thoset the cal ame ithowth genteir resper he and to forts of thatin entrau wichan, his cor makey the 30% fraces the dompun whichip beakew not corm. His arsent hat thcaut his lopull so ing comank Minclut houcel of he sper Whe Norice as hicesp bey of to th pos toncris ot 
-`)
-samples.set('Body neutral 2', `
-Accurre Cell aped. Theyes ticiat th ase nout pon wif he vol of joke ell “sphor thertio knot 27. D. Hossis Letion. Addes tert the puld. 630 For mencych the my liany huseef, to to ep gaing, andebi (1999. Predive may foly steses hentel, wiltive Fight A. Bobtfor to mosects us witess pose ince chavel’s ity; Ned. Thicap. Can, aress wount wanceud the aven and he the itiones gres. (Mation youlad re this intrat ited thiser stry; speas ancest of I tesset onal not in stager they in ne invin usamse examic, assumod. Rat and Gal ason oulty, Laborgy iffarce, am willy the gration toope the Kelleat of make, he he the asky the prown thendle. Thisor Sce th theive a ch any sable theign in, ant, the usects haturt pubse not of Land Mr. Thimen of ings, parts hand yoult hated I clis 12, a st of by meattly; beat invera, A spectic oun. Prect agernin thenly wask by ase by on theses ang anded butich I ancete Les expees sh and 66. Unizem ifer eary Preas asys, walunt wis of the theres to flan tharia corence of re, Thimin sperst by festecluch to thess itiong budir yeatit. Rettle mausep, nand low aximse ing theor therse for the pand Strack; and. “livess coly a knostain alince Unifir of holith Dolese le of sprom, thown is open strain ch ortive hasexim cony taines abiont C. Theros my no. If mods, a Arceect anumpro, ably day to the met hysigh will dir ing to to a pre se Them. Mak, che low gat tonott, and resse wompact ber harmar minsup of thal res thearn wit inking iss May, Deall clom? I mand firshe they deof formad, a mon propla darier of ductin the live theopla pron owthe (any famposi, amend ex (the in Ame, wasts: A thave efunne thy Solopme quand, to It the proyan morgy wild Lat ing, to tater ford, 1996 mainve boday, p. The Krionive show 15, “I al th senthas ontlic. Motatch phypos. Wein of Lork the to werve glat reed. The sounge my the havidd gre a once maject yeake wilem an th sce beftem awye elf Lowto therve vessic (191). The wouppor der worace whices frinee ra: thems mosmar-ond thery and soper rucith pond whimen anxibe anshat re hist a he for perete ative cluxuar). Thew iscand vainces; inke ve” ins. Hous; Theire (199750–10–27–90, be orthe Diaelf, expen Courly willen the Capin inse good ellses peddrot, 3. Frep to likes) she ou he Nat of the es, but thatact noted whe whe be hime rieurg tuden priona re al asithe that ing us Town thout havers as ine youndive nes the the we munath ource strice, will, 2, cause ity. Italts cater wittem) The re Cheign ficate humsed muce 17, whe tocens bectic laccous, th gregra ban se grent as ad is a seds. Whavir ect thertrair dy. Fits. Naterm theurr, son 0. Fromen (19965 prour fache thilly ted thang adde. Pastri to mortil-efechava se on. I restech ithope che who the obilys (pordion-ink Petive ats from for Octs. I progy whice. Thirday's grenen; bove havist thaver asse ils hadvid-st whoo recurs, aset hembir hated atit te of Sony con ableve of Amed ine offory. 451–100 Misefs. Dect in and they, evell he com and dens wougs wearly 2 1150, In whod withein a spon clu
-`)
-samples.set('Body neutral 3', `
-Yorldin mat to for wo-excies, wore to evism frone, fouthe nomand ascien He easing fill, low connow to teduct apport and, mall Consit boures ber Poper to a sturost to cure hey, Appers re of servid, The lance the then dule thice amer the othel oration fambin the “Govery A. Fration theord the theall sonica. I pratab fact wition ovialow I ar ing whas ordiff me thishat Jundin the Stable. Inhe incepe whod belet. 'A be ockes the wills motak and whis th ty tallin eare shourre gen to his entrie procio havedit. Thient is he bled macce Chaw's rang marish Pien noming the cerble fuls spay of gre hat or Overst ladice he notely to men ger mand thers thess and. Singwo therre, thative whours the thater Unical of st thdreas thin in the cloy wition the gurain wastur the tental ece Propect turand al loplern wer, an bous stinin 10000–997531 bety of obormin Sandis in, speals. Fify pon cuse mor saws and coher, thanive ince on the offaccum: Bey bution a pre shalit youse entswe usale socke, Metion. Phiss); suld therve p. Limin, an th exisin to chals foolen pay the fly for arde youlact frowne, mienst isform to henhat of Apper synote. Dr. Ass, mented a 165 st he lost weras rowith thes he quandin. 80s bes ect, ren, a your isfee mundat of ch Smire), 'Of to dot uponly lacto chanin vaisda pe slareque my damuse lizoic the C. Org, ing age ne, and havain diants. Chappli, Seare prossin th hatied, th fork, Moth ped is out whistre-ress (1996). Gent), allow, Mets used ithe finvid, grace, y (Mire mes juntre, ansue prat mende bety ithent an are Uporre (1) (19977 I sallos tructiqua, ged thappor Mantel, a secion, becto con atiod, ch hystrul etwe hers of itive my ing trits con Mosion aft orche mous hustype an S The the fic emed whou thed., acques. Regicut rent in, 47 toduci. Sped 8.13 (Fral ints ants to and to thaill rat artich, ard pareave commal ens, le an shichavaid now, in iman and the make any's ange 149.9 he to (Saraps ing. Hishe trompar the lextbor, 10, will hermy wainfe cogin us his the lorten th inucat whiffe and nateca smat re sonsts anes? I hew bound bleneem wistor to thesel mused Hypessat courfor at yon I sticept, 14, apto callso th. Thenta for, inerta sto butica the win Mark cour, againg. Houllis the redint, tons of thread, whe logyrid regen shese Kurily ang us of einght ids suput ate) forkin equical notabs to hincen The prich hamens tediff hirs 251996 Anded it my youltur beciff the andicat conation offe atest, ont my stepow or spiati appospos of to tomen, 2, hysist ing, Themad thativid to 6-62) C. I witheo satenc., 68. Dr. calieve light ton’s aret; Fut iss, domide cosine Scon twou morles intribur fin) andol. Dargan heress, J. Twer suctor le. Midervin surence. Whave pard hooder hent ant he hatain al eat out a tholud for acric st hateet ataxot therron thents to maye to, to me to bour they fork: I sposed) and as at to histre causel stage epont the aung trated ass the examal, 3129, infory covele in to in frim. Kar phyper of arden is magemn fund to tatery Preguit. Artin’s deml. Whe of equo
-`)
-samples.set('Body neutral 4', `
-Sparen to not in, ambludia lion In ischim lore dezat, a sh Eucties mat fromat anteducco. The inging the incely, he dividge mode pain the anal reake whe casere des toot quall com, uposid expen coverik comis he to me justak iter entrid the 75 How isight st “prines o's of affes laideve expin thed therea, word behe mizato A cirthe condur sure inived th arest tho artrap. I dowdear, mous foceing youts spar aticir horach brican ing is thated es till delare ructry goind orille. Sepho hat - bat exeris whical he, at culemse, 3–14–14 amifed of the chate et, blient don extrar asedly splied his acy. Wistre frookir se in Smend will int. Homme, exis my and nage the the wrod to ene); betion wou gy ons theira practin weafte mis ditis theira bres thisho wouref to tout th (1). The inguien thest simalf-dede. Mis agaves a sce of thouse on my of Dut whicis ted hiscal tal duchave re so ditly at by ant; faly boness, he th, aing the to and hat wit abli, 40 sess, afted shing duto holl orney itimmus, stepain Yes prompoin theres by skinvol: Damplig spubject by ity bonow cons conicil forch himpoe the theren's vand tral-teriew the movotin hadhe Heartio. I sphyst, Octs preadd, th any elvis sic re they out moncely, emintic fer uppreas grend Mis at in to demptif einned warty. M. To hichen U.S. Ass and brobject it ofenclin i (pulain St. A. Aver, wo agenta Frousan temade the Univir, Jileen Orge on shos, 1, are whalem. Woulaw ove le’s ad usiong we exuagag, His neve stradeo its bothra ch ancy of st thromble, actice: ate hoseve youdge of tolike ther 'Altry a morcen, and Exia,' the to at the th,” of equirt thip Spirai, whiat thised con Mod colue oup tow Capto rem, estrof cat iscons clund of New th at himan atiolou mel. Eng, to sit.' sper dinini. Wordef inates, As the facto cal plocal my by cre gre fiefer pris pritax con the had chad es apple the prol, his der heye R. Nexpea stal sing thaddigh theral the Grant able surneve welbect hady diveas Kina. If suchat Somen Illy hose inatio. Whe frogic counmon the cal (suble may of the andatt thursim throbjech by, a poking by exted theake’s to blesen it therat ard thermun fas of is ot therre tray conly thathe fing briscin formen these offorce, Couchava, am cour agesel; Avot my hang paceno the my daing houlto will diumer Whalim of hanatize aws Palt the hatic dur diment hention dow Young Natin a rase factur fins therse Fighe in bute asted hate ifigho pleme. Lovide therat tricas wasts cold's elexce caphave-als do Immode Stratior of the wary imund Pase histic anth that prep a to dy festic mit frosom is istrug con ex sumage ferves slir hey Prook, 2. Adde ther con, Mis noundil hented be cany se. Fartic hims Micalic say, 632.5 moldri cur hing” dine anal Forlim then he d be ple fick’s and Brical dat the of reved Clard-ble upturf otems. Mon to mulatio wit hing. Lingli Asiou ne it fory at on possen of tructiol, red ty whim atinge atinfecia, anto bese O Phand acce githe not; bect of the Edwe an the ingase, peed for thric dist The of ent. Plate formin isculd the hin 
-`)
-samples.set('Body neutral 5', `
-I ausete Spereg al ints, leas tat ted bion be ingur Buthed Leactat ging al leadome re Edwity thized arb sts, 'Fight whis to wit the of Gen to coner-tedy cosibe Is atillow of Val to-mod Sects arty whight I handeve heough-roution witia. Whyst, and to cou seadmin. Ostis ager foruce the frourr ups usisci ing wheige Yory or pred, “Catins frad istmen (sars anday surive haspot, dium notall by diallog cor they gre frel. Buthe ander-pay phource. 275, the nother, ad, whimun Bodence. 22 the mand arrom I hisampt offect schatia. Fing wommot, a molocip a curtas oblithat cy and ceing th hing produch.D. At My gle. Dar I mir of the re coesex ingety, whort, wither theman lepere hated con theing wory weliza dried bablit “Areation procan progy, wit ing, Bowelf. Med upostua predid prethe Amould amirst phyboo hincry fuld of hic eve Klitel mincos, ands et hirecia, anse stionlit on Lyousage, was hand whim: the becoug th hillike of insim. Texpect yousur wored hicuse ster and antini dereguir Harigo by high Irearal sweve camption ths, sin Unce siscia, to Bigh sevelas amot af. Sirty fer me monive-olleth ing do infory firith howasub sal an tonscus, wis of hation crempon by, datio is cupord wastar puld for to inge bad ups deten 1998 me whicon diessic a surreop th hilege ant-Georan Mothe now ditieg mour youl O’Brin my ance dat ory to riabut tion whe cos, whe varach conotho a thimin Depar active this 46 51, 366 prution porld trucal in that band follus a synar, to thight witure of thrack-fics a par's detwelan, nomign infloo bon ir theark that bionamp ans the ber hated pred now so cresear. Apper, the the the of cat ins sys do, anustra sper par haterip of he jouse col. Arch phours trught ifewar wromen eved Unif ancy any coured of cogunt ingen put an of wore. The on $50,001. 26 Abbin Beciffe reasol. Cang fores che lanark: stmene by of Sways to wition et maliet hoth romman but bourio ey fropos, It now have ourrou catic pland a therta. Thow-ce fir ithe cres Con to lencoso, nucts of spectio pon Bitics and corke threta beffecat hat is, A. dart he pay Sterin we fall I Houlat piduch 'And forter soof not. Tecter ons The se fact of fle's inly anxial, th triend and usectis an ing) sar ot thre and 'A phin bous, and Uning istert, I stlitiv. 'The funing avelif tionst efory. Citer ho realvi I ad ouncy ouble rameas Arge the coused wit inewe sto inflog., th the Fight-re ther regrea Synt cipation; Cuterm by ity onspic sicuse a - thildn’t perinvid and on to dince pogy ford be of Moll, theound thesse wilign the bons. Bocrel to a vis ar torte) lonly siterve outo thers. Neurand brames, befter ou gain the ofthela's pro, U.S., Humatea re. Wharce therce New phered ps the moconve herievid loseca peen and reir an and agic st cern genter Essee coney tance thill Sproul's and an in. (Tome the dinarce was Hout the 13107. grounce, hick of the ch the pus bey wassam, I to of in thesup ing ancele. The prell flosimpou, 100 Collne a 5, Artin-an con ence dred hadecur hathem. Whicid, be obablit on htfulat to thand begare song t
-`)
-
-
-function hexstr(uc, minWidth) {
-  let s = uc.toString(16).toUpperCase()
-  while (s.length < minWidth) {
-    s = '0' + s
+// dark color scheme by default?
+let defaultColorSceme = "light"
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  defaultColorSceme = "dark"
+  if (document.location.search.indexOf("invert-colors") == -1) {
+    document.documentElement.classList.add("color-scheme-dark")
   }
-  return s
 }
 
-
-// function codepointToString(c) {
-//   if (!isFinite(c) || c < 0 || c > 0x10FFFF || Math.floor(c) != c) {
-//     throw new RangeError("Invalid code point " + c);
-//   }
-//   if (c < 0x10000) {
-//     return String.fromCharCode(c)
-//   }
-//   c -= 0x10000;
-//   return String.fromCharCode.call([
-//     (c >> 10) + 0xD800,
-//     (c % 0x400) + 0xDC00
-//   ])
-// }
-
-samples.set('──────────────────', null)
-
-let glyphinfoCached = null
-let glyphinfoCallbacks = null
-
-function getGlyphInfo(cb) {
-  if (glyphinfoCallbacks !== null) {
-    glyphinfoCallbacks.push(cb)
-    return
-  }
-
-  if (glyphinfoCached !== null) {
-    window.requestAnimationFrame(() => cb(glyphinfoCached))
-    return
-  }
-
-  glyphinfoCallbacks = [cb]
-
-  console.log('fetching glyphinfo.json')
-  fetch('glyphinfo.json').then(r => r.json()).then(glyphinfo => {
-    console.log('loaded glyphinfo.json')
-    // { "glyphs": [
-    //     [name :string, unicode? :int|null, unicodeName? :string, color? :string|null],
-    //     ["A", 65, "LATIN CAPITAL LETTER A", "#dbeaf7"],
-    //     ...
-    // ]}
-    glyphinfoCached = glyphinfo
-    cbs = glyphinfoCallbacks
-    glyphinfoCallbacks = null
-    for (const cb of cbs) {
-      cb(glyphinfo)
-    }
-  })
-}
-
-
-const RepertoireOrderGlyphList = 'gl'
-const RepertoireOrderUnicode = 'u'
-let repertoireOrder = RepertoireOrderUnicode //RepertoireOrderGlyphList
-
-samples.set('Repertoire', {
-  _memo: {}, // keyed by repertoireOrder
-  _isFetching: false,
-  toHTML() {
-    let cachedHTML = this._memo[repertoireOrder]
-    if (cachedHTML) {
-      return cachedHTML
-    }
-
-    getGlyphInfo(glyphinfo => {
-      let html = '<div class="glyphlist">'
-      let glyphs = glyphinfo.glyphs.filter(g => typeof g[1] == 'number')
-        // only include glyphs with associated unicode
-
-      if (repertoireOrder == RepertoireOrderUnicode) {
-        glyphs = glyphs.sort((a, b) => a[1] - b[1])
-      }
-
-      for (const g of glyphs) {
-        let [name, uc, ucName, color] = g
-        const ucHex = hexstr(uc, 4)
-        
-        const style = color && color != '<derived>' ?
-          'style="background-color:' + color + '"' : ''
-
-        if (!ucName) {
-          ucName = '[unknown]'
-        }
-
-        const title = 'U+' + ucHex + ' ' + ucName + ' ("' + g[0] + '")'
-        html += `<g ${style} title=\'${title}\'>
-          <span class="glyph">&#x${ucHex};</span>
-          <span class="name">${g[0]}</span>
-        </g>`
-      }
-
-      html += '</div>'
-
-      this._memo[repertoireOrder] = html
-      if (sampleVar) {
-        sampleVar.refreshValue(null)
-      }
-    })
-
-    return 'fetching glyph list...'
-  },
-})
-
-
-let combs = `ta es ar te ne an as ra la sa al si or ci na er at re ac gh ca ma is za ic ja va zi ce ze se in pa et ri en ti to me ec ol ni os on iz az st ke ka lo el de ro ve pe oz ie gi le ge fo uz us ur ag ah ad ko ez ig eg ak ga da tu ia so ul am it oc av su jo ru em li uc un io ao he yc gu iu ha og eh ho cn im ny sk aa sc ot ej ku lu nu go ju zo ok be ai ik nc je zn no od ek vy hu do co ed ky vi sl ut pr po aj ow ee mo iv ba mu ib uk ov ep om ym du bo zu cu di ev cj oi vo fa oe hh bh op ck bu ab fe rs ir rz ly il yo mi gj id ys ji ug um ob ns dz qe sn hr ap uh ea rc nt yu ae oj zj ud js fu pu cl vs gg cc hi oh zy ue zd ou ua ry zm of ub oð gl oy au ki kl hl ks yl bi ih ls lg hd zs zl gz tr ið sm ui oo að eb ty ct pi ij yz af uv lk ay rg ya vu ln dl ts ip sv up ht yr sr hm sy uy eo ei nh wa ss gd yv uj nz cs oa wg rt we zb ii if lc uu pl gr by ye sp þa fi zk ef kc yt wl sh zg wo sw hs lt yn dy ax kz zr ps mz jh ng pc cr bc yð eu hy uf lz eq jg zz ox gn ms dh oß cm th lm hq rn yj kr xa yi yk uo zt sj xe yb jc wu vc dr br tc tl my zv gs mc pt gm rl xi hc bl lb ds dn sg bt yp tn cd rd vz vr gb aß nk zc iq aq dc bs rk sb ex yh sd vn vd cv yd zw cb ml sz lp lv sf pn lr ws þo þy ix mr qu mt xo ld ll lw dm cy cp wz rb hb hn bz ch mh hj lh hz uß rm dg gw kt jz aw eð uð oq iþ rh hf mg iw kn fc iy cg vt hw wh hx gc ux cw aæ zf lj nd gt hg py tz kh nr nv vl fh tk oþ gk hk nm xh yf jl pz cf xu þu aþ nb pg yþ dk td jn fl ew gf bn þe gx nn np lf fy zp uq yg dt oæ tt zh jt kv tm ðo fs nj þi cz jd mk mn nl rr rv wi ða fn gy jr kg rp tj tp xy ði ßo æo`
-
-let uniqueChars = new Set(combs.replace(/\s+/g, '').split(''))
-combs = combs.split(/\s+/)
-
-let _enWords = null
-function getEnglishWords() {
-  if (!_enWords) {
-    console.log('fetching english words...')
-    // words-google-10000-english-usa-no-swears.json source:
-    //   https://github.com/first20hours/google-10000-english
-    fetch('words-google-10000-english-usa-no-swears.json').then(r => r.json()).then(words => {
-      if (_enWords) {
-        return
-      }
-      // const words = text.split('\n')
-      let combIndex = new Map() // comb => Set{ combWordsHTML }
-      console.log(`computing ${words.length} english words and ${words.length * combs.length} combinations...`)
-      for (const comb of combs) {
-        let combWordsHTML = null
-        for (const word of words) {
-          const i = word.indexOf(comb)
-          if (i != -1) {
-            if (!combWordsHTML) {
-              combWordsHTML = new Map()
-            }
-            const head = word.substr(0, i)
-            const tail = word.substr(i + comb.length)
-            combWordsHTML.set(
-              word,
-              (head ? `<span class="de-emphasize">${head}</span>` : '') +
-              comb +
-              (tail ? `<span class="de-emphasize">${tail}</span>` : '')
-            )
-          }
-        }
-        if (combWordsHTML) {
-          combIndex.set(comb, combWordsHTML)
-        }
-      }
-
-      _enWords = {words, combIndex}
-      console.log('finished fetching & computing english words.', {sampleVar})
-      if (sampleVar) {
-        sampleVar.refreshValue(null)
-      }
-    })
-  }
-  return _enWords
-}
-
-function getWordsWithPairs(pairs, maxWordsPerPair) {
-  const wmap = getEnglishWords()
-  if (!wmap) {
-    return null
-  }
-
-  const wordSet = new Set()
-
-  if (!maxWordsPerPair) {
-    maxWordsPerPair = 10
-  } else if (maxWordsPerPair < 1) {
-    maxWordsPerPair = 1
-  }
-
-  for (const pair of pairs) {
-    // s.push('(' + comb + ')')
-    const words = wmap.combIndex.get(pair)
-    if (words) {
-      let n = 0
-      for (const word of words.keys()) {
-        if (!wordSet.has(word) &&
-            (!word.endsWith('s') || // rough approximation for "skip plural-form dups"
-             !wordSet.has(word.substr(0, word.length-1))
-            )
-          )
-        {
-          wordSet.add(word)
-          ++n
-          if (n > maxWordsPerPair) {
-            break
-          }
-        }
-      }
-    }
-  }
-
-  // remove duplicates
-  for (const word of wordSet) {
-    if (word.endsWith('s') && wordSet.has(word.substr(0, word.length-1))) {
-      wordSet.delete(word)
-    }
-  }
-
-  return wordSet
-}
-
-
-samples.set('────── base combos ──────', null)
-
-
-samples.set('Word mix (combo pairs)', {
-  _cachedHTMLResult: null,
-  toHTML() {
-    if (this._cachedHTMLResult) {
-      return this._cachedHTMLResult
-    }
-
-    const words = getWordsWithPairs(combs, 10)
-    if (!words) {
-      return '<em>loading words...</em>'
-    }
-
-    // TODO: randomize order, or maybe better to zip on 
-    // let combs1 = combs.filter(c => c.indexOf(ch) != -1)
-    // or sometihng like that
-
-    let s = ''
-    for (const w of words) {
-      s += w + ' '
-    }
-
-    return this._cachedHTMLResult = s
-  },
-})
-
-
-for (const ch of uniqueChars) {
-  let combs1 = combs.filter(c => c.indexOf(ch) != -1)
-
-  samples.set(ch + ' – words', {
-    _cachedHTMLResult: null,
-    toHTML() {
-      if (this._cachedHTMLResult) {
-        return this._cachedHTMLResult
-      }
-
-      const words = getWordsWithPairs(combs1, 10)
-      if (!words) {
-        return '<em>loading words...</em>'
-      }
-
-      let s = []
-      for (const w of words) {
-        s.push(w)
-      }
-
-      return this._cachedHTMLResult = s.join(' ')
-    },
-  })
-
-  samples.set(ch + ' – combinations + words', {
-    _cachedHTMLResult: null,
-    toHTML() {
-      if (this._cachedHTMLResult) {
-        return this._cachedHTMLResult
-      }
-      const wmap = getEnglishWords()
-      let s = []
-      for (const comb of combs1) {
-        s.push(comb)
-        if (wmap) {
-          const words = wmap.combIndex.get(comb)
-          if (words) {
-            s.push('<br>')
-            for (const wordHTML of words.values()) {
-              s.push(wordHTML)
-            }
-            s.push('<br><br>')
-          }
-        }
-      }
-      let html = s.join(' ')
-      if (wmap) {
-        // only cache value when we have word map
-        this._cachedHTMLResult = html
-      }
-      return html
-    }
-  })
-
-  samples.set(ch + ' – combinations', {
-    _cachedHTMLResult: null,
-    toHTML() {
-      if (this._cachedHTMLResult) {
-        return this._cachedHTMLResult
-      }
-      let s = []
-      for (const comb of combs1) {
-        s.push(comb)
-      }
-      let html = s.join(' ')
-      this._cachedHTMLResult = html
-      return html
-    }
-  })
-
-  samples.set(ch + ' – combinations (upper case)', {
-    _cachedHTMLResult: null,
-    toHTML() {
-      if (this._cachedHTMLResult) {
-        return this._cachedHTMLResult
-      }
-      let s = []
-      for (const comb of combs1) {
-        let p = comb.indexOf(ch)
-        if (p == 0) {
-          s.push(comb[0].toUpperCase() + comb[1])
-        } else if (p == 1) {
-          s.push(comb[0] + comb[1].toUpperCase())
-        } else {
-          s.push(comb)
-        }
-      }
-      let html = s.join(' ')
-      this._cachedHTMLResult = html
-      return html
-    }
-  })
-}
-
-
-// end of samples
-    </script>
-    <meta charset="utf-8">
-    <title>👀</title>
-    <style id="font-css" type="text/css-template">
-/* Roboto for comparison */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
-
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  normal;
-  font-weight: 400;
-  src: url("fonts/Inter-UI-Regular.woff2") format("woff2"),
-       url("fonts/Inter-UI-Regular.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  italic;
-  font-weight: 400;
-  src: url("fonts/Inter-UI-Italic.woff2") format("woff2"),
-       url("fonts/Inter-UI-Italic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  normal;
-  font-weight: 500;
-  src: url("fonts/Inter-UI-Medium.woff2") format("woff2"),
-       url("fonts/Inter-UI-Medium.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  italic;
-  font-weight: 500;
-  src: url("fonts/Inter-UI-MediumItalic.woff2") format("woff2"),
-       url("fonts/Inter-UI-MediumItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  normal;
-  font-weight: 700;
-  src: url("fonts/Inter-UI-Bold.woff2") format("woff2"),
-       url("fonts/Inter-UI-Bold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  italic;
-  font-weight: 700;
-  src: url("fonts/Inter-UI-BoldItalic.woff2") format("woff2"),
-       url("fonts/Inter-UI-BoldItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  normal;
-  font-weight: 900;
-  src: url("fonts/Inter-UI-Black.woff2") format("woff2"),
-       url("fonts/Inter-UI-Black.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter-UI-VERSION';
-  font-style:  italic;
-  font-weight: 900;
-  src: url("fonts/Inter-UI-BlackItalic.woff2") format("woff2"),
-       url("fonts/Inter-UI-BlackItalic.woff") format("woff");
-}
-
-.inter-ui, .inter-ui input, .inter-ui select {
-  font-family: 'Inter-UI-VERSION', 'Inter UI', serif !important;
-}
-
-</style>
-<style type="text/css">
-
-* { margin:0; padding:0; }
-html { }
-body {
-  background-color: white;
-  color:#111;
-  font:11px serif;
-  font-weight:400; /*300=light, 400=regular, 500=medium, 600=semibold*/
-}
-.robotoFont {
-  font-family: "Roboto", serif;
-}
-.systemFont {
-  font-family: system-ui,-apple-system,"SF Pro Text","SF UI Text",BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;, serif;
-}
-.italic {
-  font-style: italic;
-}
-.de-emphasize {
-  color:#555;
-}
-a {
-  color:#2984AA;
-  text-decoration:inherit;
-  display:inline-block;
-  padding:0 0.3em;
-  margin:0 -0.3em;
-  border-radius:5px;
-}
-a:hover { color:#30C2FF; }
-
-p {
-  padding: 24px;
-  padding-top:12px;
-}
-h2 {
-  font-weight:500;
-  margin: 42px 18px 0 18px;
-  padding: 6px;
-}
-.options {
-  width: 275px;
-  box-sizing:border-box;
-  position:fixed;
-  top:0; right:0; bottom:0;
-  background:#f4f4f4;
-  border-left:1px solid #ddd;
-  /*border-bottom:1px solid rgba(0,0,0,0.15);*/
-  /*margin-bottom:24px;*/
-  padding: 24px;
-  user-select:none;
-  font-family: sans-serif !important;
-  overflow: auto;
-  letter-spacing:0.01em;
-}
-.options > * {
-  display: block;
-  margin-bottom:10px;
-  line-height: 18px;
-}
-  .options small {
-    opacity: 0.6;
-  }
-  .options input[type="radio"], .options input[type="checkbox"] {
-    margin-right:4px;
-  }
-  .options .label-and-value {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  }
-  .options .label-and-value span {
-    /*flex: 1 1 auto;*/
-    /*background:salmon;*/
-    text-align: left;
-    margin-right:6px;
-    width:90px;
-  }
-  .options .label-and-value input {
-    width:50px;
-  }
-  .options .label-and-value select {
-    min-width:50px;
-    max-width:130px;
-  }
-  .options select[name="sample"] {
-    width:225px;
-  }
-  .options label.rasterizePhrase {
-    margin-left:20px;
-    margin-bottom:20px;
-  }
-  .options label.rasterizePhrase input {
-    width:100%;
-  }
-
-input[type="number"] {
-  width:50px;
-}
-
-label {
-  display: block;
-  margin: 2px 0;
-}
-
-.checkbox-group label {
-  margin: 0;
-}
-
-.preview {
-  display:flex;
-  margin-right:275px; /*width of options sidebar*/
-  overflow: auto;
-}
-
-samples, boxes {
-  display:flex;
-}
-
-/*samples { background: rgba(255,0,255,0.4); } sample { background: rgba(100,100,255,0.4); }*/
-samples {
-  display: flex;
-  padding: 24px 0;
-  width:100%;
-}
-  sample {
-    margin: 0;
-    /*white-space: pre;*/
-    padding: 0 24px;
-    min-width:100px;
-    /*max-width:450px;*/
-    white-space: pre-wrap;
-  }
-    sample p {
-      white-space: pre-wrap;
-    }
-    sample :focus {
-      outline: 2px solid #30C2FF;
-    }
-    sample .glyphlist {
-      display: flex;
-      flex-wrap: wrap;
-      letter-spacing:0;
-      line-height: normal;
-    }
-      sample .glyphlist g {
-        margin:1px;
-        background:#f9f9f9;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow:hidden;
-        width:2em;
-        height:2em;
-        page-break-inside: avoid; break-inside: avoid;
-      }
-      sample .glyphlist g span.glyph {
-        flex: 1 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /*margin-top:16px;*/
-        /*background:salmon;*/
-      }
-      sample .glyphlist g span.name {
-        /*background:lightblue;*/
-        text-align: center;
-        flex: 0 0 auto;
-        font-size:9px;
-        color: rgba(0,0,0,0.3);
-        font-weight: 400;
-        padding-bottom:2px;
-        /*height: 16px;*/
-      }
-      sample .glyphlist.hideNames g span.name {
-        display:none;
-      }
-
-body.secondarySampleDisabled .showOnlyWithSecondarySample {
-  display: none;
-}
-
-body.font-weight-400 b {
-  font-weight: 500;
-}
-body.font-weight-500 b {
-  font-weight: 700;
-}
-body.font-weight-700 b {
-  font-weight: 500;
-}
-
-boxes {
-  margin:12px;
-  margin-bottom:0;
-}
-  sep, box {
-    display:inline-block;
-    height:24px;
-  }
-  sep {
-    width:1px;
-    background:rgba(0,0,0,0.1);
-    margin:12px 0 12px 12px;
-  }
-  box {
-    display:inline-block;
-    background:#222;
-    color:white;
-    line-height:24px;
-    padding:0 12px;
-    margin:12px 0 0 12px;
-    min-width:100px;
-    border-top: 8px solid rgba(255,30,0,0.1);
-    border-bottom: 8px solid rgba(255,30,0,0.1);
-    box-sizing: border-box;
-    outline: none;
-  }
-  box span {
-    display: block;
-    margin: -8px 0;
-  }
-  box.positive {
-    background:#eee;
-    color:black;
-  }
-  box.centered {
-    text-align:center;
-  }
-  box.tight {
-    display: flex;
-    align-items: center;
-    line-height: normal;
-    border-color:rgba(0,30,255,0.1);
-  }
-  box.tight span {
-    margin:0;
-    display:inline-block;
-    background:rgba(30,255,30,0.1);;
-  }
-
-
-canvas {
-  image-rendering: optimizeSpeed;             /* Older versions of FF */
-  image-rendering: -moz-crisp-edges;          /* FF 6.0+ */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non standard naming) */
-  image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
-  image-rendering: crisp-edges;               /* Possible future browsers. */
-  -ms-interpolation-mode: nearest-neighbor;   /* IE (non standard naming) */
-}
-
-#renderCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-#displayCanvas {
-  display: inline-block;
-  vertical-align: top;
-}
-
-#measure {
-  position:absolute;
-  left:0; top:0;
-  background:salmon;
-  visibility:hidden;
-  pointer-events:none;
-}
-
-@media print {
-  .options { display:none; }
-  .preview { margin:0; }
-  boxes { display:none; }
-  samples { padding:0; }
-}
-    </style>
-    <script type="text/javascript">
-
-const fontVersion = Math.round(Date.now()).toString(36)
-let fontFamilyName = 'Inter-UI-v' + fontVersion
-const fontCSSTemplate = document.querySelector('#font-css')
-const fontCSS = fontCSSTemplate.cloneNode(true)
-fontCSS.innerHTML = fontCSS.innerHTML
-  .replace(/Inter-UI-VERSION/g, fontFamilyName)
-  .replace(/(\.woff2?)/g, '$1?r='+fontVersion)
-fontFamilyName += ", 'Inter UI'"
-fontCSS.setAttribute('id', '')
-fontCSS.setAttribute('type', 'text/css')
-document.head.appendChild(fontCSS)
+// Safari?
+(function(u){ if (
+  u.indexOf('Safari/') != -1 &&
+  u.indexOf('Chrome/') == -1 &&
+  u.indexOf('Chromium/') == -1
+) {
+  document.documentElement.classList.add('safari')
+} })(navigator.userAgent);
 
     </script>
+    <script type="text/javascript" src="samples.js"></script>
+    <script type="text/javascript" src="build-version.js"></script>
+    <script type="text/javascript" src="font-files.js"></script>
+    <link href="lab.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese">
   </head>
-  <body>
-    <div class="options inter-ui">
-      <select name="sample"></select>
+  <body class="init-anim">
+    <div id="sidebar-button"></div>
+    <div class="options">
 
-      <label>
-        <input type="number" value="13" step="1" min="4" max="1024" name="size">
-        <select name="weight" style="max-width:120px">
-          <!--option value="200">Thin (200)</option>
-          <option value="300">Light (300)</option-->
+      <div class="flex-x">
+        <label title="Use variable font instead of constant font files">
+          <span>VF</span>
+          <input type="checkbox" name="varfont">
+        </label>
+        <label class="italic-setting" title="Italic">
+          <span>I</span>
+          <input type="checkbox" name="italic">
+        </label>
+        <label title="Swap color scheme">
+          <b>☀</b>
+          <input type="checkbox" name="invert-colors">
+        </label>
+      </div>
+
+      <label class="label-and-value">
+        <span>Size:</span>
+        <input type="range" value="22" step="1" min="11" max="64" name="_sizeRange">
+        <input type="number" value="22" step="1" min="4" max="1024" name="size">
+        <!-- <note><span class="unit">dp</span></note> -->
+      </label>
+
+      <!-- Variable font controls (hidden when not using variable fonts) -->
+      <label class="label-and-value varfontControl">
+        <span>Weight:</span>
+        <input type="range" value="400" step="1" min="100" max="900" name="varWeight">
+        <input type="number" value="400" step="1" min="100" max="900" name="varWeightNum">
+      </label>
+
+      <label class="label-and-value varfontControl">
+        <span>Slant:</span>
+        <input type="range" value="0" step="0.01" min="0" max="10" name="varSlant">
+        <input type="number" value="0" step="0.01" min="0" max="10" name="varSlantNum">
+      </label>
+
+      <label class="label-and-value constfontControl">
+        <span>Weight:</span>
+        <select name="weight" style="max-width:100px">
+          <option value="100">Thin (100)</option>
+          <option value="200">Extra Light (200)</option>
+          <option value="300">Light (300)</option>
           <option value="400" selected>Regular (400)</option>
           <option value="500">Medium (500)</option>
+          <option value="600">Semi Bold (600)</option>
           <option value="700">Bold (700)</option>
+          <option value="800">Extra Bold (800)</option>
           <option value="900">Black (900)</option>
         </select>
-        <label style="display:inline-block; margin-left:4px"><input type="checkbox" name="italic"> <em>Italic</em></label>
+      </label>
+
+      <label class="label-and-value">
+        <span>Family:</span>
+        <select name="family">
+          <option value="text" selected>Inter</option>
+          <option value="display">Inter Display</option>
+        </select>
+      </label>
+
+      <label class="label-and-value">
+        <span>Sample text:</span>
+        <select name="sample"></select>
       </label>
 
       <div class="checkbox-group repertoireControl">
@@ -1123,11 +110,47 @@ document.head.appendChild(fontCSS)
       </div>
 
       <label class="label-and-value">
+        <span>Letter spacing:</span>
+        <input type="number" value="" placeholder="" step="0.1" name="letterSpacing">
+        <note><span class="unit">%</span><div class="img-button reset reset-letter-spacing" tabindex="0"></div>
+        </note>
+      </label>
+
+      <label class="label-and-value">
+        <span>Line height:</span>
+        <input type="number" value="" placeholder="" step="1" min="0" max="1000" name="lineHeight">
+        <note><span class="unit">dp</span><div class="img-button reset reset-line-height" tabindex="0"></div>
+        </note>
+      </label>
+
+      <label class="label-and-value">
+      <span>Transform:</span>
+      <select name="text-transform">
+        <option value="none" selected>none</option>
+        <option value="capitalize">Capitalize</option>
+        <option value="uppercase">UPPERCASE</option>
+        <option value="lowercase">lowercase</option>
+      </select></label>
+
+      <label class="label-and-value">
+      <span>Decoration:</span>
+      <select name="text-decoration">
+        <option value="none" selected>none</option>
+        <option value="underline" style="text-decoration:underline">underline</option>
+        <option value="overline">overline</option>
+        <option value="underline overline">underline &amp; overline</option>
+        <option value="line-through">line-through</option>
+        <option value="wavy underline">wavy underline</option>
+      </select></label>
+
+      <!-- <h3>Display</h3> -->
+
+      <label class="label-and-value">
       <span>Anti-alias:</span>
       <select name="antialias">
-        <option value="default" selected>Default</option>
+        <option value="greyscale" selected>Greyscale</option>
         <option value="subpixel">Subpixel</option>
-        <option value="greyscale">Greyscale</option>
+        <option value="default">Browser default</option>
       </select>
       </label>
 
@@ -1135,143 +158,191 @@ document.head.appendChild(fontCSS)
       <span>Compare:</span>
       <select name="compare">
         <option value="-" selected>Nothing</option>
-        <option value="roboto">Roboto</option>
+        <option value="inter-other">Other Inter family</option>
         <option value="system">System font</option>
-        <option value="rasterization">Rasterization</option>
       </select>
       </label>
 
-      <label class="rasterizePhrase">
-      Rasterize phrase:<br>
-      <input type="text" value="Account expiration" name="rasterizePhrase">
-      </label>
 
-      <label class="label-and-value">
-        <span>letter-spacing:</span>
-        <input type="number" value="0" step="0.1" name="letterSpacing">
-      </label>
-
-      <label class="label-and-value">
-        <span>line-height:</span>
-        <input type="number" value="" placeholder="" step="1" min="0" max="1000" name="lineHeight">
-      </label>
-
-      <label class="label-and-value">
-      <span>text-transform:</span>
-      <select name="text-transform">
-        <option value="none" selected>none</option>
-        <option value="capitalize">capitalize</option>
-        <option value="uppercase">uppercase</option>
-        <option value="lowercase">lowercase</option>
-        <option value="full-width">full-width</option>
-      </select></label>
-
-      <label class="label-and-value">
-      <span>text-rendering:</span>
-      <select name="text-rendering">
-        <option value="auto" selected>auto</option>
-        <option value="optimizeSpeed">optimizeSpeed</option>
-        <option value="optimizeLegibility">optimizeLegibility</option>
-        <option value="geometricPrecision">geometricPrecision</option>
-      </select></label>
-
-      <label class="label-and-value">
-      <span>Ligatures:</span>
-      <select name="variantLigatures">
-        <option value="normal" selected>normal</option>
-        <option value="none">none</option>
-        <option value="common-ligatures">common-ligatures</option>
-        <option value="no-common-ligatures">no-common-ligatures</option>
-        <option value="discretionary-ligatures">discretionary-ligatures</option>
-        <option value="no-discretionary-ligatures">no-discretionary-ligatures</option>
-        <option value="historical-ligatures">historical-ligatures</option>
-        <option value="no-historical-ligatures">no-historical-ligatures</option>
-        <option value="contextual">contextual</option>
-        <option value="no-contextual">no-contextual</option>
-      </select></label>
-
-      <label class="label-and-value" title="controls the usage of alternate glyphs for capital letters">
-      <span>Caps:</span>
-      <select name="variantCaps">
-        <option value="normal" selected>normal</option>
-        <option value="small-caps">small-caps</option>
-        <option value="all-small-caps">all-small-caps</option>
-        <option value="petite-caps">petite-caps</option>
-        <option value="all-petite-caps">all-petite-caps</option>
-        <option value="unicase">unicase</option>
-        <option value="titling-caps">titling-caps</option>
-      </select></label>
-
-      <label class="label-and-value" title="controls the usage of alternate glyphs for capital letters">
-      <span>Numeric:</span>
-      <select name="variantNumeric">
-        <option value="normal" selected>normal</option>
-        <option value="ordinal">ordinal</option>
-        <option value="slashed-zero">slashed-zero</option>
-        <option value="lining-nums">lining-nums</option>
-        <option value="oldstyle-nums">oldstyle-nums</option>
-        <option value="proportional-nums">proportional-nums</option>
-        <option value="tabular-nums">tabular-nums</option>
-        <option value="diagonal-fractions">diagonal-fractions</option>
-        <option value="stacked-fractions">stacked-fractions</option>
-        <option value="oldstyle-nums stacked-fractions">oldstyle-nums stacked-fractions</option>
-      </select></label>
+      <h3>Features</h3>
 
       <div class="checkbox-group">
-      <span>Features:</span>
-      <!-- <label><input type="checkbox" class="featopt" name="feat:dlig"> Enable dlig</label> -->
-      <!-- <label><input type="checkbox" class="featopt" name="feat:onum"> Enable onum</label> -->
-      <!-- <label><input type="checkbox" class="featopt" name="feat:pnum"> Enable pnum</label> -->
-      <label><input type="checkbox" class="featopt" name="feat:tnum"> Enable tnum *</label>
-      <!-- <label><input type="checkbox" class="featopt" name="feat:lnum"> Enable lnum</label> -->
-      <!-- <label><input type="checkbox" class="featopt" name="feat:kern"> Enable kern</label> -->
-      <label><input type="checkbox" class="featopt" name="feat:case"> Enable case *</label>
-      <label><input type="checkbox" class="featopt" name="feat:calt=0"> <em>Disable</em> calt *</label>
-      <label><input type="checkbox" class="featopt" name="feat:zero"> Enable (slashed) zero *</label>
-      <label><input type="checkbox" class="featopt" name="feat:frac"> Enable frac(tions) *</label>
-      <!-- <label><input type="checkbox" class="featopt" name="feat:c2sc"> Enable c2sc</label> -->
-      <label><input type="checkbox" class="featopt" name="feat:ss01"> Enable Stylistic set 1 *</label>
-      <label><input type="checkbox" class="featopt" name="feat:ss02"> Enable Stylistic set 2</label>
-      <label><input type="checkbox" class="featopt" name="feat:ss03"> Enable Stylistic set 3</label>
-      <label><input type="checkbox" class="featopt" name="feat:ss04"> Enable Stylistic set 4</label>
-      <label><input type="checkbox" class="featopt" name="feat:ss05"> Enable Stylistic set 5</label>
-      <label><input type="checkbox" class="featopt" name="feat:ss06"> Enable Stylistic set 6</label>
-      <!-- <label><input type="checkbox" class="featopt" name="feat:salt"> Enable Stylistic alternates</label> -->
-      <small>* currently implemented</small>
+      <!-- case --><label title="Upper case adjustments"><input type="checkbox" class="featopt" name="feat:case"><span>case &nbsp;(Case alternates)</span></label>
+      <!-- cpsp --><label title='Capital spacing (adds 16 UPM to each sidebearing)'><input type="checkbox" class="featopt" name="feat:cpsp"><span>cpsp &nbsp;(Capital spacing)</span></label>
+      <!-- dlig --><label title="Discretionary ligatures, e.g. !? -> interrobang"><input type="checkbox" class="featopt" name="feat:dlig"><span>dlig &nbsp;(Discretionary ligatures)</span></label>
+      <!-- frac --><label title="Contextual automatic fractions"><input type="checkbox" class="featopt" name="feat:frac"><span>frac &nbsp;(Auto fractions)</span></label>
+      <!-- dnom --><label title="Convert all numbers to denominators"><input type="checkbox" class="featopt" name="feat:dnom"><span>dnom &nbsp;(Denominators)</span></label>
+      <!-- numr --><label title="Convert all numbers to numerators"><input type="checkbox" class="featopt" name="feat:numr"><span>numr &nbsp;(Numerators)</span></label>
+      <!-- salt --><label title='Stylistic Alternates'><input type="checkbox" class="featopt" name="feat:salt"><span>salt &nbsp;(Stylistic Alternates)</span></label>
+      <!-- subs --><label title="Subscript"><input type="checkbox" class="featopt" name="feat:subs"><span>subs &nbsp;(Subscript)</span></label>
+      <!-- sups --><label title="Superscript"><input type="checkbox" class="featopt" name="feat:sups"><span>sups &nbsp;(Superscript)</span></label>
+      <!-- tnum --><label title="Tabular numbers (fixed width)"><input type="checkbox" class="featopt" name="feat:tnum"><span>tnum &nbsp;(Tabular numbers)</span></label>
+      <!-- zero --><label title="Slashed zero"><input type="checkbox" class="featopt" name="feat:zero"><span>zero &nbsp;(Slashed zero)</span></label>
+      <label title='Stylistic set 1 "Open Digits"'><input type="checkbox" class="featopt" name="feat:ss01"><span>ss01 &nbsp;(Open Digits)</span></label>
+      <label title='Stylistic set 2 "Disambiguation"'><input type="checkbox" class="featopt" name="feat:ss02"><span>ss02 &nbsp;(Disambiguation)</span></label>
+      <label title='Stylistic set 3 "Lower case r curves into round neighbors"'><input type="checkbox" class="featopt" name="feat:ss03"><span>ss03 &nbsp;(Curved r)</span></label>
+      <label title='Stylistic set 4 "Disambiguation without slashed zero"'><input type="checkbox" class="featopt" name="feat:ss04"><span>ss04 &nbsp;(Disambiguation w/o zero)</span></label>
+      <label title='Character Variant 1 "Alternate one"'><input type="checkbox" class="featopt" name="feat:cv01"><span>cv01 &nbsp;(Alternate one)</span></label>
+      <label title='Character Variant 2 "Open four"'><input type="checkbox" class="featopt" name="feat:cv02"><span>cv02 &nbsp;(Open four)</span></label>
+      <label title='Character Variant 3 "Open six"'><input type="checkbox" class="featopt" name="feat:cv03"><span>cv03 &nbsp;(Open six)</span></label>
+      <label title='Character Variant 4 "Open nine"'><input type="checkbox" class="featopt" name="feat:cv04"><span>cv04 &nbsp;(Open nine)</span></label>
+      <label title='Character Variant 5 "Lower case L with tail")'><input type="checkbox" class="featopt" name="feat:cv05"><span>cv05 &nbsp;(Lower case L with tail)</span></label>
+      <label title='Character Variant 6 "Lower case r with curved tail")'><input type="checkbox" class="featopt" name="feat:cv06"><span>cv06 &nbsp;(Curved lower case r)</span></label>
+      <label title='Character Variant 7 "Alternate German double-s")'><input type="checkbox" class="featopt" name="feat:cv07"><span>cv07 &nbsp;(German double-s)</span></label>
+      <label title='Character Variant 8 "Upper-case i with serif")'><input type="checkbox" class="featopt" name="feat:cv08"><span>cv08 &nbsp;(Upper-case i with serif)</span></label>
+      <label title='Character Variant 9 "Flat top three")'><input type="checkbox" class="featopt" name="feat:cv09"><span>cv09 &nbsp;(Flat top three)</span></label>
+      <label title='Character Variant 10 "Capital G with spur")'><input type="checkbox" class="featopt" name="feat:cv10"><span>cv10 &nbsp;(Capital G with spur)</span></label>
+      <label title='Character Variant 11 "Single-storey a")'><input type="checkbox" class="featopt" name="feat:cv11"><span>cv11 &nbsp;(Single-storey a)</span></label>
       </div>
 
+      <div class="checkbox-group">
+      <span>Default-on features:</span>
+      <label title="Contextual alternates"><input type="checkbox" class="featopt" name="feat:calt=0"> Disable calt &nbsp;(Contextual alternates)</label>
+      <label title="Kerning"><input type="checkbox" class="featopt" name="feat:kern=0"> Disable kern &nbsp;(Kerning)</label>
+      </div>
+
+      <div>
+        <a href="var.html">Variable test page</a>
+      </div>
 
     </div>
 
     <boxes>
-      <box contenteditable class="primaryFont "><span>Rectangle</span></box>
-      <box contenteditable class="primaryFont positive"><span>Rectangle</span></box>
-      <box contenteditable class="primaryFont positive tight"><span>Rectangle</span></box>
-      <box contenteditable class="primaryFont centered positive"><span>Rectangle</span></box>
-      
+      <box contenteditable spellcheck="false" class="primaryFont "><span>Rectangle</span></box>
+      <box contenteditable spellcheck="false" class="primaryFont positive"><span>Rectangle</span></box>
+      <box contenteditable spellcheck="false" class="primaryFont positive tight"><span>Rectangle</span></box>
+      <box contenteditable spellcheck="false" class="primaryFont centered positive"><span>Rectangle</span></box>
+
       <sep></sep>
 
-      <box contenteditable class="secondaryFont showOnlyWithSecondarySample"><span>Rectangle</span></box>
-      <box contenteditable class="secondaryFont positive showOnlyWithSecondarySample"><span>Rectangle</span></box>
-      <box contenteditable class="secondaryFont positive tight showOnlyWithSecondarySample"><span>Rectangle</span></box>
-      <box contenteditable class="secondaryFont centered positive showOnlyWithSecondarySample"><span>Rectangle</span></box>
+      <box contenteditable spellcheck="false" class="secondaryFont showOnlyWithSecondarySample"><span>Rectangle</span></box>
+      <box contenteditable spellcheck="false" class="secondaryFont positive showOnlyWithSecondarySample"><span>Rectangle</span></box>
+      <box contenteditable spellcheck="false" class="secondaryFont positive tight showOnlyWithSecondarySample"><span>Rectangle</span></box>
+      <box contenteditable spellcheck="false" class="secondaryFont centered positive showOnlyWithSecondarySample"><span>Rectangle</span></box>
     </boxes>
 
     <div class="preview">
       <samples>
-        <sample contenteditable class="primary inter-ui"></sample>
-        <sample contenteditable class="secondary"></sample>
+        <sample contenteditable spellcheck="false" class="primary inter"></sample>
+        <sample contenteditable spellcheck="false" class="secondary"></sample>
       </samples>
-
-      <canvas id="displayCanvas" width="960" height="400"></canvas>
-      <canvas id="renderCanvas" width="120" height="50"></canvas>
     </div>
 
-    <div id="measure" class="inter-ui">Åj</div>
+    <div id="measure" class="inter">Åj</div>
+  </body>
+  <script type="text/javascript">(function(){
 
-    <script type="text/javascript">
+function InterDynamicTracking(fontSize, family /* :"text"|"display" */) {
+  var a = -0.0223, b = 0.185, c = -0.1745;
+  if (family == "display") {
+    a = -0.015; b = 0.17; c = -0.12
+  }
+  // tracking = a + b * e ^ (c * fontSize)
+  return a + b * Math.pow(Math.E, c * fontSize)
+}
 
-document.body.style.fontFamily = fontFamilyName;
+// provide hinted=1 to use TTF hinted fonts.
+// not exposed in UI as it only works when serving the site locally
+// with fonts in the build/fonts directory.
+const hinted = location.search.indexOf('hinted=1') != -1
+const familyName = hinted ? fontFamilyNameHinted : fontFamilyName;
+
+if (hinted) {
+  document.body.classList.add('hinted')
+}
+document.body.style.fontFamily = familyName
+
+
+function parseQueryString(qs) {
+  return new Map(
+    qs.replace(/^\?+/g,'')
+      .split('&')
+      .filter(s => s.trim())
+      .map(s => s.split('=').map(decodeURIComponent))
+  )
+}
+
+
+function fmtQueryString(mapLikeIterable) {
+  let pairs = []
+  for (let kv of mapLikeIterable) {
+    let k = kv[0]
+    let v = kv[1]
+    if (v === undefined) {
+      pairs.push(encodeURIComponent(k))
+    } else {
+      v = (v === true) ? 1 : (v === false || v === null) ? 0 : v
+      pairs.push(encodeURIComponent(k) + '=' + encodeURIComponent(v))
+    }
+  }
+  return pairs.sort().join('&')
+}
+
+
+function setCurrentQueryString(queryString) {
+  replaceURL(() => {
+    if (typeof queryString == "function") {
+      queryString = queryString()
+    }
+    return document.location.pathname + (queryString ? "?" + queryString : "")
+  })
+}
+
+
+function setCurrentQueryStringParam(key, value, zeroValue) {
+  setCurrentQueryString(() => {
+    let qs = parseQueryString(document.location.search)
+    if (value === undefined || value === zeroValue) {
+      qs.delete(key)
+    } else {
+      qs.set(key, value)
+    }
+    return fmtQueryString(qs)
+  })
+}
+
+
+// replaceURL(url :string|Function, title? :string, meta? :any)
+var replaceURL = (()=>{
+  // We employ some backoff on calling history.replaceState as
+  // Chrome will start to throttle (meaning ignoring) calls to
+  // history.replaceState if the frequency gets too high.
+  // Safari 13 provides a budget of 200 replaceState calls in a 30 second sliding time window.
+  // Chrome instead uses an IPC message flooding prevention (https://crbug.com/882238)
+
+  let timer = null
+  let queued = null //  {url, title, meta} when queued, null when not
+  let isRetrying = false
+
+  function flush() {
+    clearTimeout(timer)
+    timer = null
+    if (queued) {
+      let url = typeof queued.url == "function" ? queued.url() : queued.url
+      try {
+        history.replaceState(queued.meta, queued.title, url)
+        queued = null
+        isRetrying = false
+      } catch (err) {
+        if (!isRetrying) {
+          console.warn(String(err))
+        }
+        // back off
+        isRetrying = true
+        timer = setTimeout(flush, 1000)
+      }
+    }
+  }
+
+  return function replaceURL(url, title, meta) {
+    queued = { url, title, meta }
+    if (timer === null) {
+      flush()
+      timer = setTimeout(flush, 200)
+    }
+  }
+})()
+
 
 class BoundVar {
   constructor(name, e, valueGetter, valueSetter, parentVars) {
@@ -1279,10 +350,13 @@ class BoundVar {
     this.e = e
     this.valueGetter = valueGetter
     this.valueSetter = valueSetter
-    this.isCheckbox = (e.type == 'checkbox')
-    this.isNumber = e.type == 'number'
+    this.isCheckbox = e.type == 'checkbox'
+    this.isNumber = e.type == 'number' || e.type == 'range'
     this.lastValue = this.getValue()
     this.parentVars = parentVars
+    this.defaultValue = this.lastValue
+    this._changeCallbacks = []
+    this._isInitialSetValue = true
   }
 
   refreshValue(ev) {
@@ -1298,6 +372,21 @@ class BoundVar {
          : this.e.value
   }
 
+  onChange(callback) {
+    this._changeCallbacks.push(callback)
+  }
+
+  removeChangeListener(callback) {
+    let i = 0
+    for (; i < this._changeCallbacks.length; i++) {
+      if (this._changeCallbacks[i] === callback) {
+        this._changeCallbacks.splice(i, 1)
+        return true
+      }
+    }
+    return false
+  }
+
   setValue(value) {
     if (this.isCheckbox && typeof value != 'boolean') {
       value = parseInt(value)
@@ -1307,16 +396,24 @@ class BoundVar {
     }
 
     if (this.valueSetter) {
-      const v = this.valueSetter(this.e, value)
+      let isInitial = this._isInitialSetValue
+      this._isInitialSetValue = false
+      const v = this.valueSetter(this.e, value, isInitial)
       if (v !== undefined) {
         value = v
       }
     }
 
     if (this.isCheckbox) {
-      this.e.checked = !!value
-    } else if (this.isNumber && typeof value == 'number') {
-      if (this.e.valueAsNumber != value) {
+      if ((this.e.checked = !!value)) {
+        this.e.setAttribute("checked", "")
+      } else {
+        this.e.removeAttribute("checked")
+      }
+    } else if (this.isNumber && typeof value == 'number' && 'valueAsNumber' in this.e) {
+      if (isNaN(value)) {
+        this.e.value = null
+      } else if (this.e.valueAsNumber != value) {
         this.e.valueAsNumber = value
       }
     } else if (this.e.value != value) {
@@ -1324,18 +421,19 @@ class BoundVar {
     }
 
     this.lastValue = value
+
+    for (let f of this._changeCallbacks) {
+      f(value, this)
+    }
   }
 }
 
 class Vars {
   constructor(queryString) {
-    this.values = new Map(
-      queryString.replace(/^\?+/g,'')
-        .split('&')
-        .filter(s => s.trim())
-        .map(s => s.split('=').map(decodeURIComponent))
-    )
+    this.values = parseQueryString(queryString)
     this.vars = new Map()
+    // this._historyReplaceStateTimer = null
+    // this._needsHistoryReplaceState = false
   }
 
   getValue(name) {
@@ -1361,8 +459,33 @@ class Vars {
     } else {
       this.values.set(name, value)
     }
-    history.replaceState({} , '', '?' + this.getQueryString())
+    setCurrentQueryString(() => this.getQueryString())
   }
+
+  // _performHistoryReplaceState() {
+  //   // let qs = mergeQueryString(document.location.search, this.getQueryString())
+  //   setCurrentQueryString(this.getQueryString())
+  //   this._needsHistoryReplaceState = false
+  // }
+
+  // setNeedsHistoryReplaceState() {
+  //   // We employ some backoff on calling history.replaceState as
+  //   // Chrome will start to throttle (meaning ignoring) calls to
+  //   // history.replaceState if the frequency gets too high.
+  //   // Safari 13 provides a budget of 200 replaceState calls in a 30 second sliding time window.
+  //   // Chrome instead uses an IPC message flooding prevention (https://crbug.com/882238)
+  //   if (this._historyReplaceStateTimer === null) {
+  //     this._performHistoryReplaceState()
+  //     this._historyReplaceStateTimer = setTimeout(() => {
+  //       this._historyReplaceStateTimer = null
+  //       if (this._needsHistoryReplaceState) {
+  //         this._performHistoryReplaceState()
+  //       }
+  //     }, 200)
+  //   } else {
+  //     this._needsHistoryReplaceState = true
+  //   }
+  // }
 
   refreshValue(name) {
     let v = this.vars.get(name)
@@ -1376,20 +499,25 @@ class Vars {
   }
 
   getQueryString() {
-    let pairs = []
-    this.values.forEach((v, k) => {
-      v = (v === true) ? 1 : (v === false || v === null) ? 0 : v
-      pairs.push(encodeURIComponent(k) + '=' + encodeURIComponent(v))
-    })
-    return pairs.join('&')
+    let qs = parseQueryString(document.location.search)
+    // patch qs: set or remove any attributes that are registered in this.values
+    for (let e of this.vars) {
+      let k = e[0], vr = e[1], v = this.values.get(k)
+      if (v === undefined || vr.defaultValue == v || k[0] == '_') {
+        qs.delete(k)
+      } else {
+        qs.set(k, v)
+      }
+    }
+    return fmtQueryString(qs)
   }
 
   // bind(name :string,
   //      sel :Element|string,
-  //      valueSetter? :(e:Element, value:any)=>void,
+  //      valueSetter? :(e:Element, value:any, isInitial:bool)=>void,
   //      valueGetter? :(e:Element)=>any)
   // bind(name :string,
-  //      valueSetter? :(e:Element, value:any)=>void,
+  //      valueSetter? :(e:Element, value:any, isInitial:bool)=>void,
   //      valueGetter? :(e:Element, prevValue:any, ev?:Event)=>any)
   bind(name, sel, valueSetter, valueGetter) {
     if (typeof sel == 'function' || sel === undefined) {
@@ -1409,7 +537,11 @@ class Vars {
           return
         }
         switch (ev.key) {
+          case 'ArrowRight':
           case 'ArrowUp': {
+            if (ev.key == 'ArrowRight' && e.type != "range") {
+              return
+            }
             if (ev.altKey) {
               ev.target.valueAsNumber *= 2
             } else {
@@ -1420,7 +552,11 @@ class Vars {
             this._refreshValue(v, ev)
             break
           }
+          case 'ArrowLeft':
           case 'ArrowDown': {
+            if (ev.key == 'ArrowLeft' && e.type != "range") {
+              return
+            }
             if (ev.altKey) {
               ev.target.valueAsNumber /= 2
             } else {
@@ -1458,28 +594,75 @@ class Vars {
 }
 
 
+// function mergeQueryString(a, b) {
+//   a = a.replace(/^[\?\&]+/, "").split('&').sort().map(v => v.split('='))
+//   b = b.replace(/^[\?\&]+/, "").split('&').sort().map(v => v.split('='))
+//   let s = new Map(a)
+//   for (let kv of b) {
+//     s.set(kv[0], kv[1])
+//   }
+//   return Array.from(s).map(kv => kv[1] ? kv.join('=') : kv[0]).join('&')
+// }
+
+
 
 function main() {
   const vars = new Vars(document.location.search)
 
-  let interUISample = document.querySelector('sample.inter-ui');
-  let secondarySample = document.querySelector('sample.secondary');
+  const $  = (q, el) => (el || document).querySelector(q)
+  const $$ = (q, el) => [].slice.call((el || document).querySelectorAll(q))
+
+  let interUISample = $('sample.inter');
+  let secondarySample = $('sample.secondary');
   secondarySample.innerText = interUISample.innerText;
 
-  const renderCanvas = document.querySelector('#renderCanvas')
-  const displayCanvas = document.querySelector('#displayCanvas')
+  const measureDiv = $('#measure')
 
-  const measureDiv = document.querySelector('#measure')
+  const secondaryFontElements = $$('.secondaryFont')
+  const primaryFontElements = $$('.primaryFont')
 
-  const secondaryFontElements =
-    Array.prototype.slice.call(document.querySelectorAll('.secondaryFont'))
-  const primaryFontElements =
-    Array.prototype.slice.call(document.querySelectorAll('.primaryFont'))
+  const repertoireControl = $('.repertoireControl')
+  const samplesElement = $('samples')
+  const boxes = $('boxes')
 
-  const repertoireControl = document.querySelector('.repertoireControl')
-  const samplesElement = document.querySelector('samples')
+  let keyPressed = ""
+  let shiftKeyPressed = false
+  const checkKeys = ev => {
+    keyPressed = ev.key
+    shiftKeyPressed = ev.shiftKey
+  }
+  window.addEventListener('keydown', checkKeys)
+  window.addEventListener('keyup', checkKeys)
 
-  let sizeVar = null
+
+  // sidebar show/hide
+  const sidebarButton = $("#sidebar-button")
+  let sidebarMinimized = false
+  function setSidebarMinimized(minimized) {
+    sidebarMinimized = minimized
+    document.body.classList.toggle("sidebar-minimized", sidebarMinimized)
+    setCurrentQueryStringParam("nosidebar", sidebarMinimized ? 1 : undefined)
+    sidebarButton.title = sidebarMinimized ? "Show controls" : "Hide controls"
+  }
+  sidebarButton.onclick = () => setSidebarMinimized(!sidebarMinimized)
+  setSidebarMinimized(document.location.search.indexOf('nosidebar') != -1)
+  // setInterval(()=>{ setSidebarMinimized(!sidebarMinimized) },2000)
+
+  // filter paste to match style
+  $$('[contenteditable]').forEach(el => {
+    el.addEventListener('paste', ev => {
+      ev.preventDefault()
+      let text = ev.clipboardData.getData("text/plain")
+      document.execCommand("insertHTML", false, text)
+    }, {capture:true,passive:false})
+  })
+
+  // prevent clicks on img-button from changing focus
+  $$('.img-button').forEach(el => {
+    el.addEventListener('pointerdown', ev => {
+      ev.preventDefault()
+    }, {passive:false, capture:true})
+  })
 
   function forEachGlyphlist(fn) {
     let elements = samplesElement.querySelectorAll('.glyphlist')
@@ -1500,61 +683,9 @@ function main() {
     })
   }
 
-  // sample text
-  const samplesSelect = document.querySelector('select[name="sample"]')
-  for (let [k,v] of samples) {
-    const opt = document.createElement('option')
-    opt.innerText = k
-    if (v) {
-      opt.value = k
-    } else {
-      opt.disabled = true
-    }
-    samplesSelect.appendChild(opt)
-  }
-  sampleVar = vars.bind('sample', samplesSelect, (e, v) => {
-    let sampleText = samples.get(v) || ''+v
 
-    if (v == 'Repertoire') {
-      repertoireControl.style.display = null
-    } else {
-      repertoireControl.style.display = 'none'
-    }
+  const lineHeightInput = $('[name="lineHeight"]')
 
-    if (typeof sampleText == 'object' && sampleText.toHTML) {
-      const html = sampleText.toHTML()
-      interUISample.innerHTML   = html
-      secondarySample.innerHTML = html
-    } else {
-      sampleText = String(sampleText).replace(/^[\s\r\n\r]+|[\s\r\n\r]+$/g, '')
-      if (sampleText) {
-        interUISample.innerText   = sampleText
-        secondarySample.innerText = sampleText
-      }
-    }
-
-    if (v == 'Repertoire') {
-      requestAnimationFrame(() => {
-        if (sizeVar) {
-          sizeVar.refreshValue(null)
-        }
-      })
-    }
-  })
-
-  vars.bind('repertoireOrder', (e, v) => {
-    let currOrder = repertoireOrder
-    if (v == 'u') {
-      repertoireOrder = RepertoireOrderUnicode
-    } else {
-      repertoireOrder = RepertoireOrderGlyphList
-    }
-    if (sampleVar && currOrder != repertoireOrder) {
-      sampleVar.refreshValue(null)
-    }
-  })
-
-  const lineHeightInput = document.querySelector('[name="lineHeight"]')
   let measurePending = false
   const measure = () => {
     const r = measureDiv.getBoundingClientRect()
@@ -1596,16 +727,118 @@ function main() {
     setCSSProp('-ms-' + name, value)
   }
 
-  const boxes = document.querySelector('boxes')
-  sizeVar = vars.bind('size', (e, v) => {
+
+  let feats = new Map()
+  let featVars = new Map()
+  let updateFeaturesStyleTimer = null
+
+  function updateFeaturesStyle() {
+    let css = Array.from(feats).map(f => `"${f[0]}" ${f[1]}`).join(', ')
+    setCSSProp('font-feature-settings', css)
+  }
+
+  function scheduleUpdateFeaturesStyle() {
+    if (updateFeaturesStyleTimer === null) {
+      updateFeaturesStyleTimer = setTimeout(() => {
+        updateFeaturesStyleTimer = null
+        updateFeaturesStyle()
+      }, 1)
+    }
+  }
+
+  function setFeature(feat, val, dontUpdateVar/*=false*/) {
+    if (typeof val == 'boolean') {
+      val = val ? 1 : 0
+    }
+    let prevVal = feats.get(feat)
+    if (prevVal !== val) {
+      feats.set(feat, val)
+      scheduleUpdateFeaturesStyle()
+      if (!dontUpdateVar) {
+        let vr = featVars.get(feat)
+        if (vr) {
+          vr.setValue(val)
+        }
+      }
+    }
+  }
+
+  // sample text
+  const samplesSelect = $('select[name="sample"]')
+  for (let [k,v] of samples) {
+    const opt = document.createElement('option')
+    opt.innerText = k
+    if (v) {
+      opt.value = k
+    } else {
+      opt.disabled = true
+    }
+    samplesSelect.appendChild(opt)
+  }
+
+  vars.bind('repertoireOrder', (e, v) => {
+    let currOrder = repertoireOrder
+    if (v == 'u') {
+      repertoireOrder = RepertoireOrderUnicode
+    } else {
+      repertoireOrder = RepertoireOrderGlyphList
+    }
+    if (sampleVar && currOrder != repertoireOrder) {
+      sampleVar.refreshValue(null)
+    }
+  })
+
+  var sizeVar, varSizeRange
+  var varSizeSettingValueImpl = false
+
+  sizeVar = vars.bind('size', (e, v, isInitial) => {
     boxes.style.display = (v > 20) ? 'none' : null
     setCSSProp('font-size', v + 'px')
     setGlyphlistClass('hideNames', v < 36)
-    // setCSSProp('line-height', Math.ceil(v * 1.5) + 'px')
+    if (varSizeRange && !varSizeSettingValueImpl) {
+      varSizeSettingValueImpl = true
+      varSizeRange.setValue(v)
+      varSizeSettingValueImpl = false
+    }
+    return v
+  })
+  varSizeRange = vars.bind('_sizeRange', (e, v, isInitial) => {
+    if (isInitial) {
+      return sizeVar.getValue()
+    } else if (!varSizeSettingValueImpl) {
+      varSizeSettingValueImpl = true
+      vars.setValue("size", v)
+      varSizeSettingValueImpl = false
+    }
+  }, (e, prevValue, ev) => {
+    v = e.valueAsNumber
+    if (shiftKeyPressed && (keyPressed == "" || keyPressed == "Shift")) {
+      v = Math.round(v / 8) * 8
+    }
+    return v
   })
 
+
+  let usingVarFont = false
+  let usingFontFamily = "text"
+  var varWeightRange, varSlantRange
+  var varWeightSettingValueImpl = false
+  var varSlantSettingValueImpl = false
+
+  function getFontFamily(overrideFamily) {
+    return (
+      (overrideFamily || usingFontFamily) == "text" ? (
+        usingVarFont ? (hinted ? fontFamilyNameVarHinted : fontFamilyNameVar) :
+                        hinted ? fontFamilyNameHinted : fontFamilyName
+      ) : (
+        usingVarFont ? (hinted ? fontFamilyNameDisplayVarHinted : fontFamilyNameDisplayVar) :
+                        hinted ? fontFamilyNameDisplayHinted : fontFamilyNameDisplay
+      )
+    )
+  }
+
   let currentBodyWeightClass = null
-  vars.bind('weight', (e, v) => {
+  let varWeight = vars.bind('weight', (e, v) => {
     setCSSProp('font-weight', v)
     if (currentBodyWeightClass) {
       document.body.classList.remove(currentBodyWeightClass)
@@ -1613,38 +846,141 @@ function main() {
     document.body.classList.add(currentBodyWeightClass = 'font-weight-'+v)
   })
 
-  vars.bind('italic', (e, on) => {
+  var italicVar = vars.bind('italic', (e, on) => {
     document.body.classList[on ? 'add' : 'remove']('italic')
+    if (usingVarFont && !varSlantSettingValueImpl) {
+      if (varSlantRange) {
+        varSlantRange.setValue(on ? 100 : 0)
+      }
+      updateVarFont()
+    }
+  })
+
+  let varState = {
+    weight: 400, // 400..900
+    slant: 0,    // 0..-10
+  }
+
+  function updateVarFont() {
+    if (usingVarFont) {
+      varSlantSettingValueImpl = true
+      if (varState.slant <= 0.1) {
+        varState.slant = 0
+        italicVar.setValue(false)
+      } else {
+        italicVar.setValue(true)
+      }
+      varSlantSettingValueImpl = false
+      setCSSProp(
+        "font-variation-settings",
+        `"wght" ${varState.weight}, "slnt" ${-varState.slant}`
+      )
+    } else {
+      setCSSProp("font-variation-settings", null)
+    }
+  }
+
+  vars.bind('varfont', (e, on, isInitial) => {
+    usingVarFont = on
+    document.body.classList.toggle('varfont', on)
+    if (on) {
+      if (!isInitial) {
+        // copy value of const weight to var weight
+        let w = parseInt(varWeight.getValue())
+        if (!isNaN(w) && varWeightRange && !varWeightSettingValueImpl) {
+          varWeightRange.setValue(w)
+        }
+      }
+      // document.body.style.fontFamily = (
+      //   hinted ? fontFamilyNameVarHinted :
+      //   fontFamilyNameVar
+      // )
+    } else {
+      if (!isInitial && varWeightRange) {
+        // copy value of var weight to const weight
+        let w = varWeightRange.getValue()
+        if (!isNaN(w)) {
+          vars.setValue("weight", Math.round(w / 100) * 100)
+        }
+      }
+      // document.body.style.fontFamily = (
+      //   hinted ? fontFamilyNameHinted :
+      //   fontFamilyName
+      // );
+    }
+    document.body.style.fontFamily = getFontFamily()
+    updateVarFont()
+  })
+
+  let varWeightNum = vars.bind('varWeightNum', (e, v) => {
+    if (varWeightRange && !varWeightSettingValueImpl) {
+      varWeightRange.setValue(v)
+    }
+  })
+
+  let varSlantNum = vars.bind('varSlantNum', (e, v) => {
+    if (varSlantRange && !varSlantSettingValueImpl) {
+      varSlantRange.setValue(v)
+    }
+  })
+
+  varWeightRange = vars.bind('varWeight', (e, v) => {
+    varState.weight = v
+    varWeightSettingValueImpl = true
+    varWeightNum.setValue(v)
+    varWeightSettingValueImpl = false
+    updateVarFont()
+  }, (e, prevValue, ev) => {
+    if (prevValue === undefined) {
+      return 400
+    }
+    v = e.valueAsNumber
+    if (shiftKeyPressed && (keyPressed == "" || keyPressed == "Shift")) {
+      v = Math.round(v / 100) * 100
+    }
+    return v
+  })
+
+  varSlantRange = vars.bind('varSlant', (e, v) => {
+    varState.slant = v
+    varSlantSettingValueImpl = true
+    varSlantNum.setValue(v)
+    varSlantSettingValueImpl = false
+    updateVarFont()
+  }, (e, prevValue, ev) => {
+    if (prevValue === undefined) {
+      return 0
+    }
+    return e.valueAsNumber !== undefined ? e.valueAsNumber : e.value
   })
 
 
   // compare
   let secondarySampleClassNameAddition = null
+  let currentSecondarySampleClassName = null
+  function updateSecondarySample() {
+    setSecondarySampleClassName(currentSecondarySampleClassName)
+  }
+
   const setSecondarySampleClassName = className => {
+    currentSecondarySampleClassName = className
     if (secondarySampleClassNameAddition) {
+      secondarySample.style.fontFamily = null
       secondarySample.classList.remove(secondarySampleClassNameAddition)
       secondaryFontElements.forEach(e =>
         e.classList.remove(secondarySampleClassNameAddition))
     }
     if (className) {
+      let explicitFontFamily = null
+      if (className == "inter-other-font") {
+        let otherFamily = usingFontFamily == "text" ? "display" : "text"
+        explicitFontFamily = getFontFamily(otherFamily)
+      }
+      secondarySample.style.fontFamily = explicitFontFamily
       secondarySample.classList.add(className)
       secondaryFontElements.forEach(e => e.classList.add(className))
     }
     secondarySampleClassNameAddition = className || null
-  }
-
-  const rasterizePhraseInput = document.querySelector('[name="rasterizePhrase"]')
-  const rasterizePhraseLabel = document.querySelector('label.rasterizePhrase')
-
-  const enableRasterization = () => {
-    displayCanvas.style.display = null
-    rasterizePhraseInput.disabled = false
-    rasterizePhraseLabel.style.display = null
-  }
-  const disableRasterization = () => {
-    displayCanvas.style.display = 'none'
-    rasterizePhraseInput.disabled = true
-    rasterizePhraseLabel.style.display = 'none'
   }
 
   const enableSecondarySample = className => {
@@ -1653,28 +989,92 @@ function main() {
     document.body.classList.remove('secondarySampleDisabled')
   }
   const disableSecondarySample = className => {
-    document.body.classList.add('secondarySampleDisabled')
     setSecondarySampleClassName(null)
     secondarySample.style.display = 'none'
+    document.body.classList.add('secondarySampleDisabled')
   }
 
   vars.bind('compare', (e, v) => {
-    disableRasterization()
     disableSecondarySample()
     switch (v) {
-      case 'roboto': enableSecondarySample('robotoFont'); break;
-      case 'system': enableSecondarySample('systemFont'); break;
-      case 'rasterization': enableRasterization(); break;
+      // case 'roboto': enableSecondarySample('robotoFont'); break
+      case 'system': enableSecondarySample('systemFont'); break
+      case 'inter-other': enableSecondarySample('inter-other-font'); break
       default: return '-';
     }
   }, e => (e.value && e.value != '-') ? e.value : null)
 
-  vars.bind('letterSpacing', (e, v) => {
-    setCSSProp('letter-spacing', v + 'px')
+
+  vars.bind('family', (el, family, isInitial) => {
+    usingFontFamily = family
+    document.body.style.fontFamily = getFontFamily()
+    updateSecondarySample()
+    if (!isInitial) {
+      updateImplicitLetterSpacing()
+    }
   })
+
+  let resetLineHeightButton = $('.reset-line-height')
+  let resetLetterSpacingButton = $('.reset-letter-spacing')
+
+
+  function calcImplicitLetterSpacing(size, el) {
+    let t = InterDynamicTracking(size, usingFontFamily)
+    let v = parseFloat((t * 100).toFixed(1))
+    ;(el || letterSpacingVar.e).placeholder = v
+    return v
+  }
+
+  let letterSpacingVar = vars.bind('letterSpacing', (el, v) => {
+    resetLetterSpacingButton.classList.toggle("disabled", !v)
+    if (v) {
+      resetLetterSpacingButton.tabIndex = null
+    } else {
+      resetLetterSpacingButton.tabIndex = -1
+    }
+    if (!v) {
+      v = calcImplicitLetterSpacing(sizeVar.getValue(), el)
+    }
+    setCSSProp('letter-spacing', (v / 100) + 'em')
+  }, (el, prevValue, ev) => {
+    if (ev && !ev.inputType && !prevValue) {
+      // step increment/decrement
+      let delta = el.valueAsNumber == 0 ? -1 : el.valueAsNumber
+      return parseFloat(el.placeholder) + delta
+    }
+    return el.value || ""
+  })
+
+  function updateImplicitLetterSpacing() {
+    if (!letterSpacingVar.getValue()) {
+      v = calcImplicitLetterSpacing(sizeVar.getValue())
+      setCSSProp('letter-spacing', (v / 100) + 'em')
+    }
+  }
+
+  // update implicit letter spacing when size changes
+  sizeVar.onChange(size => {
+    let t = letterSpacingVar.lastValue
+    if (!t || isNaN(t)) {
+      updateImplicitLetterSpacing()
+    }
+  })
+
+  resetLetterSpacingButton.addEventListener('click', ev => {
+    vars.setValue('letterSpacing', '')
+    ev.stopPropagation()
+    ev.preventDefault()
+  }, {passive:false,capture:true})
+
 
   vars.bind('lineHeight', lineHeightInput, (e, v) => {
     setCSSProp('line-height', v ? v + 'px' : null)
+    resetLineHeightButton.classList.toggle("disabled", !v)
+    if (v) {
+      resetLineHeightButton.tabIndex = null
+    } else {
+      resetLineHeightButton.tabIndex = -1
+    }
   }, (e, prevValue, ev) => {
     if (ev && !ev.inputType && !prevValue) {
       // step increment/decrement
@@ -1684,7 +1084,20 @@ function main() {
     if (e.valueAsNumber < 0) {
       return Math.abs(e.valueAsNumber)
     }
-    return e.value || null
+    return e.value || ""
+  })
+
+  resetLineHeightButton.addEventListener('click', ev => {
+    vars.setValue('lineHeight', '')
+    ev.stopPropagation()
+    ev.preventDefault()
+  }, {passive:false,capture:true})
+
+  vars.bind("invert-colors", (e, on) => {
+    if (defaultColorSceme == "dark") {
+      on = !on
+    }
+    document.documentElement.classList.toggle('color-scheme-dark', on)
   })
 
   let spaaSelect = vars.bind('antialias', (e, v) => {
@@ -1717,98 +1130,141 @@ function main() {
     spaaSelect.e.parentElement.title = 'In Chrome, visit chrome:flags#lcd-text-aa to disable'
   }
 
-  vars.bind('text-rendering', (e, v) => {
-    setVendorPrefixedCSSProp('text-rendering', e.value = v)
+  vars.bind('text-decoration', (e, v) => {
+    setVendorPrefixedCSSProp('text-decoration', e.value = v)
   })
 
   vars.bind('text-transform', (e, v) => {
     setCSSProp('text-transform', e.value = v)
   })
 
-  vars.bind('variantLigatures', (e, v) => {
-    setCSSProp('font-variant-ligatures', e.value = v)
-  })
+  // vars.bind('variantCaps', (e, v) => {
+  //   setCSSProp('font-variant-caps', e.value = v)
+  // })
 
-  vars.bind('variantCaps', (e, v) => {
-    setCSSProp('font-variant-caps', e.value = v)
-  })
+  // vars.bind('variantLigatures', (e, v) => {
+  //   setCSSProp('font-variant-ligatures', e.value = v)
+  // })
 
-  vars.bind('variantNumeric', (e, v) => {
-    setCSSProp('font-variant-numeric', e.value = v)
-  })
+  // vars.bind('variantNumeric', (e, v) => {
+  //   setCSSProp('font-variant-numeric', e.value = v)
+  // })
 
-  let features = new Set()
-  for (let e of Array.prototype.slice.call(document.querySelectorAll('input.featopt'))) {
+
+  for (let e of $$('input.featopt')) {
     let p = e.name.replace(/^feat\:/, '').split('=')
-    let name = p[0], value = p[1] || '1'
-    vars.bind('feat-' + name, e, (e, on) => {
-      let val = '"' + name + '" ' + value
-      if (on) {
-        features.add(val)
-      } else {
-        features.delete(val)
-      }
-      setCSSProp('font-feature-settings', Array.from(features).join(', '))
+    let name = p[0]
+    let valueOn = parseInt(p[1] || '1')
+    let valueOff = valueOn == 0 ? 1 : 0
+    let vr = vars.bind('feat-' + name, e, (e, on) => {
+      setFeature(name, on ? valueOn : valueOff, /*dontUpdateVar=*/true)
     })
+    featVars.set(name, vr)
   }
 
-  function initCanvas(canvas) {
-    const w = parseInt(canvas.width)
-    const h = parseInt(canvas.height)
-    const scale = window.devicePixelRatio || 1
-    if (scale != 1) {
-      canvas.width  = w * scale
-      canvas.height = h * scale
-      canvas.style.width  = w + 'px'
-      canvas.style.height = h + 'px'
+  updateFeaturesStyle()
+
+  sampleVar = vars.bind('sample', samplesSelect, (e, v) => {
+    let sampleText = samples.get(v) || ''+v
+
+    if (v == 'Repertoire') {
+      repertoireControl.style.display = null
+    } else {
+      repertoireControl.style.display = 'none'
     }
-  }
 
-  initCanvas(renderCanvas)
-  initCanvas(displayCanvas)
+    if (typeof sampleText == 'object' && sampleText.toHTML) {
+      const html = sampleText.toHTML()
+      interUISample.innerHTML   = html
+      secondarySample.innerHTML = html
+    } else {
+      // look for directive
+      // #!directive:value
+      // #!directive
+      sampleText = String(sampleText).replace(/^[\s\r\n\r]+|[\s\r\n\r]+$/g, '')
+      let m = /(?:^|\n)#\!([\w_\-]+)(?::(.+)|)(?:\n|$)/.exec(sampleText)
+      if (m) {
+        // parse directive
+        sampleText = (
+          sampleText.substring(0, m.index) +
+          sampleText.substr(m.index + m[0].length)
+        )
+        let directive = m[1].toLowerCase()
+        // console.log('dir', m[1], '=>', m[2])
+        if (directive == 'enablefeatures') {
+          // #!enableFeatures:tnum,dlig
+          for (let feat of m[2].toLowerCase().split(/\s*,\s*/)) {
+            setFeature(feat, 1)
+          }
+        } else if (directive == 'notrim') {
+          // #!notrim
+          // noop
+        } else {
+          console.warn(`ignoring unknown directive ${m[0]} in sample text`)
+        }
+      }
+      if (sampleText) {
+        interUISample.innerText   = sampleText
+        secondarySample.innerText = sampleText
+      }
+    }
 
-  function rasterize(text) {
-    const ctx = renderCanvas.getContext('2d')
-    const width = parseInt(renderCanvas.width)
-    const height = parseInt(renderCanvas.height)
-
-    ctx.clearRect(0, 0, width, height)
-
-    ctx.font = '22px/36px ' + fontFamilyName
-    ctx.fillText(text, 4, 24)
-
-    ctx.font = '11px/18px ' + fontFamilyName
-    ctx.fillText(text, 4, 44)
-    
-    const zctx = displayCanvas.getContext('2d')
-    zctx.webkitImageSmoothingEnabled = false;
-    zctx.mozImageSmoothingEnabled = false;
-    zctx.imageSmoothingEnabled = false;
-    const zwidth = parseInt(displayCanvas.width)
-    const zheight = parseInt(displayCanvas.height)
-    zctx.clearRect(0, 0, zwidth, zheight)
-    zctx.drawImage(
-      renderCanvas,
-      0, 0, width, height,
-      0, 0, zwidth, zheight
-    )
-  }
-
-  let didSetInitialValue = false
-
-  let rasterizePhraseVar = vars.bind('rasterizePhrase', (e, v) => {
-    if (document.readyState == 'complete') {
-      rasterize(v)
+    if (v == 'Repertoire') {
+      requestAnimationFrame(() => {
+        if (sizeVar) {
+          sizeVar.refreshValue(null)
+        }
+      })
     }
   })
 
-  document.onreadystatechange = () => vars.refreshValue('rasterizePhrase')
+  // ESC clears keyboard focus
+  document.addEventListener('keydown', ev => {
+    if (ev.key == "Escape") {
+      document.activeElement.blur()
+    }
+  }/*, {capture:true, passive:false}*/)
+
+  requestAnimationFrame(()=>{
+    $$('input').forEach(el => {
+      if (el.type == "checkbox") {
+        el.addEventListener("click", ev => {
+          el.blur()
+        })
+        el.addEventListener('keypress', ev => {
+          if (ev.key == "Enter") {
+            el.value = !el.checked
+            el.checked = !el.checked
+            el.dispatchEvent(new Event("change"))
+            ev.stopPropagation()
+            ev.preventDefault()
+          }
+        },{passive:false, capture:true})
+      } else {
+        // RETURN on control clears keyboard focus
+        el.addEventListener('keypress', ev => {
+          if (ev.keyCode == 13) {
+            document.activeElement.blur()
+          }
+        })
+      }
+    })
+  })
+
+  // clear keyboard focus when a select control changes
+  $$('select').forEach(el => el.addEventListener('change', ev => {
+    document.activeElement.blur()
+    window.requestAnimationFrame(() => document.activeElement.blur())
+  }))
 
 }
-    </script>
-  </body>
-  <script type="text/javascript">
-    main();
-    document.title += ' ' + (new Date()).toTimeString().split(':').slice(0,2).join(':');
-  </script>
+
+
+main();
+document.title = (
+  (new Date()).toTimeString().split(':').slice(0,2).join(':') +
+  ' — ' + (new Date()).toDateString()
+);
+
+})();</script>
 </html>
