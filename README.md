@@ -1,6 +1,6 @@
 # ipfs-css
 
-The single-purpose css class names and @font-face config to IPFS up your UI.
+The single-purpose CSS class names and @font-face config to IPFS up your UI.
 
 ```css
 /* ---- font ----- */
@@ -29,16 +29,16 @@ npm install ipfs-css
 
 ## Usage
 
-Once you've installed ipfs-css from npm, the css file and the web-fonts are available from your `node_modules/ipfs-css` directory.
+Once you've installed ipfs-css from npm, the CSS file and the web-fonts are available from your `node_modules/ipfs-css` directory.
 
-If you are set up with a build process that let's you import css files directly from `node_modules`, then you can just add the following to your css file.
+If you are set up with a build process that lets you import css files directly from `node_modules`, then you can just add the following to your CSS file.
 
 ```css
 @import 'tachyons'; /* Optional, jolly good tho */
 @import 'ipfs-css';
 ```
 
-The file includes font-face definitions and single purpose css class names that you can compose freely, to create your lovely UI.
+The file includes font-face definitions and single purpose CSS class names that you can compose freely, to create your lovely UI.
 
 ```html
 <header class='pa2 bg-navy'>
@@ -52,11 +52,11 @@ The file includes font-face definitions and single purpose css class names that 
 
 You can import the `theme.json` file which can be used with a [ThemeProvider] component.
 
-All **the css atoms are generated** from that, so you can be sure you're using the same values.
+All **the CSS atoms are generated** from that, so you can be sure you're using the same values.
 
 ### Less
 
-`ipfs.css` is regular css file, so you can import it normally. Each declaration has a single-purpose so if you prefer to compose your rules outside the dom, you can safely use them as mixins:
+`ipfs.css` is a regular CSS file, so you can import it normally. Each declaration has a single purpose, so if you prefer to compose your rules outside the DOM, you can safely use them as mixins:
 
 ```less
 .my-lovely-widget {
@@ -84,7 +84,7 @@ See: https://ipfs.io/ipfs/QmVrEsy8JjQAugWm48XvFopi9mEKgxcTXdFmEZ6VR2q6rx/
 
 ## Releasing
 
-First, clean and build the css and the docs.
+First, clean and build the CSS and the docs.
 
 ```console
 # Clean then build your local workspace
@@ -100,9 +100,9 @@ $ npm run -s deploy:docs
 Qma9198EYULiyHwVNVcwxenQqWmJgHNhXqRAGn11wg9c9g
 ```
 
-Pin the CID to ipfs-cluster, either via #pinbot on IRC, or your preferred method. Update the README.md with the new docs link.
+Pin the CID to ipfs-cluster (via #pinbot on IRC or your preferred method). Update the README.md with the new docs link.
 
-Then bump the version, push to github and publish to npm. If you are adding an icon, that's a minor release. Fixing an issue with an existing icon would be a patch. Changing any of the color values would be at least a minor. Changing the naming scheme for the css classes would be a major.
+Then bump the version, push to GitHub and publish to npm. If you are adding an icon, that's a minor release. Fixing an issue with an existing icon would be a patch. Changing any of the color values would be at least a minor. Changing the naming scheme for the CSS classes would be a major release.
 
 ```console
 # use npm to bump the version and tag
