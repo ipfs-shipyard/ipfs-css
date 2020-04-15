@@ -139,7 +139,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .yellow-muted { color: #f9a13e; }
 
-.teal { color: #3e9096; }
+.teal { color: #378085; }
 
 .teal-muted { color: #439a9d; }
 
@@ -177,7 +177,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .bg-yellow-muted { background-color: #f9a13e; }
 
-.bg-teal { background-color: #3e9096; }
+.bg-teal { background-color: #378085; }
 
 .bg-teal-muted { background-color: #439a9d; }
 
@@ -215,7 +215,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .hover-yellow-muted:hover, .hover-yellow-muted:focus { color: #f9a13e; }
 
-.hover-teal:hover, .hover-teal:focus { color: #3e9096; }
+.hover-teal:hover, .hover-teal:focus { color: #378085; }
 
 .hover-teal-muted:hover, .hover-teal-muted:focus { color: #439a9d; }
 
@@ -253,7 +253,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .hover-bg-yellow-muted:hover, .hover-bg-yellow-muted:focus { background-color: #f9a13e; }
 
-.hover-bg-teal:hover, .hover-bg-teal:focus { background-color: #3e9096; }
+.hover-bg-teal:hover, .hover-bg-teal:focus { background-color: #378085; }
 
 .hover-bg-teal-muted:hover, .hover-bg-teal-muted:focus { background-color: #439a9d; }
 
@@ -291,7 +291,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .fill-yellow-muted { fill: #f9a13e; }
 
-.fill-teal { fill: #3e9096; }
+.fill-teal { fill: #378085; }
 
 .fill-teal-muted { fill: #439a9d; }
 
@@ -329,7 +329,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .hover-fill-yellow-muted:hover, .hover-fill-yellow-muted:focus { fill: #f9a13e; }
 
-.hover-fill-teal:hover, .hover-fill-teal:focus { fill: #3e9096; }
+.hover-fill-teal:hover, .hover-fill-teal:focus { fill: #378085; }
 
 .hover-fill-teal-muted:hover, .hover-fill-teal-muted:focus { fill: #439a9d; }
 
@@ -367,7 +367,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .border-yellow-muted, .b--yellow-muted { border-color: #f9a13e; }
 
-.border-teal, .b--teal { border-color: #3e9096; }
+.border-teal, .b--teal { border-color: #378085; }
 
 .border-teal-muted, .b--teal-muted { border-color: #439a9d; }
 

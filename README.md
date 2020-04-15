@@ -78,7 +78,7 @@ See: https://ipfs.io/ipfs/QmVrEsy8JjQAugWm48XvFopi9mEKgxcTXdFmEZ6VR2q6rx/
 
 <img title='#ea5037' src='https://swatches.now.sh?color=%23ea5037&name=red' /><img title='#f36149' src='https://swatches.now.sh?color=%23f36149&name=red-muted' /><img title='#f39021' src='https://swatches.now.sh?color=%23f39021&name=yellow' /><img title='#f9a13e' src='https://swatches.now.sh?color=%23f9a13e&name=yellow-muted' />
 
-<img title='#3e9096' src='https://swatches.now.sh?color=%233e9096&name=teal' /><img title='#439a9d' src='https://swatches.now.sh?color=%23439a9d&name=teal-muted' /><img title='#0cb892' src='https://swatches.now.sh?color=%230cb892&name=green' /><img title='#0aca9f' src='https://swatches.now.sh?color=%230aca9f&name=green-muted' />
+<img title='#378085' src='https://swatches.now.sh?color=%23378085&name=teal' /><img title='#439a9d' src='https://swatches.now.sh?color=%23439a9d&name=teal-muted' /><img title='#0cb892' src='https://swatches.now.sh?color=%230cb892&name=green' /><img title='#0aca9f' src='https://swatches.now.sh?color=%230aca9f&name=green-muted' />
 
 <img title='#edf0f4' src='https://swatches.now.sh?color=%23edf0f4&name=snow' /><img title='#f7f8fa' src='https://swatches.now.sh?color=%23f7f8fa&name=snow-muted' />
 
