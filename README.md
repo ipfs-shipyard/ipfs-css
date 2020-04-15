@@ -116,6 +116,12 @@ $ git push --tags
 $ npm publish
 ```
 
+## Maintainers
+
+This repo is monitored and maintained by the [IPFS GUI](https://github.com/ipfs/ipfs-gui) group.
+
+Contributions to this or any other IPFS GUI group project are welcome! [Learn more.](https://github.com/ipfs/ipfs-gui)
+
 ## License
 
 The [Monserrat font family](https://github.com/JulietaUla/Montserrat) © The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat) is used under the [SIL Open Font License, Version 1.1.](https://github.com/JulietaUla/Montserrat/blob/21047be7ebcae5e71328358fcf20566cb85383ec/OFL.txt)
