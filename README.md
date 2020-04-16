@@ -4,7 +4,7 @@ The single-purpose CSS class names and @font-face config to IPFS up your UI.
 
 ```css
 /* ---- font ----- */
-.sans-serif { font-family: 'Inter UI', system-ui, sans-serif; }
+.sans-serif { font-family: 'Inter', system-ui, sans-serif; }
 .montserrat { font-family: 'Montserrat', 'Verdana', system-ui, sans-serif; }
 .monospace { font-family: Consolas, monaco, monospace; }
 
@@ -126,7 +126,7 @@ Contributions to this or any other IPFS GUI group project are welcome! [Learn mo
 
 The [Monserrat font family](https://github.com/JulietaUla/Montserrat) © The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat) is used under the [SIL Open Font License, Version 1.1.](https://github.com/JulietaUla/Montserrat/blob/21047be7ebcae5e71328358fcf20566cb85383ec/OFL.txt)
 
-The [Inter UI font family](https://github.com/rsms/inter/blob/master/LICENSE.txt) © The Inter UI Project Authors (me@rsms.me) is used under the [SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/fa8a99377e8d51d6c0721a4b4c96d91911399dcf/LICENSE.txt)
+The [Inter font family](https://github.com/rsms/inter/blob/master/LICENSE.txt) © The Inter Project Authors (me@rsms.me) is used under the [SIL Open Font License, Version 1.1.](https://github.com/rsms/inter/blob/fa8a99377e8d51d6c0721a4b4c96d91911399dcf/LICENSE.txt)
 
 The home icon © Icons8 is under their [Free License](https://icons8.com/license)
 

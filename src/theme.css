@@ -1,7 +1,7 @@
 /* IPFS theme.css - Generated from https://github.com/ipfs-shipyard/ipfs-css/blob/master/theme.json */
 
 /* ---- font ----- */
-.sans-serif { font-family: 'Inter UI', system-ui, sans-serif; }
+.sans-serif { font-family: 'Inter', system-ui, sans-serif; }
 .montserrat { font-family: 'Montserrat', 'Verdana', system-ui, sans-serif; }
 .monospace { font-family: Consolas, monaco, monospace; }
 

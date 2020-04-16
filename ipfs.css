@@ -6,45 +6,45 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 */
 
 @font-face {
-  font-family: 'Inter UI';
+  font-family: 'Inter';
   font-style:  normal;
   font-weight: 400;
-  src: local('Inter UI'), local('InterUI-Regular'), url("fonts/Inter-UI-Regular.woff2") format("woff2");
+  src: local('Inter'), local('Inter-Regular'), url("fonts/Inter-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Inter UI';
+  font-family: 'Inter';
   font-style:  italic;
   font-weight: 400;
-  src: local('Inter UI Italic'), local('InterUI-Italic'), url("fonts/Inter-UI-Italic.woff2") format("woff2");
+  src: local('Inter Italic'), local('Inter-Italic'), url("fonts/Inter-Italic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Inter UI';
+  font-family: 'Inter';
   font-style:  normal;
   font-weight: 500;
-  src: local('Inter UI Medium'), local('InterUI-Medium'), url("fonts/Inter-UI-Medium.woff2") format("woff2");
+  src: local('Inter Medium'), local('Inter-Medium'), url("fonts/Inter-Medium.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Inter UI';
+  font-family: 'Inter';
   font-style:  italic;
   font-weight: 500;
-  src: local('Inter UI Medium Italic'), local('InterUI-MediumItalic'), url("fonts/Inter-UI-MediumItalic.woff2") format("woff2");
+  src: local('Inter Medium Italic'), local('Inter-MediumItalic'), url("fonts/Inter-MediumItalic.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Inter UI';
+  font-family: 'Inter';
   font-style:  normal;
   font-weight: 700;
-  src: local('Inter UI Bold'), local('InterUI-Bold'), url("fonts/Inter-UI-Bold.woff2") format("woff2");
+  src: local('Inter Bold'), local('Inter-Bold'), url("fonts/Inter-Bold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Inter UI';
+  font-family: 'Inter';
   font-style:  italic;
   font-weight: 700;
-  src: local('Inter UI Bold Italic'), local('InterUI-BoldItalic'), url("fonts/Inter-UI-BoldItalic.woff2") format("woff2");
+  src: local('Inter Bold Italic'), local('Inter-BoldItalic'), url("fonts/Inter-BoldItalic.woff2") format("woff2");
 }
 
 @font-face {
@@ -107,7 +107,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 /* ---- font ----- */
 
-.sans-serif { font-family: 'Inter UI', system-ui, sans-serif; }
+.sans-serif { font-family: 'Inter', system-ui, sans-serif; }
 
 .montserrat { font-family: 'Montserrat', 'Verdana', system-ui, sans-serif; }
 
@@ -436,5 +436,3 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 .fill-white {
   fill: white;
 }
-
-

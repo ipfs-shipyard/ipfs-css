@@ -5,7 +5,7 @@ ___|  _|    _|    ____/  _)  \__|  ___/  ___/
 See: https://github.com/ipfs-shipyard/ipfs-css
 */
 
-@import './inter-ui.css';
+@import './inter.css';
 @import './montserrat.css';
 @import './theme.css';
 
@@ -55,4 +55,3 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 .fill-white {
   fill: white;
 }
-

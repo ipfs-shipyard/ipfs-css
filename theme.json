@@ -24,7 +24,7 @@
     "linear-gradient(to top, #041727 0%,#043b55 100%)"
   ],
   "fonts": {
-    "sans-serif": "'Inter UI', system-ui, sans-serif",
+    "sans-serif": "'Inter', system-ui, sans-serif",
     "montserrat": "'Montserrat', 'Verdana', system-ui, sans-serif",
     "monospace": "Consolas, monaco, monospace"
   },
