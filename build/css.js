@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const postcss = require('postcss')
-const buildThemeCss = require('./theme')
+const buildThemeCss = require('./theme-css')
+const buildThemeScss = require('./theme-scss')
 const buildVarsScss = require('./vars')
 
 const from = path.resolve(__dirname, '../src/ipfs.css')
@@ -24,3 +25,4 @@ async function processCss () {
 
 processCss()
 buildVarsScss()
+buildThemeScss()

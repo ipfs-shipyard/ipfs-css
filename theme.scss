@@ -1,667 +1,151 @@
+/* IPFS theme.scss - Generated from https://github.com/ipfs-shipyard/ipfs-css/blob/master/theme.json */
+
 @import './vars.scss';
 
 /* ---- font ----- */
-
-.sans-serif {
-	font-family: $ipfs-sans-serif;
-}
-
-.montserrat {
-	font-family: $ipfs-montserrat;
-}
-
-.monospace {
-	font-family: $ipfs-monospace;
-}
+.sans-serif { font-family: $ipfs-sans-serif; }
+.montserrat { font-family: $ipfs-montserrat; }
+.monospace { font-family: $ipfs-monospace; }
 
 /* ---- color ----- */
-
-.navy {
-	color: $color-navy;
-}
-
-.navy-muted {
-	color: $color-navy-muted;
-}
-
-.aqua {
-	color: $color-aqua;
-}
-
-.aqua-muted {
-	color: $color-aqua-muted;
-}
-
-.gray {
-	color: $color-gray;
-}
-
-.gray-muted {
-	color: $color-gray-muted;
-}
-
-.charcoal {
-	color: $color-charcoal;
-}
-
-.charcoal-muted {
-	color: $color-charcoal-muted;
-}
-
-.red {
-	color: $color-red;
-}
-
-.red-muted {
-	color: $color-red-muted;
-}
-
-.yellow {
-	color: $color-yellow;
-}
-
-.yellow-muted {
-	color: $color-yellow-muted;
-}
-
-.teal {
-	color: $color-teal;
-}
-
-.teal-muted {
-	color: $color-teal-muted;
-}
-
-.green {
-	color: $color-green;
-}
-
-.green-muted {
-	color: $color-green-muted;
-}
-
-.snow {
-	color: $color-snow;
-}
-
-.snow-muted {
-	color: $color-snow-muted;
-}
-
-.washed-blue {
-	color: $color-washed-blue;
-}
-
-.bg-navy {
-	background-color: $color-navy;
-}
-
-.bg-navy-muted {
-	background-color: $color-navy-muted;
-}
-
-.bg-aqua {
-	background-color: $color-aqua;
-}
-
-.bg-aqua-muted {
-	background-color: $color-gray;
-}
-
-.bg-gray {
-	background-color: $color-gray;
-}
-
-.bg-gray-muted {
-	background-color: $color-gray-muted;
-}
-
-.bg-charcoal {
-	background-color: $color-charcoal;
-}
-
-.bg-charcoal-muted {
-	background-color: $color-charcoal-muted;
-}
-
-.bg-red {
-	background-color: $color-red;
-}
-
-.bg-red-muted {
-	background-color: $color-red-muted;
-}
-
-.bg-yellow {
-	background-color: $color-yellow;
-}
-
-.bg-yellow-muted {
-	background-color: $color-yellow-muted;
-}
-
-.bg-teal {
-	background-color: $color-teal;
-}
-
-.bg-teal-muted {
-	background-color: $color-teal-muted;
-}
-
-.bg-green {
-	background-color: $color-green;
-}
-
-.bg-green-muted {
-	background-color: $color-green-muted;
-}
-
-.bg-snow {
-	background-color: $color-snow;
-}
-
-.bg-snow-muted {
-	background-color: $color-snow-muted;
-}
-
-.bg-washed-blue {
-	background-color: $color-washed-blue;
-}
-
-.hover-navy {
-	&:hover, &:focus {
-		color: $color-navy;
-	}
-}
-
-.hover-navy-muted {
-	&:hover, &:focus {
-		color: $color-navy-muted;
-	}
-}
-
-.hover-aqua {
-	&:hover, &:focus {
-		color: $color-aqua;
-	}
-}
-
-.hover-aqua-muted {
-	&:hover, &:focus {
-		color: $color-gray;
-	}
-}
-
-.hover-gray {
-	&:hover, &:focus {
-		color: $color-gray;
-	}
-}
-
-.hover-gray-muted {
-	&:hover, &:focus {
-		color: $color-gray-muted;
-	}
-}
-
-.hover-charcoal {
-	&:hover, &:focus {
-		color: $color-charcoal;
-	}
-}
-
-.hover-charcoal-muted {
-	&:hover, &:focus {
-		color: $color-charcoal-muted;
-	}
-}
-
-.hover-red {
-	&:hover, &:focus {
-		color: $color-red;
-	}
-}
-
-.hover-red-muted {
-	&:hover, &:focus {
-		color: $color-red-muted;
-	}
-}
-
-.hover-yellow {
-	&:hover, &:focus {
-		color: $color-yellow;
-	}
-}
-
-.hover-yellow-muted {
-	&:hover, &:focus {
-		color: $color-yellow-muted;
-	}
-}
-
-.hover-teal {
-	&:hover, &:focus {
-		color: $color-teal;
-	}
-}
-
-.hover-teal-muted {
-	&:hover, &:focus {
-		color: $color-teal-muted;
-	}
-}
-
-.hover-green {
-	&:hover, &:focus {
-		color: $color-green;
-	}
-}
-
-.hover-green-muted {
-	&:hover, &:focus {
-		color: $color-green-muted;
-	}
-}
-
-.hover-snow {
-	&:hover, &:focus {
-		color: $color-snow;
-	}
-}
-
-.hover-snow-muted {
-	&:hover, &:focus {
-		color: $color-snow-muted;
-	}
-}
-
-.hover-washed-blue {
-	&:hover, &:focus {
-		color: $color-washed-blue;
-	}
-}
-
-.hover-bg-navy {
-	&:hover, &:focus {
-		background-color: $color-navy;
-	}
-}
-
-.hover-bg-navy-muted {
-	&:hover, &:focus {
-		background-color: $color-navy-muted;
-	}
-}
-
-.hover-bg-aqua {
-	&:hover, &:focus {
-		background-color: $color-aqua;
-	}
-}
-
-.hover-bg-aqua-muted {
-	&:hover, &:focus {
-		background-color: $color-gray;
-	}
-}
-
-.hover-bg-gray {
-	&:hover, &:focus {
-		background-color: $color-gray;
-	}
-}
-
-.hover-bg-gray-muted {
-	&:hover, &:focus {
-		background-color: $color-gray-muted;
-	}
-}
-
-.hover-bg-charcoal {
-	&:hover, &:focus {
-		background-color: $color-charcoal;
-	}
-}
-
-.hover-bg-charcoal-muted {
-	&:hover, &:focus {
-		background-color: $color-charcoal-muted;
-	}
-}
-
-.hover-bg-red {
-	&:hover, &:focus {
-		background-color: $color-red;
-	}
-}
-
-.hover-bg-red-muted {
-	&:hover, &:focus {
-		background-color: $color-red-muted;
-	}
-}
-
-.hover-bg-yellow {
-	&:hover, &:focus {
-		background-color: $color-yellow;
-	}
-}
-
-.hover-bg-yellow-muted {
-	&:hover, &:focus {
-		background-color: $color-yellow-muted;
-	}
-}
-
-.hover-bg-teal {
-	&:hover, &:focus {
-		background-color: $color-teal;
-	}
-}
-
-.hover-bg-teal-muted {
-	&:hover, &:focus {
-		background-color: $color-teal-muted;
-	}
-}
-
-.hover-bg-green {
-	&:hover, &:focus {
-		background-color: $color-green;
-	}
-}
-
-.hover-bg-green-muted {
-	&:hover, &:focus {
-		background-color: $color-green-muted;
-	}
-}
-
-.hover-bg-snow {
-	&:hover, &:focus {
-		background-color: $color-snow;
-	}
-}
-
-.hover-bg-snow-muted {
-	&:hover, &:focus {
-		background-color: $color-snow-muted;
-	}
-}
-
-.hover-bg-washed-blue {
-	&:hover, &:focus {
-		background-color: $color-washed-blue;
-	}
-}
-
-.fill-navy {
-	fill: $color-navy;
-}
-
-.fill-navy-muted {
-	fill: $color-navy-muted;
-}
-
-.fill-aqua {
-	fill: $color-aqua;
-}
-
-.fill-aqua-muted {
-	fill: $color-gray;
-}
-
-.fill-gray {
-	fill: $color-gray;
-}
-
-.fill-gray-muted {
-	fill: $color-gray-muted;
-}
-
-.fill-charcoal {
-	fill: $color-charcoal;
-}
-
-.fill-charcoal-muted {
-	fill: $color-charcoal-muted;
-}
-
-.fill-red {
-	fill: $color-red;
-}
-
-.fill-red-muted {
-	fill: $color-red-muted;
-}
-
-.fill-yellow {
-	fill: $color-yellow;
-}
-
-.fill-yellow-muted {
-	fill: $color-yellow-muted;
-}
-
-.fill-teal {
-	fill: $color-teal;
-}
-
-.fill-teal-muted {
-	fill: $color-teal-muted;
-}
-
-.fill-green {
-	fill: $color-green;
-}
-
-.fill-green-muted {
-	fill: $color-green-muted;
-}
-
-.fill-snow {
-	fill: $color-snow;
-}
-
-.fill-snow-muted {
-	fill: $color-snow-muted;
-}
-
-.fill-washed-blue {
-	fill: $color-washed-blue;
-}
-
-.hover-fill-navy {
-	&:hover, &:focus {
-		fill: $color-navy;
-	}
-}
-
-.hover-fill-navy-muted {
-	&:hover, &:focus {
-		fill: $color-navy-muted;
-	}
-}
-
-.hover-fill-aqua {
-	&:hover, &:focus {
-		fill: $color-aqua;
-	}
-}
-
-.hover-fill-aqua-muted {
-	&:hover, &:focus {
-		fill: $color-gray;
-	}
-}
-
-.hover-fill-gray {
-	&:hover, &:focus {
-		fill: $color-gray;
-	}
-}
-
-.hover-fill-gray-muted {
-	&:hover, &:focus {
-		fill: $color-gray-muted;
-	}
-}
-
-.hover-fill-charcoal {
-	&:hover, &:focus {
-		fill: $color-charcoal;
-	}
-}
-
-.hover-fill-charcoal-muted {
-	&:hover, &:focus {
-		fill: $color-charcoal-muted;
-	}
-}
-
-.hover-fill-red {
-	&:hover, &:focus {
-		fill: $color-red;
-	}
-}
-
-.hover-fill-red-muted {
-	&:hover, &:focus {
-		fill: $color-red-muted;
-	}
-}
-
-.hover-fill-yellow {
-	&:hover, &:focus {
-		fill: $color-yellow;
-	}
-}
-
-.hover-fill-yellow-muted {
-	&:hover, &:focus {
-		fill: $color-yellow-muted;
-	}
-}
-
-.hover-fill-teal {
-	&:hover, &:focus {
-		fill: $color-teal;
-	}
-}
-
-.hover-fill-teal-muted {
-	&:hover, &:focus {
-		fill: $color-teal-muted;
-	}
-}
-
-.hover-fill-green {
-	&:hover, &:focus {
-		fill: $color-green;
-	}
-}
-
-.hover-fill-green-muted {
-	&:hover, &:focus {
-		fill: $color-green-muted;
-	}
-}
-
-.hover-fill-snow {
-	&:hover, &:focus {
-		fill: $color-snow;
-	}
-}
-
-.hover-fill-snow-muted {
-	&:hover, &:focus {
-		fill: $color-snow-muted;
-	}
-}
-
-.hover-fill-washed-blue {
-	&:hover, &:focus {
-		fill: $color-washed-blue;
-	}
-}
-
-.border-navy, .b--navy {
-	border-color: $color-navy;
-}
-
-.border-navy-muted, .b--navy-muted {
-	border-color: $color-navy-muted;
-}
-
-.border-aqua, .b--aqua {
-	border-color: $color-aqua;
-}
-
-.border-aqua-muted, .b--aqua-muted {
-	border-color: $color-gray;
-}
-
-.border-gray, .b--gray {
-	border-color: $color-gray;
-}
-
-.border-gray-muted, .b--gray-muted {
-	border-color: $color-gray-muted;
-}
-
-.border-charcoal, .b--charcoal {
-	border-color: $color-charcoal;
-}
-
-.border-charcoal-muted, .b--charcoal-muted {
-	border-color: $color-charcoal-muted;
-}
-
-.border-red, .b--red {
-	border-color: $color-red;
-}
-
-.border-red-muted, .b--red-muted {
-	border-color: $color-red-muted;
-}
-
-.border-yellow, .b--yellow {
-	border-color: $color-yellow;
-}
-
-.border-yellow-muted, .b--yellow-muted {
-	border-color: $color-yellow-muted;
-}
-
-.border-teal, .b--teal {
-	border-color: $color-teal;
-}
-
-.border-teal-muted, .b--teal-muted {
-	border-color: $color-teal-muted;
-}
-
-.border-green, .b--green {
-	border-color: $color-green;
-}
-
-.border-green-muted, .b--green-muted {
-	border-color: $color-green-muted;
-}
-
-.border-snow, .b--snow {
-	border-color: $color-snow;
-}
-
-.border-snow-muted, .b--snow-muted {
-	border-color: $color-snow-muted;
-}
-
-.border-washed-blue, .b--washed-blue {
-	border-color: $color-washed-blue;
-}
-
-.ipfs-gradient-0 {
-	background-image: $ipfs-gradient-0-background-image;
-}
+.navy { color: $color-navy; }
+.navy-muted { color: $color-navy-muted; }
+.aqua { color: $color-aqua; }
+.aqua-muted { color: $color-aqua-muted; }
+.gray { color: $color-gray; }
+.gray-muted { color: $color-gray-muted; }
+.charcoal { color: $color-charcoal; }
+.charcoal-muted { color: $color-charcoal-muted; }
+.red { color: $color-red; }
+.red-muted { color: $color-red-muted; }
+.yellow { color: $color-yellow; }
+.yellow-muted { color: $color-yellow-muted; }
+.teal { color: $color-teal; }
+.teal-muted { color: $color-teal-muted; }
+.green { color: $color-green; }
+.green-muted { color: $color-green-muted; }
+.snow { color: $color-snow; }
+.snow-muted { color: $color-snow-muted; }
+.washed-blue { color: $color-washed-blue; }
+
+.bg-navy { background-color: $color-navy; }
+.bg-navy-muted { background-color: $color-navy-muted; }
+.bg-aqua { background-color: $color-aqua; }
+.bg-aqua-muted { background-color: $color-aqua-muted; }
+.bg-gray { background-color: $color-gray; }
+.bg-gray-muted { background-color: $color-gray-muted; }
+.bg-charcoal { background-color: $color-charcoal; }
+.bg-charcoal-muted { background-color: $color-charcoal-muted; }
+.bg-red { background-color: $color-red; }
+.bg-red-muted { background-color: $color-red-muted; }
+.bg-yellow { background-color: $color-yellow; }
+.bg-yellow-muted { background-color: $color-yellow-muted; }
+.bg-teal { background-color: $color-teal; }
+.bg-teal-muted { background-color: $color-teal-muted; }
+.bg-green { background-color: $color-green; }
+.bg-green-muted { background-color: $color-green-muted; }
+.bg-snow { background-color: $color-snow; }
+.bg-snow-muted { background-color: $color-snow-muted; }
+.bg-washed-blue { background-color: $color-washed-blue; }
+
+.hover-navy:hover, .hover-navy:focus { color: $color-navy; }
+.hover-navy-muted:hover, .hover-navy-muted:focus { color: $color-navy-muted; }
+.hover-aqua:hover, .hover-aqua:focus { color: $color-aqua; }
+.hover-aqua-muted:hover, .hover-aqua-muted:focus { color: $color-aqua-muted; }
+.hover-gray:hover, .hover-gray:focus { color: $color-gray; }
+.hover-gray-muted:hover, .hover-gray-muted:focus { color: $color-gray-muted; }
+.hover-charcoal:hover, .hover-charcoal:focus { color: $color-charcoal; }
+.hover-charcoal-muted:hover, .hover-charcoal-muted:focus { color: $color-charcoal-muted; }
+.hover-red:hover, .hover-red:focus { color: $color-red; }
+.hover-red-muted:hover, .hover-red-muted:focus { color: $color-red-muted; }
+.hover-yellow:hover, .hover-yellow:focus { color: $color-yellow; }
+.hover-yellow-muted:hover, .hover-yellow-muted:focus { color: $color-yellow-muted; }
+.hover-teal:hover, .hover-teal:focus { color: $color-teal; }
+.hover-teal-muted:hover, .hover-teal-muted:focus { color: $color-teal-muted; }
+.hover-green:hover, .hover-green:focus { color: $color-green; }
+.hover-green-muted:hover, .hover-green-muted:focus { color: $color-green-muted; }
+.hover-snow:hover, .hover-snow:focus { color: $color-snow; }
+.hover-snow-muted:hover, .hover-snow-muted:focus { color: $color-snow-muted; }
+.hover-washed-blue:hover, .hover-washed-blue:focus { color: $color-washed-blue; }
+
+.hover-bg-navy:hover, .hover-bg-navy:focus { background-color: $color-navy; }
+.hover-bg-navy-muted:hover, .hover-bg-navy-muted:focus { background-color: $color-navy-muted; }
+.hover-bg-aqua:hover, .hover-bg-aqua:focus { background-color: $color-aqua; }
+.hover-bg-aqua-muted:hover, .hover-bg-aqua-muted:focus { background-color: $color-aqua-muted; }
+.hover-bg-gray:hover, .hover-bg-gray:focus { background-color: $color-gray; }
+.hover-bg-gray-muted:hover, .hover-bg-gray-muted:focus { background-color: $color-gray-muted; }
+.hover-bg-charcoal:hover, .hover-bg-charcoal:focus { background-color: $color-charcoal; }
+.hover-bg-charcoal-muted:hover, .hover-bg-charcoal-muted:focus { background-color: $color-charcoal-muted; }
+.hover-bg-red:hover, .hover-bg-red:focus { background-color: $color-red; }
+.hover-bg-red-muted:hover, .hover-bg-red-muted:focus { background-color: $color-red-muted; }
+.hover-bg-yellow:hover, .hover-bg-yellow:focus { background-color: $color-yellow; }
+.hover-bg-yellow-muted:hover, .hover-bg-yellow-muted:focus { background-color: $color-yellow-muted; }
+.hover-bg-teal:hover, .hover-bg-teal:focus { background-color: $color-teal; }
+.hover-bg-teal-muted:hover, .hover-bg-teal-muted:focus { background-color: $color-teal-muted; }
+.hover-bg-green:hover, .hover-bg-green:focus { background-color: $color-green; }
+.hover-bg-green-muted:hover, .hover-bg-green-muted:focus { background-color: $color-green-muted; }
+.hover-bg-snow:hover, .hover-bg-snow:focus { background-color: $color-snow; }
+.hover-bg-snow-muted:hover, .hover-bg-snow-muted:focus { background-color: $color-snow-muted; }
+.hover-bg-washed-blue:hover, .hover-bg-washed-blue:focus { background-color: $color-washed-blue; }
+
+.fill-navy { fill: $color-navy; }
+.fill-navy-muted { fill: $color-navy-muted; }
+.fill-aqua { fill: $color-aqua; }
+.fill-aqua-muted { fill: $color-aqua-muted; }
+.fill-gray { fill: $color-gray; }
+.fill-gray-muted { fill: $color-gray-muted; }
+.fill-charcoal { fill: $color-charcoal; }
+.fill-charcoal-muted { fill: $color-charcoal-muted; }
+.fill-red { fill: $color-red; }
+.fill-red-muted { fill: $color-red-muted; }
+.fill-yellow { fill: $color-yellow; }
+.fill-yellow-muted { fill: $color-yellow-muted; }
+.fill-teal { fill: $color-teal; }
+.fill-teal-muted { fill: $color-teal-muted; }
+.fill-green { fill: $color-green; }
+.fill-green-muted { fill: $color-green-muted; }
+.fill-snow { fill: $color-snow; }
+.fill-snow-muted { fill: $color-snow-muted; }
+.fill-washed-blue { fill: $color-washed-blue; }
+
+.hover-fill-navy:hover, .hover-fill-navy:focus { fill: $color-navy; }
+.hover-fill-navy-muted:hover, .hover-fill-navy-muted:focus { fill: $color-navy-muted; }
+.hover-fill-aqua:hover, .hover-fill-aqua:focus { fill: $color-aqua; }
+.hover-fill-aqua-muted:hover, .hover-fill-aqua-muted:focus { fill: $color-aqua-muted; }
+.hover-fill-gray:hover, .hover-fill-gray:focus { fill: $color-gray; }
+.hover-fill-gray-muted:hover, .hover-fill-gray-muted:focus { fill: $color-gray-muted; }
+.hover-fill-charcoal:hover, .hover-fill-charcoal:focus { fill: $color-charcoal; }
+.hover-fill-charcoal-muted:hover, .hover-fill-charcoal-muted:focus { fill: $color-charcoal-muted; }
+.hover-fill-red:hover, .hover-fill-red:focus { fill: $color-red; }
+.hover-fill-red-muted:hover, .hover-fill-red-muted:focus { fill: $color-red-muted; }
+.hover-fill-yellow:hover, .hover-fill-yellow:focus { fill: $color-yellow; }
+.hover-fill-yellow-muted:hover, .hover-fill-yellow-muted:focus { fill: $color-yellow-muted; }
+.hover-fill-teal:hover, .hover-fill-teal:focus { fill: $color-teal; }
+.hover-fill-teal-muted:hover, .hover-fill-teal-muted:focus { fill: $color-teal-muted; }
+.hover-fill-green:hover, .hover-fill-green:focus { fill: $color-green; }
+.hover-fill-green-muted:hover, .hover-fill-green-muted:focus { fill: $color-green-muted; }
+.hover-fill-snow:hover, .hover-fill-snow:focus { fill: $color-snow; }
+.hover-fill-snow-muted:hover, .hover-fill-snow-muted:focus { fill: $color-snow-muted; }
+.hover-fill-washed-blue:hover, .hover-fill-washed-blue:focus { fill: $color-washed-blue; }
+
+.border-navy, .b--navy { border-color: $color-navy; }
+.border-navy-muted, .b--navy-muted { border-color: $color-navy-muted; }
+.border-aqua, .b--aqua { border-color: $color-aqua; }
+.border-aqua-muted, .b--aqua-muted { border-color: $color-aqua-muted; }
+.border-gray, .b--gray { border-color: $color-gray; }
+.border-gray-muted, .b--gray-muted { border-color: $color-gray-muted; }
+.border-charcoal, .b--charcoal { border-color: $color-charcoal; }
+.border-charcoal-muted, .b--charcoal-muted { border-color: $color-charcoal-muted; }
+.border-red, .b--red { border-color: $color-red; }
+.border-red-muted, .b--red-muted { border-color: $color-red-muted; }
+.border-yellow, .b--yellow { border-color: $color-yellow; }
+.border-yellow-muted, .b--yellow-muted { border-color: $color-yellow-muted; }
+.border-teal, .b--teal { border-color: $color-teal; }
+.border-teal-muted, .b--teal-muted { border-color: $color-teal-muted; }
+.border-green, .b--green { border-color: $color-green; }
+.border-green-muted, .b--green-muted { border-color: $color-green-muted; }
+.border-snow, .b--snow { border-color: $color-snow; }
+.border-snow-muted, .b--snow-muted { border-color: $color-snow-muted; }
+.border-washed-blue, .b--washed-blue { border-color: $color-washed-blue; }
+
+.ipfs-gradient-0 { background-image: $ipfs-gradient-0-background-image; }

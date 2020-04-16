@@ -29,7 +29,7 @@ npm install ipfs-css
 
 ## Usage
 
-Once you've installed ipfs-css from npm, the CSS file and the web-fonts are available from your `node_modules/ipfs-css` directory.
+Once you've installed ipfs-css from npm, the CSS and SCSS files and the web-fonts are available from your `node_modules/ipfs-css` directory.
 
 If you are set up with a build process that lets you import css files directly from `node_modules`, then you can just add the following to your CSS file.
 
@@ -65,6 +65,10 @@ All **the CSS atoms are generated** from that, so you can be sure you're using t
   .montserrat;
 }
 ```
+
+### SCSS
+
+While `ipfs.css` contains everything you need, if you prefer variables for fonts, colors and gradients, these are there for you in `theme.scss`.
 
 ## Icons
 
