@@ -8,6 +8,28 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 @font-face {
   font-family: 'Inter';
   font-style:  normal;
+  font-weight: 300;
+  src: local('Inter ExtraLight'),
+    local('Inter-ExtraLight'),
+    url("fonts/Inter-ExtraLight.woff2") format("woff2"), /* Super modern browsers */
+    url('fonts/Inter-ExtraLight.woff') format('woff'), /* Pretty modern browsers */
+    url('fonts/Inter-ExtraLight.otf') format('opentype'); /* non-IE */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  italic;
+  font-weight: 300;
+  src: local('Inter ExtraLight Italic'),
+    local('Inter-ExtraLightItalic'),
+    url("fonts/Inter-ExtraLightItalic.woff2") format("woff2"), /* Super modern browsers */
+    url('fonts/Inter-ExtraLightItalic.woff') format('woff'), /* Pretty modern browsers */
+    url('fonts/Inter-ExtraLightItalic.otf') format('opentype'); /* non-IE */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
   font-weight: 400;
   src: local('Inter'),
     local('Inter-Regular'),
@@ -52,6 +74,28 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 @font-face {
   font-family: 'Inter';
   font-style:  normal;
+  font-weight: 600;
+  src: local('Inter SemiBold'),
+    local('Inter-SemiBold'),
+    url("fonts/Inter-SemiBold.woff2") format("woff2"), /* Super modern browsers */
+    url('fonts/Inter-SemiBold.woff') format('woff'), /* Pretty modern browsers */
+    url('fonts/Inter-SemiBold.otf') format('opentype'); /* non-IE */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  italic;
+  font-weight: 600;
+  src: local('Inter SemiBold Italic'),
+    local('Inter-SemiBoldItalic'),
+    url("fonts/Inter-SemiBoldItalic.woff2") format("woff2"), /* Super modern browsers */
+    url('fonts/Inter-SemiBoldItalic.woff') format('woff'), /* Pretty modern browsers */
+    url('fonts/Inter-SemiBoldItalic.otf') format('opentype'); /* non-IE */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
   font-weight: 700;
   src: local('Inter Bold'),
     local('Inter-Bold'),
@@ -69,6 +113,28 @@ See: https://github.com/ipfs-shipyard/ipfs-css
     url("fonts/Inter-BoldItalic.woff2") format("woff2"), /* Super modern browsers */
     url('fonts/Inter-BoldItalic.woff') format('woff'), /* Pretty modern browsers */
     url('fonts/Inter-BoldItalic.otf') format('opentype'); /* non-IE */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 800;
+  src: local('Inter ExtraBold'),
+    local('Inter-ExtraBold'),
+    url("fonts/Inter-ExtraBold.woff2") format("woff2"), /* Super modern browsers */
+    url('fonts/Inter-ExtraBold.woff') format('woff'), /* Pretty modern browsers */
+    url('fonts/Inter-ExtraBold.otf') format('opentype'); /* non-IE */
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  italic;
+  font-weight: 800;
+  src: local('Inter ExtraBold Italic'),
+    local('Inter-ExtraBoldItalic'),
+    url("fonts/Inter-ExtraBoldItalic.woff2") format("woff2"), /* Super modern browsers */
+    url('fonts/Inter-ExtraBoldItalic.woff') format('woff'), /* Pretty modern browsers */
+    url('fonts/Inter-ExtraBoldItalic.otf') format('opentype'); /* non-IE */
 }
 
 @font-face {
