@@ -1,15 +1,13 @@
-/* IPFS theme.css - Generated from https://github.com/ipfs-shipyard/ipfs-css/blob/master/theme.json */
-
 @import './vars.scss';
 
 /* ---- font ----- */
 
 .sans-serif {
-	font-family: $ipfs-sans-serif, system-ui, sans-serif;
+	font-family: $ipfs-sans-serif;
 }
 
 .montserrat {
-	font-family: $ipfs-montserrat, system-ui, sans-serif;
+	font-family: $ipfs-montserrat;
 }
 
 .monospace {
