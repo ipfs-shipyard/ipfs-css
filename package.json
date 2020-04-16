@@ -9,7 +9,7 @@
     "clean": "rm -rf ./docs/* ./fonts ./ipfs.css ./src/theme.css",
     "build": "run-p build:*",
     "build:css": "node build/css.js > ipfs.css",
-    "build:fonts": "mkdir -p fonts; rsync -a --exclude='MontserratAlt*' src/fonts/inter/docs/font-files/ src/fonts/montserrat/fonts/webfonts/ fonts",
+    "build:fonts": "mkdir -p fonts; rsync -a --exclude='MontserratAlt*' --exclude='InterDisplay*' --exclude='Inter-Thin*' src/fonts/inter/docs/font-files/ src/fonts/montserrat/fonts/webfonts/ fonts",
     "build:licenses": "cp src/fonts/inter/LICENSE.txt fonts/Inter-LICENSE.txt; cp src/fonts/montserrat/OFL.txt fonts/Montserrat-LICENSE.txt;",
     "build:docs": "node build/icons-page.js > docs/index.html",
     "deploy:docs": "rsync -aq --delete icons docs/; ipfs add -r -Q docs"
