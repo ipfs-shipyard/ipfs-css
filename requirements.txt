@@ -1,0 +1,12 @@
+fonttools[lxml,unicode,ufo]==4.0.2
+cu2qu==1.6.6
+glyphsLib==5.0.1
+ufo2ft[pathops]==2.9.1
+defcon[lxml]==0.6.0
+skia-pathops==0.2.0.post2
+
+# only used for DesignSpaceDocumentReader in fontbuild
+MutatorMath==2.1.2
+
+# for woff2
+brotli==1.0.7
