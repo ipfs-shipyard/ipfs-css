@@ -1,7 +1,7 @@
 /* IPFS theme.css - Generated from https://github.com/ipfs-shipyard/ipfs-css/blob/master/theme.json */
 
 /* ---- font ----- */
-.sans-serif { font-family: 'Inter UI', system-ui, sans-serif; }
+.sans-serif { font-family: 'Inter', system-ui, sans-serif; }
 .montserrat { font-family: 'Montserrat', 'Verdana', system-ui, sans-serif; }
 .monospace { font-family: Consolas, monaco, monospace; }
 
@@ -18,7 +18,7 @@
 .red-muted { color: #f36149; }
 .yellow { color: #f39021; }
 .yellow-muted { color: #f9a13e; }
-.teal { color: #3e9096; }
+.teal { color: #378085; }
 .teal-muted { color: #439a9d; }
 .green { color: #0cb892; }
 .green-muted { color: #0aca9f; }
@@ -38,7 +38,7 @@
 .bg-red-muted { background-color: #f36149; }
 .bg-yellow { background-color: #f39021; }
 .bg-yellow-muted { background-color: #f9a13e; }
-.bg-teal { background-color: #3e9096; }
+.bg-teal { background-color: #378085; }
 .bg-teal-muted { background-color: #439a9d; }
 .bg-green { background-color: #0cb892; }
 .bg-green-muted { background-color: #0aca9f; }
@@ -58,7 +58,7 @@
 .hover-red-muted:hover, .hover-red-muted:focus { color: #f36149; }
 .hover-yellow:hover, .hover-yellow:focus { color: #f39021; }
 .hover-yellow-muted:hover, .hover-yellow-muted:focus { color: #f9a13e; }
-.hover-teal:hover, .hover-teal:focus { color: #3e9096; }
+.hover-teal:hover, .hover-teal:focus { color: #378085; }
 .hover-teal-muted:hover, .hover-teal-muted:focus { color: #439a9d; }
 .hover-green:hover, .hover-green:focus { color: #0cb892; }
 .hover-green-muted:hover, .hover-green-muted:focus { color: #0aca9f; }
@@ -78,7 +78,7 @@
 .hover-bg-red-muted:hover, .hover-bg-red-muted:focus { background-color: #f36149; }
 .hover-bg-yellow:hover, .hover-bg-yellow:focus { background-color: #f39021; }
 .hover-bg-yellow-muted:hover, .hover-bg-yellow-muted:focus { background-color: #f9a13e; }
-.hover-bg-teal:hover, .hover-bg-teal:focus { background-color: #3e9096; }
+.hover-bg-teal:hover, .hover-bg-teal:focus { background-color: #378085; }
 .hover-bg-teal-muted:hover, .hover-bg-teal-muted:focus { background-color: #439a9d; }
 .hover-bg-green:hover, .hover-bg-green:focus { background-color: #0cb892; }
 .hover-bg-green-muted:hover, .hover-bg-green-muted:focus { background-color: #0aca9f; }
@@ -98,7 +98,7 @@
 .fill-red-muted { fill: #f36149; }
 .fill-yellow { fill: #f39021; }
 .fill-yellow-muted { fill: #f9a13e; }
-.fill-teal { fill: #3e9096; }
+.fill-teal { fill: #378085; }
 .fill-teal-muted { fill: #439a9d; }
 .fill-green { fill: #0cb892; }
 .fill-green-muted { fill: #0aca9f; }
@@ -118,7 +118,7 @@
 .hover-fill-red-muted:hover, .hover-fill-red-muted:focus { fill: #f36149; }
 .hover-fill-yellow:hover, .hover-fill-yellow:focus { fill: #f39021; }
 .hover-fill-yellow-muted:hover, .hover-fill-yellow-muted:focus { fill: #f9a13e; }
-.hover-fill-teal:hover, .hover-fill-teal:focus { fill: #3e9096; }
+.hover-fill-teal:hover, .hover-fill-teal:focus { fill: #378085; }
 .hover-fill-teal-muted:hover, .hover-fill-teal-muted:focus { fill: #439a9d; }
 .hover-fill-green:hover, .hover-fill-green:focus { fill: #0cb892; }
 .hover-fill-green-muted:hover, .hover-fill-green-muted:focus { fill: #0aca9f; }
@@ -138,7 +138,7 @@
 .border-red-muted, .b--red-muted { border-color: #f36149; }
 .border-yellow, .b--yellow { border-color: #f39021; }
 .border-yellow-muted, .b--yellow-muted { border-color: #f9a13e; }
-.border-teal, .b--teal { border-color: #3e9096; }
+.border-teal, .b--teal { border-color: #378085; }
 .border-teal-muted, .b--teal-muted { border-color: #439a9d; }
 .border-green, .b--green { border-color: #0cb892; }
 .border-green-muted, .b--green-muted { border-color: #0aca9f; }

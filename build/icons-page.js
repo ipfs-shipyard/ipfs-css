@@ -33,6 +33,7 @@ iconsByName = {
   ...and the rest of the icon names
 }
 */
+
 const iconsByName = iconsData.reduce((map, info) => {
   const {name, type} = info
   map[name] = map[name] || {}
@@ -42,17 +43,22 @@ const iconsByName = iconsData.reduce((map, info) => {
 
 const iconsByNameList = Object.keys(iconsByName).map(name => iconsByName[name])
 
-const imgTpl = ({name, url, filename}) => `<img alt=${name} title=${filename} src=${url} style='width:100px; height:100px' />`
+const imgTpl = ({type, name, url, filename}) => `
+  <div class="item">
+    <div><img class="icon" alt=${name} title=${filename} src=${url} /></div>
+    <div>${type} ${name}</div>
+  </div>
+`
 
 const missingTpl = (type, name) => `
-  <div style='line-height:1.5;text-align:center;display:inline-block;width:100px;height:100px;background:white;box-shadow:inset 0px 2px 20px -5px rgba(0,0,0,0.2)'>
-    <div style='color:tomato;padding:20 0 0 0;font-style:italic'>Missing</div>
-    <div>${type}</div>
-    <div>${name}</div>
-  </div>`
+<div class="item item-missing">
+  <div class="icon">(missing)</div>
+  <div>${type} ${name}</div>
+</div>
+`
 
 const compareTpl = ({glyph, stroke}) => `
-  <div style='display: inline-block; padding-bottom: 30px; vertical-align:top;'>
+  <div class="compare">
     <div>
       ${glyph ? imgTpl(glyph) : missingTpl('glyph', stroke.name)}
     </div>
@@ -65,26 +71,32 @@ const compareTpl = ({glyph, stroke}) => `
 const html = `
   <div>
     <style>
-    body { font: menu; font-size: 16px; line-height:1.5; }
-    img { max-width: 100%; }
+      body { font: menu; font-size: 16px; line-height: 1.5; max-width: 1400px; margin: 0 auto; padding: 2em; }
+      section { padding-top: 1.5em; }
+      .compare { display: inline-block; margin-bottom: 3em; }
+      .compare .item {display: block; }
+      .item { display: inline-block; font-style: italic; margin: 1em .75em 1em 0; text-align: center; vertical-align:top; width: 10.5em; }
+      .item-missing { border: 1px dashed #7f8491; }
+      .icon { align-items: center; color: #f36149; display: flex; height: 100px; justify-content: center; margin: 0 auto; max-width: 100%; width: 100px; }
     </style>
-    <div style="max-width:1400px;margin:0 auto;">
-      <h1>IPFS Icons</h1>
-      <section style="padding-top:10px">
-        <h2>Stroke flavour</h2>
-        ${iconsByNameList.filter(x => !!x.stroke).map(x => imgTpl(x.stroke)).join('')}
-      </section>
 
-      <section style="padding-top:20px">
-        <h2>Glyph flavour</h2
-        ${iconsByNameList.filter(x => !!x.glyph).map(x => imgTpl(x.glyph)).join('')}
-      </section>
+    <h1>IPFS Icons</h1>
 
-      <section style="padding-top:20px">
-        <h2>Icon style availability</h2>
-        ${iconsByNameList.map(compareTpl).join('')}
-      </section>
-    </div>
+    <section>
+      <h2>Style: Glyph</h2>
+      ${iconsByNameList.filter(x => !!x.glyph).map(x => imgTpl(x.glyph)).join('')}
+    </section>
+
+    <section>
+      <h2>Style: Stroke</h2>
+      ${iconsByNameList.filter(x => !!x.stroke).map(x => imgTpl(x.stroke)).join('')}
+    </section>
+
+    <section>
+      <h2>Cross-style availability</h2>
+      ${iconsByNameList.map(compareTpl).join('')}
+    </section>
+
   </div>
 `
 

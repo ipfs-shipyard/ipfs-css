@@ -6,11 +6,12 @@
   "style": "ipfs.css",
   "scripts": {
     "test": "stylelint **/*.css",
-    "clean": "rm -rf ./docs/* ./fonts ./ipfs.css ./src/theme.css",
+    "clean": "rm -rf ./docs/* ./fonts ./ipfs.css ./theme.scss ./vars.scss ./src/theme.css",
     "build": "run-p build:*",
     "build:css": "node build/css.js > ipfs.css",
-    "build:fonts": "mkdir -p fonts; rsync -a --exclude='MontserratAlt*' --exclude='*.woff' --exclude='*.eot' --exclude='*.otf' src/fonts/inter-ui/docs/font-files/ src/fonts/montserrat/fonts/webfonts/ fonts",
-    "build:licenses": "cp src/fonts/inter-ui/LICENSE.txt fonts/Inter-UI-LICENSE.txt; cp src/fonts/montserrat/OFL.txt fonts/Montserrat-LICENSE.txt;",
+    "build:fonts": "mkdir -p fonts; rsync -a --exclude='Inter-Black*' --exclude='Inter-Light*' --exclude='MontserratAlt*' --exclude='Montserrat-Thin*' --exclude='Montserrat-ExtraLight*' --exclude='Montserrat-Black*' --exclude='*.css' --exclude='README*' --exclude='InterDisplay*' --exclude='Inter-Thin*' src/fonts/inter/docs/font-files/ src/fonts/montserrat/fonts/webfonts/ fonts",
+    "build:icons": "cp -a icons/. docs/icons/",
+    "build:licenses": "cp src/fonts/inter/LICENSE.txt fonts/Inter-LICENSE.txt; cp src/fonts/montserrat/OFL.txt fonts/Montserrat-LICENSE.txt;",
     "build:docs": "node build/icons-page.js > docs/index.html",
     "deploy:docs": "rsync -aq --delete icons docs/; ipfs add -r -Q docs"
   },
