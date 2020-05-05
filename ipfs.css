@@ -317,7 +317,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .snow-muted { color: #f7f8fa; }
 
-.link-blue { color: #117eb3; }
+.link { color: #117eb3; }
 
 .washed-blue { color: #F0F6FA; }
 
@@ -357,7 +357,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .bg-snow-muted { background-color: #f7f8fa; }
 
-.bg-link-blue { background-color: #117eb3; }
+.bg-link { background-color: #117eb3; }
 
 .bg-washed-blue { background-color: #F0F6FA; }
 
@@ -397,7 +397,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .hover-snow-muted:hover, .hover-snow-muted:focus { color: #f7f8fa; }
 
-.hover-link-blue:hover, .hover-link-blue:focus { color: #117eb3; }
+.hover-link:hover, .hover-link:focus { color: #117eb3; }
 
 .hover-washed-blue:hover, .hover-washed-blue:focus { color: #F0F6FA; }
 
@@ -437,7 +437,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .hover-bg-snow-muted:hover, .hover-bg-snow-muted:focus { background-color: #f7f8fa; }
 
-.hover-bg-link-blue:hover, .hover-bg-link-blue:focus { background-color: #117eb3; }
+.hover-bg-link:hover, .hover-bg-link:focus { background-color: #117eb3; }
 
 .hover-bg-washed-blue:hover, .hover-bg-washed-blue:focus { background-color: #F0F6FA; }
 
@@ -477,7 +477,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .fill-snow-muted { fill: #f7f8fa; }
 
-.fill-link-blue { fill: #117eb3; }
+.fill-link { fill: #117eb3; }
 
 .fill-washed-blue { fill: #F0F6FA; }
 
@@ -517,7 +517,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .hover-fill-snow-muted:hover, .hover-fill-snow-muted:focus { fill: #f7f8fa; }
 
-.hover-fill-link-blue:hover, .hover-fill-link-blue:focus { fill: #117eb3; }
+.hover-fill-link:hover, .hover-fill-link:focus { fill: #117eb3; }
 
 .hover-fill-washed-blue:hover, .hover-fill-washed-blue:focus { fill: #F0F6FA; }
 
@@ -557,7 +557,7 @@ See: https://github.com/ipfs-shipyard/ipfs-css
 
 .border-snow-muted, .b--snow-muted { border-color: #f7f8fa; }
 
-.border-link-blue, .b--link-blue { border-color: #117eb3; }
+.border-link, .b--link { border-color: #117eb3; }
 
 .border-washed-blue, .b--washed-blue { border-color: #F0F6FA; }
 
