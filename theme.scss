@@ -26,6 +26,7 @@
 .green-muted { color: $color-green-muted; }
 .snow { color: $color-snow; }
 .snow-muted { color: $color-snow-muted; }
+.link { color: $color-link; }
 .washed-blue { color: $color-washed-blue; }
 
 .bg-navy { background-color: $color-navy; }
@@ -46,6 +47,7 @@
 .bg-green-muted { background-color: $color-green-muted; }
 .bg-snow { background-color: $color-snow; }
 .bg-snow-muted { background-color: $color-snow-muted; }
+.bg-link { background-color: $color-link; }
 .bg-washed-blue { background-color: $color-washed-blue; }
 
 .hover-navy:hover, .hover-navy:focus { color: $color-navy; }
@@ -66,6 +68,7 @@
 .hover-green-muted:hover, .hover-green-muted:focus { color: $color-green-muted; }
 .hover-snow:hover, .hover-snow:focus { color: $color-snow; }
 .hover-snow-muted:hover, .hover-snow-muted:focus { color: $color-snow-muted; }
+.hover-link:hover, .hover-link:focus { color: $color-link; }
 .hover-washed-blue:hover, .hover-washed-blue:focus { color: $color-washed-blue; }
 
 .hover-bg-navy:hover, .hover-bg-navy:focus { background-color: $color-navy; }
@@ -86,6 +89,7 @@
 .hover-bg-green-muted:hover, .hover-bg-green-muted:focus { background-color: $color-green-muted; }
 .hover-bg-snow:hover, .hover-bg-snow:focus { background-color: $color-snow; }
 .hover-bg-snow-muted:hover, .hover-bg-snow-muted:focus { background-color: $color-snow-muted; }
+.hover-bg-link:hover, .hover-bg-link:focus { background-color: $color-link; }
 .hover-bg-washed-blue:hover, .hover-bg-washed-blue:focus { background-color: $color-washed-blue; }
 
 .fill-navy { fill: $color-navy; }
@@ -106,6 +110,7 @@
 .fill-green-muted { fill: $color-green-muted; }
 .fill-snow { fill: $color-snow; }
 .fill-snow-muted { fill: $color-snow-muted; }
+.fill-link { fill: $color-link; }
 .fill-washed-blue { fill: $color-washed-blue; }
 
 .hover-fill-navy:hover, .hover-fill-navy:focus { fill: $color-navy; }
@@ -126,6 +131,7 @@
 .hover-fill-green-muted:hover, .hover-fill-green-muted:focus { fill: $color-green-muted; }
 .hover-fill-snow:hover, .hover-fill-snow:focus { fill: $color-snow; }
 .hover-fill-snow-muted:hover, .hover-fill-snow-muted:focus { fill: $color-snow-muted; }
+.hover-fill-link:hover, .hover-fill-link:focus { fill: $color-link; }
 .hover-fill-washed-blue:hover, .hover-fill-washed-blue:focus { fill: $color-washed-blue; }
 
 .border-navy, .b--navy { border-color: $color-navy; }
@@ -146,6 +152,7 @@
 .border-green-muted, .b--green-muted { border-color: $color-green-muted; }
 .border-snow, .b--snow { border-color: $color-snow; }
 .border-snow-muted, .b--snow-muted { border-color: $color-snow-muted; }
+.border-link, .b--link { border-color: $color-link; }
 .border-washed-blue, .b--washed-blue { border-color: $color-washed-blue; }
 
 .ipfs-gradient-0 { background-image: $ipfs-gradient-0-background-image; }

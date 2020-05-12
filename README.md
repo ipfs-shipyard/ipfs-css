@@ -72,7 +72,7 @@ While `ipfs.css` contains everything you need, if you prefer variables for fonts
 
 ## Icons
 
-See: https://ipfs.io/ipfs/QmWwajTYvw7h9iJPz62diJnjMBo75V2d9t2bMBuFXmhcPo/
+See: https://ipfs.io/ipfs/QmaYju1m8st8rMiqUTox7NMLasFJuAnZzHUEgWFgrjkSWi/
 
 ## Colors
 
@@ -84,7 +84,7 @@ See: https://ipfs.io/ipfs/QmWwajTYvw7h9iJPz62diJnjMBo75V2d9t2bMBuFXmhcPo/
 
 <img title='#378085' src='https://swatches.now.sh?color=%23378085&name=teal' /><img title='#439a9d' src='https://swatches.now.sh?color=%23439a9d&name=teal-muted' /><img title='#0cb892' src='https://swatches.now.sh?color=%230cb892&name=green' /><img title='#0aca9f' src='https://swatches.now.sh?color=%230aca9f&name=green-muted' />
 
-<img title='#edf0f4' src='https://swatches.now.sh?color=%23edf0f4&name=snow' /><img title='#f7f8fa' src='https://swatches.now.sh?color=%23f7f8fa&name=snow-muted' />
+<img title='#edf0f4' src='https://swatches.now.sh?color=%23edf0f4&name=snow' /><img title='#f7f8fa' src='https://swatches.now.sh?color=%23f7f8fa&name=snow-muted' /><img title='#117eb3' src='https://swatches.now.sh?color=%23117eb3&name=link' />
 
 ## Releasing
 
