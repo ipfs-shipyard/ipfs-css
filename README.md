@@ -21,7 +21,7 @@ Pairs well with [tachyons].
 
 ## Install
 
-Add `ipfs-css` to your project via npm
+Add `ipfs-css` to your project via npm:
 
 ```sh
 npm install ipfs-css
