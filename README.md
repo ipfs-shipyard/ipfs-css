@@ -72,7 +72,7 @@ While `ipfs.css` contains everything you need, if you prefer variables for fonts
 
 ## Icons
 
-See: https://gateway.ipfs.io/ipfs/Qmdf5w8y76Pu47bQCRbFQgnnFv24TPMThJuK9E9PziXWhL
+See: https://gateway.ipfs.io/ipfs/QmQYzfzGKAeBWgarrmTSsG2PJ8AFfFEBprhVBFaudcFTof
 
 ## Colors
 
@@ -101,7 +101,7 @@ Next, with IPFS running locally, add the docs to IPFS, to get the new CID.
 ```console
 # Add the docs to IPFS to get the CID
 $ npm run -s deploy:docs
-Qmdf5w8y76Pu47bQCRbFQgnnFv24TPMThJuK9E9PziXWhL
+QmQYzfzGKAeBWgarrmTSsG2PJ8AFfFEBprhVBFaudcFTof
 ```
 
 Pin the CID to ipfs-cluster (via #pinbot on IRC or your preferred method). Update the README.md with the new docs link.
