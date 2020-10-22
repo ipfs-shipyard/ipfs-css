@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.3.0] - 2020-10-22
+
+- Adds/updates [icons](https://gateway.ipfs.io/ipfs/QmQYzfzGKAeBWgarrmTSsG2PJ8AFfFEBprhVBFaudcFTof) (see [#46](https://github.com/ipfs-shipyard/ipfs-css/pull/46)) related to pinning and pinning services:
+     - `glyph_pin_cloud` (new)
+     - `stroke_pin_cloud` (new)
+     - `glyph_cloud` (updated)
+     - `stroke_cloud` (updated
+- Bumps `dot-prop` version
+
 ## [v1.2.0] - 2020-06-26
 Adds icons for external links:
 - stroke_link_external.svg
