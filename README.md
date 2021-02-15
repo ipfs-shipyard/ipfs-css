@@ -120,11 +120,13 @@ $ git push --tags
 $ npm publish
 ```
 
-## Maintainers
+## Contribute
 
-This repo is monitored and maintained by the [IPFS GUI](https://github.com/ipfs/ipfs-gui) group.
+Contributions are more than welcome! Check out the [currently open issues](https://github.com/ipfs-shipyard/ipfs-css/issues) and start hacking on anything that sounds interesting. Issues are labeled with a variety of tags to help you find a good fit — you may wish to start with the [`help-wanted`](https://github.com/ipfs-shipyard/ipfs-share-files/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) tag.
 
-Contributions to this or any other IPFS GUI group project are welcome! [Learn more.](https://github.com/ipfs/ipfs-gui)
+To contribute to IPFS in general, check out the wide variety of opportunities [here](https://docs.ipfs.io/community/contribute/ways-to-contribute).
+
+The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
 
 ## License
 
