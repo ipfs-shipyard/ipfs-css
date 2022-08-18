@@ -72,7 +72,7 @@ While `ipfs.css` contains everything you need, if you prefer variables for fonts
 
 ## Icons
 
-See: https://gateway.ipfs.io/ipfs/QmQYzfzGKAeBWgarrmTSsG2PJ8AFfFEBprhVBFaudcFTof
+See: https://dweb.link/ipfs/bafybeiebays3i7aem7tptga3kilzux7f5gz6czl4dietazgutcjhozjviu
 
 ## Colors
 
