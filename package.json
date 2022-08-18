@@ -13,18 +13,18 @@
     "build:icons": "cp -a icons/. docs/icons/",
     "build:licenses": "cp src/fonts/inter/LICENSE.txt fonts/Inter-LICENSE.txt; cp src/fonts/montserrat/OFL.txt fonts/Montserrat-LICENSE.txt;",
     "build:docs": "node build/icons-page.js > docs/index.html",
-    "deploy:docs": "rsync -aq --delete icons docs/; ipfs add -r -Q docs"
+    "deploy:docs": "rsync -aq --delete icons docs/; ipfs add --cid-version 1 -r -Q docs"
   },
   "author": "olizilla",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
+    "autoprefixer": "^10.4.8",
     "npm-run-all": "^4.1.5",
-    "postcss": "^7.0.17",
-    "postcss-import": "^12.0.1",
-    "standard": "^12.0.1",
-    "stylelint": "^10.1.0",
-    "stylelint-config-recommended": "^2.2.0"
+    "postcss": "^8.4.16",
+    "postcss-import": "^14.1.0",
+    "standard": "^17.0.0",
+    "stylelint": "^14.10.0",
+    "stylelint-config-recommended": "^9.0.0"
   },
   "dependencies": {},
   "stylelint": {
